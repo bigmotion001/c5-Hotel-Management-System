@@ -43,8 +43,8 @@
         <div class="container">
             <div class="row align-items-center">
                  <div class="col-6">
-                    <a href="index-2.html" class="logo_normal"><img src="img/logo.png" width="135" height="45" alt=""></a>
-                    <a href="index-2.html" class="logo_sticky"><img src="img/logo_sticky.png" width="135" height="45" alt=""></a>
+                    <a href="index-2.html" class="logo_normal"><img src="{{ ('frontend/img/logo.png') }}" width="135" height="45" alt=""></a>
+                    <a href="index-2.html" class="logo_sticky"><img src="{{ ('frontend/img/logo_sticky.png') }}" width="135" height="45" alt=""></a>
                 </div>
                 <div class="col-6">
                     <nav>
@@ -66,7 +66,7 @@
 
     <div class="nav_panel">
         <a href="#" class="closebt open_close_nav_panel"><i class="bi bi-x"></i></a>
-        <div class="logo_panel"><img src="img/logo_sticky.png" width="135" height="45" alt=""></div>
+        <div class="logo_panel"><img src="{{ ('frontend/img/logo_sticky.png') }}" width="135" height="45" alt=""></div>
         <div class="sidebar-navigation">
             <nav>
                 <ul class="level-1">
