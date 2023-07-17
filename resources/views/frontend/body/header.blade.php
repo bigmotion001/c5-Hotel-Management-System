@@ -43,8 +43,8 @@
         <div class="container">
             <div class="row align-items-center">
                  <div class="col-6">
-                    <a href="index-2.html" class="logo_normal"><img src="img/logo.png" width="135" height="45" alt=""></a>
-                    <a href="index-2.html" class="logo_sticky"><img src="img/logo_sticky.png" width="135" height="45" alt=""></a>
+                    <a href="index-2.html" class="logo_normal"><img src="frontend/img/logo.png" width="135" height="45" alt=""></a>
+                    <a href="index-2.html" class="logo_sticky"><img src="frontend/img/logo_sticky.png" width="135" height="45" alt=""></a>
                 </div>
                 <div class="col-6">
                     <nav>

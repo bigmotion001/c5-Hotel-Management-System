@@ -5,13 +5,6 @@
 @section('content')
 
 
-
-
-
-
-
-
-
   <div class="hero full-height jarallax" data-jarallax-video="{{ ('frontend/video/sunset.ogv') }}" data-speed="0.2">
             <div class="wrapper opacity-mask d-flex align-items-center justify-content-center text-center animate_hero" data-opacity-mask="rgba(0, 0, 0, 0.5)">
                 <div class="container">
@@ -64,8 +57,8 @@
                 <div class="row justify-content-between flex-lg-row-reverse align-items-center">
                     <div class="col-lg-5">
                         <div class="parallax_wrapper">
-                            <img src="img/home_2.jpg" alt="" class="img-fluid rounded-img">
-                            <div data-cue="slideInUp" class="img_over"><span data-jarallax-element="-30"><img src="img/home_1.jpg" alt="" class="rounded-img"></span></div>
+                            <img src="frontend/img/home_2.jpg" alt="" class="img-fluid rounded-img">
+                            <div data-cue="slideInUp" class="img_over"><span data-jarallax-element="-30"><img src="frontend/img/home_1.jpg" alt="" class="rounded-img"></span></div>
                         </div>
                     </div>
                     <div class="col-lg-5">
@@ -85,9 +78,9 @@
             <div class="pinned-image pinned-image--medium">
                 <div class="pinned-image__container" id="section_video">
                     <video loop="loop" muted="muted" id="video_home">
-                        <source src="video/swimming_pool_2.mp4" type="video/mp4">
-                        <source src="video/swimming_pool_2.webm" type="video/webm">
-                        <source src="video/swimming_pool_2.ogv" type="video/ogg">
+                        <source src="frontend/video/swimming_pool_2.mp4" type="video/mp4">
+                        <source src="frontend/video/swimming_pool_2.webm" type="video/webm">
+                        <source src="frontend/video/swimming_pool_2.ogv" type="video/ogg">
                     </video>
                     <div class="pinned-image__container-overlay"></div>
                 </div>
@@ -111,7 +104,7 @@
                 <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12">
                     <a href="room-details.html" class="box_cat_rooms">
                         <figure>
-                            <div class="background-image" data-background="url(img/rooms/1.jpg)"></div>
+                            <div class="background-image" data-background="url(frontend/img/rooms/1.jpg)"></div>
                             <div class="info">
                                 <small>From $250/night</small>
                                 <h3>Junior Suite</h3>
@@ -123,7 +116,7 @@
                 <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6">
                     <a href="room-details.html" class="box_cat_rooms">
                         <figure>
-                            <div class="background-image" data-background="url(img/rooms/2.jpg)"></div>
+                            <div class="background-image" data-background="url(frontend/img/rooms/2.jpg)"></div>
                             <div class="info">
                                 <small>From $190/night</small>
                                 <h3>Deluxe Room</h3>
@@ -135,7 +128,7 @@
                 <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6">
                     <a href="room-details.html" class="box_cat_rooms">
                         <figure>
-                            <div class="background-image" data-background="url(img/rooms/3.jpg)"></div>
+                            <div class="background-image" data-background="url(frontend/img/rooms/3.jpg)"></div>
                             <div class="info">
                                 <small>From $240/night</small>
                                 <h3>Superior Room</h3>
@@ -199,7 +192,7 @@
                     <div class="col-lg-6">
                         <div class="pinned-image rounded_container pinned-image--small mb-4">
                             <div class="pinned-image__container">
-                                <img src="img/local_amenities_1.jpg" alt="">
+                                <img src="frontend/img/local_amenities_1.jpg" alt="">
                             </div>
                         </div>
                     </div>
@@ -217,7 +210,7 @@
                     <div class="col-lg-6 order-lg-2">
                         <div class="pinned-image rounded_container pinned-image--small mb-4">
                             <div class="pinned-image__container">
-                                <img src="img/local_amenities_3.jpg" alt="">
+                                <img src="frontend/img/local_amenities_3.jpg" alt="">
                             </div>
                         </div>
                     </div>
@@ -237,7 +230,7 @@
         <!-- /bg_white -->
 
         <div class="parallax_section_1 jarallax" data-jarallax data-speed="0.2">
-            <img class="jarallax-img kenburns-2" src="img/hero_home_1.jpg" alt="">
+            <img class="jarallax-img kenburns-2" src="frontend/img/hero_home_1.jpg" alt="">
             <div class="wrapper opacity-mask d-flex align-items-center justify-content-center text-center" data-opacity-mask="rgba(0, 0, 0, 0.5)">
                 <div class="container">
                     <div class="row justify-content-center">
@@ -250,7 +243,7 @@
                                 <div>
                                     <div class="box_overlay">
                                         <div class="pic">
-                                            <figure><img src="img/testimonial_1.jpg" alt="" class="img-circle">
+                                            <figure><img src="frontend/img/testimonial_1.jpg" alt="" class="img-circle">
                                             </figure>
                                             <h4>Roberta<small>12 Oct</small></h4>
                                         </div>
@@ -263,7 +256,7 @@
                                 <div>
                                     <div class="box_overlay">
                                         <div class="pic">
-                                            <figure><img src="img/testimonial_1.jpg" alt="" class="img-circle">
+                                            <figure><img src="frontend/img/testimonial_1.jpg" alt="" class="img-circle">
                                             </figure>
                                             <h4>Roberta<small>2 Nov</small></h4>
                                         </div>
@@ -276,7 +269,7 @@
                                 <div>
                                     <div class="box_overlay">
                                         <div class="pic">
-                                            <figure><img src="img/testimonial_1.jpg" alt="" class="img-circle">
+                                            <figure><img src="frontend/img/testimonial_1.jpg" alt="" class="img-circle">
                                             </figure>
                                             <h4>Roberta<small>3 Dec</small></h4>
                                         </div>
@@ -305,7 +298,7 @@
                 <div class="row justify-content-center home">
                     <div class="item col-xl-4 col-lg-6">
                         <a href="news-post.html" class="box_contents" data-cue="slideInUp" data-delay="300">
-                            <figure><img src="img/blog-1.jpg" alt="" class="img-fluid"><em>11 Dec</em></figure>
+                            <figure><img src="frontend/img/blog-1.jpg" alt="" class="img-fluid"><em>11 Dec</em></figure>
                             <div class="wrapper">
                                 <small>Travel<span></span></small>
                                 <h2>The vacation and travel Guide for experts in 2022</h2>
@@ -315,7 +308,7 @@
                     </div>
                     <div class="item col-xl-4 col-lg-6">
                         <a href="news-post.html" class="box_contents" data-cue="slideInUp" data-delay="400">
-                            <figure><img src="img/blog-3.jpg" alt="" class="img-fluid"><em>24 Dec</em></figure>
+                            <figure><img src="frontend/img/blog-3.jpg" alt="" class="img-fluid"><em>24 Dec</em></figure>
                             <div class="wrapper">
                                 <small>Event<span></span></small>
                                 <h2>Yayoi Kusama: Infinity Mirror Rooms at Tate Modern</h2>
@@ -325,7 +318,7 @@
                     </div>
                     <div class="item col-xl-4 col-lg-6">
                         <a href="news-post.html" class="box_contents" data-cue="slideInUp" data-delay="500">
-                            <figure><img src="img/blog-2.jpg" alt="" class="img-fluid"><em>21 Dec</em></figure>
+                            <figure><img src="frontend/img/blog-2.jpg" alt="" class="img-fluid"><em>21 Dec</em></figure>
                             <div class="wrapper">
                                 <small>Restaurant<span></span></small>
                                 <h2>Best Local Restaurant in 2022</h2>

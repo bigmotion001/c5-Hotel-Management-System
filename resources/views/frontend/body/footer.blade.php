@@ -4,7 +4,7 @@
 <footer class="revealed">
     <div class="footer_bg">
         <div class="gradient_over"></div>
-        <div class="background-image" data-background="url(img/rooms/3.jpg)"></div>
+        <div class="background-image" data-background="url(frontend/img/rooms/3.jpg)"></div>
     </div>
     <div class="container">
         <div class="row move_content">
