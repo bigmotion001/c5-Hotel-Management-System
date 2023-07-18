@@ -25,7 +25,7 @@
     <!-- BASE CSS -->
     <link href="{{ ('frontend/css/bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ ('frontend/css/style.css') }}" rel="stylesheet">
-	<link href="{{ ('frontend/css/vendors.min.css') }}" rel="stylesheet">
+    <link href="{{ ('frontend/css/vendors.min.css') }}" rel="stylesheet">
 
     <!-- YOUR CUSTOM CSS -->
     <link href="{{ ('frontend/css/custom.css') }}" rel="stylesheet">
@@ -42,7 +42,7 @@
     <header class="reveal_header">
         <div class="container">
             <div class="row align-items-center">
-                 <div class="col-6">
+                <div class="col-6">
                     <a href="index-2.html" class="logo_normal"><img src="frontend/img/logo.png" width="135" height="45" alt=""></a>
                     <a href="index-2.html" class="logo_sticky"><img src="frontend/img/logo_sticky.png" width="135" height="45" alt=""></a>
                 </div>
@@ -51,7 +51,7 @@
                         <ul>
                             <li><a href="#booking_section" class="btn_1 btn_scrollto">Book Now</a></li>
                             <li>
-                               <div class="hamburger_2 open_close_nav_panel">
+                                <div class="hamburger_2 open_close_nav_panel">
                                     <div class="hamburger__box">
                                         <div class="hamburger__inner"></div>
                                     </div>
@@ -71,7 +71,7 @@
             <nav>
                 <ul class="level-1">
                     <li class="parent"><a href="#0">Home</a>
-                         <ul class="level-2">
+                        <ul class="level-2">
                             <li class="back"><a href="#0">Back</a></li>
                             <li><a href="index-2.html">Home Video Bg</a></li>
                             <li><a href="index-3.html">Home Carousel</a></li>

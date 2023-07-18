@@ -12,7 +12,7 @@
                 <h5>Contacts</h5>
                 <ul>
                     <li>Baker Street 567, Los Angeles 11023<br>California - US<br><br></li>
-                    <li><strong><a href="#0">info@Paradisehotel.com</a></strong></li>
+                    <li><strong><a href="#0">info@C5hotel.com</a></strong></li>
                     <li><strong><a href="#0">+434 43242232</a></strong></li>
                 </ul>
                 <div class="social">
@@ -56,7 +56,7 @@
     <!--/container-->
     <div class="copy">
         <div class="container">
-            © Paradise - by <a href="#">Ansonika</a>
+            © C5 HOTEL - <a href="#">2023</a>
         </div>
     </div>
 </footer>
@@ -73,6 +73,8 @@
 <script src="{{ ('frontend/js/common_scripts.js') }}"></script>
 <script src="{{ ('frontend/js/common_functions.js') }}"></script>
 <script src="{{ ('frontend/js/datepicker_inline.js') }}"></script>
+<script src="{{ ('frontend/js/slider.js') }}"></script>
+
 
 
 <script type="text/javascript">
