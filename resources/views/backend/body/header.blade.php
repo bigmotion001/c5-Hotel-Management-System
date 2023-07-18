@@ -17,9 +17,9 @@
 
 
 
-    <link rel="stylesheet" type="text/css" href="{{ ('/backend/app-assets/vendors/css/vendors.min.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ ('/backend/app-assets/vendors/css/animate/animate.min.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ ('/backend/app-assets/vendors/css/extensions/sweetalert2.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('backendapp-assets/vendors/css/vendors.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('backend/app-assets/vendors/css/animate/animate.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('backend/app-assets/vendors/css/extensions/sweetalert2.min.css') }}">
 
 
 
@@ -28,29 +28,29 @@
     <!-- END: Page CSS-->
 
     <!-- BEGIN: Vendor CSS-->
-    <link rel="stylesheet" type="text/css" href="{{ ('/backend/app-assets/vendors/css/vendors.min.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ ('/backend/app-assets/vendors/css/charts/apexcharts.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ ('/backend/app-assets/vendors/css/extensions/toastr.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('backend/app-assets/vendors/css/vendors.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('backend/app-assets/vendors/css/charts/apexcharts.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('backend/app-assets/vendors/css/extensions/toastr.min.css') }}">
     <!-- END: Vendor CSS-->
 
     <!-- BEGIN: Theme CSS-->
-    <link rel="stylesheet" type="text/css" href="{{ ('/backend/app-assets/css/bootstrap.min.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ ('/backend/app-assets/css/bootstrap-extended.min.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ ('/backend/app-assets/css/colors.min.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ ('/backend/app-assets/css/components.min.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ ('/backend/app-assets/css/themes/dark-layout.min.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ ('/backend/app-assets/css/themes/bordered-layout.min.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ ('/backend/app-assets/css/themes/semi-dark-layout.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('backend/app-assets/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('backend/app-assets/css/bootstrap-extended.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('backend/app-assets/css/colors.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('backend/app-assets/css/components.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('backend/app-assets/css/themes/dark-layout.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('backend/app-assets/css/themes/bordered-layout.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('backend/app-assets/css/themes/semi-dark-layout.min.css') }}">
 
     <!-- BEGIN: Page CSS-->
-    <link rel="stylesheet" type="text/css" href="{{ ('/backend/app-assets/css/core/menu/menu-types/vertical-menu.min.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ ('/backend/app-assets/css/pages/dashboard-ecommerce.min.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ ('/backend/app-assets/css/plugins/charts/chart-apex.min.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ ('/backend/app-assets/css/plugins/extensions/ext-component-toastr.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('backend/app-assets/css/core/menu/menu-types/vertical-menu.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('backend/app-assets/css/pages/dashboard-ecommerce.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('backend/app-assets/css/plugins/charts/chart-apex.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('backend/app-assets/css/plugins/extensions/ext-component-toastr.min.css') }}">
     <!-- END: Page CSS-->
 
     <!-- BEGIN: Custom CSS-->
-    <link rel="stylesheet" type="text/css" href="{{ ('/backend/assets/css/style.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('backend/assets/css/style.css') }}">
     <!-- END: Custom CSS-->
 
 </head>
@@ -84,8 +84,8 @@
                     <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdown-user"><a class="dropdown-item" href="#"><i class="me-50" data-feather="user"></i> Profile</a><a class="dropdown-item" href="app-email.html">
 
                             <div class="dropdown-divider"></div>
-                            <!-- <a class="dropdown-item" href="page-account-settings-account.html"><i class="me-50" data-feather="settings"></i>
-                                Settings</a> -->
+                            <a class="dropdown-item" href="page-account-settings-account.html"><i class="me-50" data-feather="settings"></i>
+                                Settings</a>
 
                             <a class="dropdown-item" href="#"><i class="me-50" data-feather="power"></i> Logout</a>
                     </div>
