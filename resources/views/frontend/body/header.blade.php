@@ -42,68 +42,27 @@
 
     <div class="layer"></div><!-- Opacity Mask -->
 
-    <header>
-
-        <div class="nav__bar">
-            <div class="icons-box">
-                <label for="show-menu" class="menu-icon"><i class="fa fa-bars"></i></label>
-                <a href="/" class="c5">C5<span class="hotel">HOTEL</span></a>
-            </div>
-
-
-            <input type="checkbox" id="show-menu">
-
-
-            <nav class="menu-list">
-                <ul>
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/">About Us</a></li>
-                    
-
-                    <li class="dropdown">
-                        <a id="rooms">Rooms & Suites <i id="angle" class="fa fa-angle-down" aria-hidden="true"></i></a>
-                        <div id="all_rooms" class="dropdown-content">
-
-                            <ul>
-                                <a href="/">
-                                    <li>Standard Room</li>
-                                </a>
-                                <a href="/">
-                                    <li>Executive Room</li>
-                                </a>
-                                <a href="/">
-                                    <li>Delux Room</li>
-                                </a>
-                                <a href="/">
-                                    <li>Studio Room</li>
-                                </a>
-                                <a href="/">
-                                    <li>Delux Suite</li>
-                                </a>
-                                <a href="/">
-                                    <li>Royal Suite</li>
-                                </a>
-                                <a href="/">
-                                    <li>Diplomatic Suite</li>
-                                </a>
-                                <a href="/">
-                                    <li>Presidential Suite</li>
-                                </a>
-                            </ul>
-
-                        </div>
-                    </li>
-
-                    <li><a href="/">Contact</a></li>
-                    <li><a href="/">Photo Gallery</a></li>
-                    
-                </ul>
-
-            </nav>
-
-            <div>
-                <a href="/" class="btn_book">Book Now</a>
-
+    <header class="reveal_header">
+        <div class="container">
+            <div class="row align-items-center">
+                 <div class="col-6">
+                    <a href="index-2.html" class="logo_normal"><img src="frontend/img/logo.png" width="135" height="45" alt=""></a>
+                    <a href="index-2.html" class="logo_sticky"><img src="frontend/img/logo_sticky.png" width="135" height="45" alt=""></a>
+                </div>
+                <div class="col-6">
+                    <nav>
+                        <ul>
+                            <li><a href="#booking_section" class="btn_1 btn_scrollto">Book Now</a></li>
+                            <li>
+                               <div class="hamburger_2 open_close_nav_panel">
+                                    <div class="hamburger__box">
+                                        <div class="hamburger__inner"></div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
             </div>
 
         </div>
@@ -111,7 +70,7 @@
 
     <div class="nav_panel">
         <a href="#" class="closebt open_close_nav_panel"><i class="bi bi-x"></i></a>
-        <div class="logo_panel"><img src="img/logo_sticky.png" width="135" height="45" alt=""></div>
+        <div class="logo_panel"><img src="{{ ('frontend/img/logo_sticky.png') }}" width="135" height="45" alt=""></div>
         <div class="sidebar-navigation">
             <nav>
                 <ul class="level-1">
