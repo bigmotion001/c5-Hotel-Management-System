@@ -1,34 +1,33 @@
 @include('backend.body.header')
-    <!-- END: Header-->
+<!-- END: Header-->
 
 
-    <!-- BEGIN: Main Menu-->
-    @include('backend.body.sidebar')
-    <!-- END: Main Menu-->
+<!-- BEGIN: Main Menu-->
+@include('backend.body.sidebar')
+<!-- END: Main Menu-->
 
-    <!-- BEGIN: Content-->
-   <!-- BEGIN: Content-->
-   <div class="app-content content ">
-    <div class="content-overlay"></div>
-    <div class="header-navbar-shadow"></div>
-    <div class="content-wrapper container-xxl p-0">
-      <div class="content-header row">
-      </div>
-
-
+<!-- BEGIN: Content-->
+<!-- BEGIN: Content-->
+<div class="app-content content ">
+  <div class="content-overlay"></div>
+  <div class="header-navbar-shadow"></div>
+  <div class="content-wrapper container-xxl p-0">
+    <div class="content-header row">
+    </div>
 
 
 
-  <div class="content-body"><!-- Dashboard Ecommerce Starts -->
+
+
+    <div class="content-body"><!-- Dashboard Ecommerce Starts -->
 
       @yield('content')
 
-      </div>
     </div>
   </div>
-  <!-- END: Content-->
+</div>
+<!-- END: Content-->
 
-  <!-- Footer -->
+<!-- Footer -->
 
-  @include('backend.body.footer')
- 
+@include('backend.body.footer')

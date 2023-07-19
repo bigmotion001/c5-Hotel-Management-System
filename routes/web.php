@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Backend\AdminController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\UtilitiesController;
 use Illuminate\Support\Facades\Route;
 
 //===============ADMIN ROUTES======================
@@ -29,3 +30,18 @@ Route::middleware('auth')->group(function () {
 });
 
 require __DIR__.'/auth.php';
+
+
+//==================== Utility Routes ===================
+
+Route::get('/amenities', [UtilitiesController::class, 'amenities'])->name('amenities');
+
+Route::get('/add_amenities', [UtilitiesController::class, 'Add_amenities'])->name('add_amenities');
+
+Route::Post('/save_amenities', [UtilitiesController::class, 'Save_amenities'])->name('save_amenities');
+
+Route::get('/edit_amenity/{id}', [UtilitiesController::class, 'Edit_amenity'])->name('edit_amenity');
+
+Route::post('/updated_amenities/{id}', [UtilitiesController::class, 'updated_amenity'])->name('updated_amenity');
+
+Route::get('/delete_amenities/{id}', [UtilitiesController::class, 'Delete_amenity'])->name('delete_amenity');

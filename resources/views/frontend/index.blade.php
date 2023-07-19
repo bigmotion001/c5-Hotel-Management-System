@@ -347,7 +347,7 @@
                                     </div>
                                 </div>
                                 <div class="col-6">
-                                    <div class="mb-3 qty-buttons mb-3 version_2">
+                                    <div class="mb-3 qty-buttons version_2">
                                         <input type="button" value="+" class="qtyplus" name="childs_booking">
                                         <input type="text" name="childs_booking" id="childs_booking" value="" class="qty form-control" placeholder="Childs">
                                         <input type="button" value="-" class="qtyminus" name="childs_booking">

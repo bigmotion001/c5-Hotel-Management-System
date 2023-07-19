@@ -93,3 +93,5 @@
             </ul>
         </div>
     </nav>
+
+    @include('sweetalert::alert')
