@@ -6,76 +6,67 @@
 
 
 <div id="carousel-home">
-            <div class="owl-carousel owl-theme kenburns">
-                <div class="owl-slide background-image cover" data-background="url(frontend/img/hero_home_1.jpg)">
-                    <div class="opacity-mask d-flex align-items-center" data-opacity-mask="rgba(0, 0, 0, 0.5)">
-                        <div class="container">
-                            <div class="row justify-content-center justify-content-md-start">
-                                <div class="col-lg-6 static">
-                                    <div class="slide-text white">
-                                        <small class="owl-slide-animated owl-slide-title">C5 Luxury Hotel
-                                            Experience</small>
-                                        <h2 class="owl-slide-animated owl-slide-title-2">A unique experience where to
-                                            stay</h2>
-                                        <div class="owl-slide-animated owl-slide-title-3"><a
-                                                class="btn_1 outline white mt-3" href="room-list-1.html">Read more</a>
-                                        </div>
+    <div class="owl-carousel owl-theme kenburns">
+        <div class="owl-slide background-image cover" data-background="url(frontend/img/hero_home_1.jpg)">
+            <div class="opacity-mask d-flex align-items-center" data-opacity-mask="rgba(0, 0, 0, 0.5)">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-6 static">
+                            <div class="slide-text white text-center">
+                                <small class="owl-slide-animated owl-slide-title">C5 Luxury Hotel
+                                    Experience</small>
+                                <h2 class="owl-slide-animated owl-slide-title-2">A UNIQUE EXPERIENCE
+                                    WHERE TO STAY
+                                </h2>
+                                <div class="owl-slide-animated owl-slide-title-3">
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-10">
+                            <div class="row g-0 booking_form">
+                                <div class="col-lg-4 ">
+                                    <div class="form-group">
+                                        <input class="form-control" type="text" name="dates" placeholder="Check in / Check out" readonly="readonly">
+                                        <i class="bi bi-calendar2"></i>
                                     </div>
+                                </div>
+                                <div class="col-lg-3 col-sm-6 pe-lg-0 pe-sm-1">
+                                    <div class="qty-buttons">
+                                        <label>Adults</label>
+                                        <input type="button" value="+" class="qtyplus" name="adults">
+                                        <input type="text" name="adults" id="adults" value="" class="qty form-control">
+                                        <input type="button" value="-" class="qtyminus" name="adults">
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-sm-6 ps-lg-0 ps-sm-1">
+                                    <div class="qty-buttons">
+                                        <label>Childs</label>
+                                        <input type="button" value="+" class="qtyplus" name="childs">
+                                        <input type="text" name="childs" id="childs" value="" class="qty form-control">
+                                        <input type="button" value="-" class="qtyminus" name="childs">
+                                    </div>
+                                </div>
+                                <div class="col-lg-2">
+                                    <input type="submit" class="btn_search" value="Search">
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <!--/owl-slide-->
-                <div class="owl-slide background-image cover" data-background="url(frontend/img/hero_home_2.jpg)">
-                    <div class="opacity-mask d-flex align-items-center" data-opacity-mask="rgba(0, 0, 0, 0.5)">
-                        <div class="container">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-6 static">
-                                    <div class="slide-text white text-center">
-                                        <small class="owl-slide-animated owl-slide-title">C5 Luxury Hotel
-                                            Experience</small>
-                                        <h2 class="owl-slide-animated owl-slide-title-2">A truly immersive relax place
-                                        </h2>
-                                        <div class="owl-slide-animated owl-slide-title-3"><a
-                                                class="btn_1 outline white mt-3" href="room-list-2.html">Read more</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!--/owl-slide-->
-                <div class="owl-slide background-image cover" data-background="url(frontend/img/parallax_bg.jpg)">
-                    <div class="opacity-mask d-flex align-items-center" data-opacity-mask="rgba(0, 0, 0, 0.6)">
-                        <div class="container">
-                            <div class="row justify-content-center justify-content-md-end">
-                                <div class="col-lg-6 static">
-                                    <div class="slide-text text-end white">
-                                        <small class="owl-slide-animated owl-slide-title">C5 Luxury Hotel
-                                            Experience</small>
-                                        <h2 class="owl-slide-animated owl-slide-title-2">The experience of unique
-                                            holidays</h2>
-                                        <div class="owl-slide-animated owl-slide-title-3"><a
-                                                class="btn_1 outline white mt-3" href="room-list-3.html">Read more</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--/owl-slide-->
                 </div>
             </div>
-            <div class="mouse_wp">
-                <a href="#first_section" class="btn_scrollto">
-                    <div class="mouse"></div>
-                </a>
-            </div>
-            <!-- / mouse -->
         </div>
-        <!--/carousel-->
+    </div>
+</div>
+</div>
+<div class="mouse_wp">
+    <a href="#first_section" class="btn_scrollto">
+        <div class="mouse"></div>
+    </a>
+</div>
+<!-- / mouse -->
+</div>
+<!--/carousel-->
 
 
 

@@ -1,4 +1,3 @@
-
 </main>
 
 <footer class="revealed">
@@ -64,7 +63,7 @@
 
 <div class="progress-wrap">
     <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
-        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>
+        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
     </svg>
 </div>
 <!-- /back to top -->
@@ -79,10 +78,25 @@
 
 <script type="text/javascript">
     $('.jarallax').jarallax({
-      videoLoop: true,
-      videoPlayOnlyVisible: false,
-      videoLazyLoading: false
+        videoLoop: true,
+        videoPlayOnlyVisible: false,
+        videoLazyLoading: false
     });
+</script>
+
+<script>
+    let rooms = document.getElementById('rooms')
+
+    rooms.addEventListener('click', function() {
+
+        let all_rooms = document.getElementById('all_rooms')
+
+        // console.log(all_rooms)
+
+        all_rooms.classList.toggle('dropdown_ative')
+
+        document.getElementById('angle').classList.toggle('rotate')
+    })
 </script>
 
 </body>
