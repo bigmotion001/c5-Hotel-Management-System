@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Amenities;
+use App\Models\Complement;
 use Illuminate\Http\Request;
 use RealRashid\SweetAlert\Facades\Alert;
 
@@ -99,4 +100,83 @@ class UtilitiesController extends Controller
         Alert::success('Amenity Deleted Successfully');
         return redirect('amenities');
     }
+
+    //fetch all Complement page
+    public function complement()
+    {
+        $datas = Complement::orderBy('id', 'desc')->get();
+
+
+        return view('backend/complement/complement', compact('datas'));
+    }
+
+    //add complement page
+    function Add_complement()
+    {
+
+        return view('backend/complement/add_complement');
+    }
+
+
+    //add complement function
+    function Save_complement(Request $request)
+    {
+        $request->validate([
+            'title' => 'required|string',
+            'item' => 'required',
+        ]);
+
+        $data = new Complement;
+
+        $data->title = $request->title;
+        $data->item = $request->item;
+
+
+        $data->save();
+
+        Alert::success('Complement Added Successfully');
+        return redirect('complement');
+    }
+
+    //update complement page
+    public function Edit_complement($id)
+    {
+        // dd($id);
+
+        $datas = Complement::findOrFail($id);
+
+        return view('backend/complement/edit_complement', compact('datas'));
+    }
+
+    //update complement function
+    function Updated_complement(Request $request, $id)
+    {
+        $data = Complement::findOrFail($id);
+
+        $request->validate([
+            'title' => 'required|string',
+            'item' => 'required|string',
+        ]);
+
+        $data->title = $request->title;
+        $data->item = $request->item;
+
+        $data->save();
+
+        Alert::success('Complement Updated Successfully');
+        return redirect('complement');
+    }
+
+    //Delete Complement function
+    public function Delete_complement($id)
+    {
+        $data = Complement::findOrFail($id);
+
+        $data->delete();
+
+        Alert::success('Complement Deleted Successfully');
+        
+        return redirect('complement');
+    }
+
 }

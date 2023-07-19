@@ -23,6 +23,9 @@
                     <li class="#">
                         <a class="d-flex align-items-center" href="{{ route('amenities') }}"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="List">Amenities</span></a>
                     </li>
+                    <li class="#">
+                        <a class="d-flex align-items-center" href="{{ route('complement') }}"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="List">Complements</span></a>
+                    </li>
 
             </li>
         </ul>

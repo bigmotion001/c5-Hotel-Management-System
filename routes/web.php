@@ -34,6 +34,7 @@ require __DIR__.'/auth.php';
 
 //==================== Utility Routes ===================
 
+//amenities routes
 Route::get('/amenities', [UtilitiesController::class, 'amenities'])->name('amenities');
 
 Route::get('/add_amenities', [UtilitiesController::class, 'Add_amenities'])->name('add_amenities');
@@ -45,3 +46,17 @@ Route::get('/edit_amenity/{id}', [UtilitiesController::class, 'Edit_amenity'])->
 Route::post('/updated_amenities/{id}', [UtilitiesController::class, 'updated_amenity'])->name('updated_amenity');
 
 Route::get('/delete_amenities/{id}', [UtilitiesController::class, 'Delete_amenity'])->name('delete_amenity');
+
+
+//complement route
+Route::get('/complement', [UtilitiesController::class, 'complement'])->name('complement');
+
+Route::get('/add_complement', [UtilitiesController::class, 'Add_complement'])->name('add_complement');
+
+Route::post('/save_complement', [UtilitiesController::class, 'Save_complement'])->name('save_complement');
+
+Route::get('/edit_complement/{id}', [UtilitiesController::class, 'Edit_complement'])->name('edit_complement');
+
+Route::post('/updated_complement/{id}', [UtilitiesController::class, 'Updated_complement'])->name('updated_complement');
+
+Route::get('/delete_complement/{id}', [UtilitiesController::class, 'Delete_complement'])->name('delete_complement');
