@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Amenities;
+use App\Models\Bedtype;
 use App\Models\Complement;
 use Illuminate\Http\Request;
 use RealRashid\SweetAlert\Facades\Alert;
@@ -177,6 +178,80 @@ class UtilitiesController extends Controller
         Alert::success('Complement Deleted Successfully');
         
         return redirect('complement');
+    }
+
+    //fetch all bedtype page
+    public function Bedtype()
+    {
+        $datas = Bedtype::orderBy('id', 'desc')->get();
+
+
+        return view('backend/bedtype/bedtype', compact('datas'));
+    }
+
+    //add bedtype page
+    function Add_bedtype()
+    {
+
+        return view('backend/bedtype/add_bedtype');
+    }
+
+
+    //add bedtype function
+    function Save_bedtype(Request $request)
+    {
+        $request->validate([
+            'bedtype' => 'required|string',
+        ]);
+
+        $data = new Bedtype;
+
+        $data->bedtype = $request->bedtype;
+
+
+        $data->save();
+
+        Alert::success('Bed Type Added Successfully');
+        return redirect('bedtype');
+    }
+
+    //update bedtype page
+    public function Edit_bedtype($id)
+    {
+        // dd($id);
+
+        $datas = Bedtype::findOrFail($id);
+
+        return view('backend/bedtype/edit_bedtype', compact('datas'));
+    }
+
+    //update bedtype function
+    function Updated_bedtype(Request $request, $id)
+    {
+        $data = Bedtype::findOrFail($id);
+
+        $request->validate([
+            'bedtype' => 'required|string',
+        ]);
+
+        $data->bedtype = $request->bedtype;
+
+        $data->save();
+
+        Alert::success('Bed Type Updated Successfully');
+        return redirect('bedtype');
+    }
+
+    //Delete bedtype function
+    public function Delete_bedtype($id)
+    {
+        $data = Bedtype::findOrFail($id);
+
+        $data->delete();
+
+        Alert::success('Bed Tpye Deleted Successfully');
+        
+        return redirect('bedtype');
     }
 
 }

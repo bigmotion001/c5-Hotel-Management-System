@@ -60,3 +60,16 @@ Route::get('/edit_complement/{id}', [UtilitiesController::class, 'Edit_complemen
 Route::post('/updated_complement/{id}', [UtilitiesController::class, 'Updated_complement'])->name('updated_complement');
 
 Route::get('/delete_complement/{id}', [UtilitiesController::class, 'Delete_complement'])->name('delete_complement');
+
+//bedtype route
+Route::get('/bedtype', [UtilitiesController::class, 'Bedtype'])->name('bedtype');
+
+Route::get('/add_bedtype', [UtilitiesController::class, 'Add_bedtype'])->name('add_bedtype');
+
+Route::post('/save_bedtype', [UtilitiesController::class, 'Save_bedtype'])->name('save_bedtype');
+
+Route::get('/edit_bedtype/{id}', [UtilitiesController::class, 'Edit_bedtype'])->name('edit_bedtype');
+
+Route::post('/updated_bedtype/{id}', [UtilitiesController::class, 'Updated_bedtype'])->name('updated_bedtype');
+
+Route::get('/delete_bedtype/{id}', [UtilitiesController::class, 'Delete_bedtype'])->name('delete_bedtype');
