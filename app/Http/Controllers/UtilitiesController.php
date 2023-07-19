@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Amenities;
 use App\Models\Bedtype;
 use App\Models\Complement;
+use App\Models\Room;
 use Illuminate\Http\Request;
 use RealRashid\SweetAlert\Facades\Alert;
 
@@ -180,6 +181,7 @@ class UtilitiesController extends Controller
         return redirect('complement');
     }
 
+
     //fetch all bedtype page
     public function Bedtype()
     {
@@ -252,6 +254,116 @@ class UtilitiesController extends Controller
         Alert::success('Bed Tpye Deleted Successfully');
         
         return redirect('bedtype');
+    }
+
+    //fetch all room page
+    public function Room()
+    {
+        $datas = Room::orderBy('id', 'desc')->get();
+
+
+        return view('backend/room/room', compact('datas'));
+    }
+
+    //add room page
+    function Add_room()
+    {
+
+        return view('backend/room/add_room');
+    }
+
+
+    //add room function
+    function Save_room(Request $request)
+    {
+        $request->validate([
+            'room_number' => 'required|string',
+            'room_type' => 'required|string',
+            'room_status' => 'required|string',
+        ]);
+
+        $data = new Room;
+
+        $data->room_number = $request->room_number;
+        $data->room_type = $request->room_type;
+        $data->room_status = $request->room_status;
+
+
+        $data->save();
+
+        Alert::success('Room Added Successfully');
+        return redirect('room');
+    }
+
+    //update room page
+    public function Edit_room($id)
+    {
+        // dd($id);
+
+        $datas = room::findOrFail($id);
+
+        return view('backend/room/edit_room', compact('datas'));
+    }
+
+    //update room function
+    function Updated_room(Request $request, $id)
+    {
+        $data = room::findOrFail($id);
+
+        $request->validate([
+            'room_number' => 'required|string',
+            'room_type' => 'required|string',
+            'room_status' => 'required|string',
+        ]);
+
+        $data->room_number = $request->room_number;
+        $data->room_type = $request->room_type;
+        $data->room_status = $request->room_status;
+
+        $data->save();
+
+        Alert::success('Room Updated Successfully');
+        return redirect('room');
+    }
+
+    //Delete room function
+    public function Delete_room($id)
+    {
+        $data = room::findOrFail($id);
+
+        $data->delete();
+
+        Alert::success('Room Deleted Successfully');
+        
+        return redirect('room');
+    }
+
+    //Enable room status
+    public function Enable($id)
+    {
+        $data = room::findOrFail($id);
+
+        $data->room_status = "Disable";
+
+        $data->save();
+
+        Alert::success('Room Status Disabled');
+        
+        return redirect('room');
+    }
+
+    //Enable room status
+    public function Disable($id)
+    {
+        $data = room::findOrFail($id);
+
+        $data->room_status = "Enable";
+
+        $data->save();
+
+        Alert::success('Room Status Enabled');
+        
+        return redirect('room');
     }
 
 }

@@ -48,7 +48,7 @@ Route::post('/updated_amenities/{id}', [UtilitiesController::class, 'updated_ame
 Route::get('/delete_amenities/{id}', [UtilitiesController::class, 'Delete_amenity'])->name('delete_amenity');
 
 
-//complement route
+//complement routes
 Route::get('/complement', [UtilitiesController::class, 'complement'])->name('complement');
 
 Route::get('/add_complement', [UtilitiesController::class, 'Add_complement'])->name('add_complement');
@@ -61,7 +61,7 @@ Route::post('/updated_complement/{id}', [UtilitiesController::class, 'Updated_co
 
 Route::get('/delete_complement/{id}', [UtilitiesController::class, 'Delete_complement'])->name('delete_complement');
 
-//bedtype route
+//bedtype routes
 Route::get('/bedtype', [UtilitiesController::class, 'Bedtype'])->name('bedtype');
 
 Route::get('/add_bedtype', [UtilitiesController::class, 'Add_bedtype'])->name('add_bedtype');
@@ -73,3 +73,20 @@ Route::get('/edit_bedtype/{id}', [UtilitiesController::class, 'Edit_bedtype'])->
 Route::post('/updated_bedtype/{id}', [UtilitiesController::class, 'Updated_bedtype'])->name('updated_bedtype');
 
 Route::get('/delete_bedtype/{id}', [UtilitiesController::class, 'Delete_bedtype'])->name('delete_bedtype');
+
+//Room routes
+Route::get('/room', [UtilitiesController::class, 'Room'])->name('room');
+
+Route::get('/add_room', [UtilitiesController::class, 'Add_room'])->name('add_room');
+
+Route::post('/save_room', [UtilitiesController::class, 'Save_room'])->name('save_room');
+
+Route::get('/edit_room/{id}', [UtilitiesController::class, 'Edit_room'])->name('edit_room');
+
+Route::post('/updated_room/{id}', [UtilitiesController::class, 'Updated_room'])->name('updated_room');
+
+Route::get('/delete_room/{id}', [UtilitiesController::class, 'Delete_room'])->name('delete_room');
+
+Route::get('/enable/{id}', [UtilitiesController::class, 'Enable'])->name('enable');
+
+Route::get('/disable/{id}', [UtilitiesController::class, 'Disable'])->name('disable');
