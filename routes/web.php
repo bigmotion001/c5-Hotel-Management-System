@@ -1,16 +1,17 @@
 <?php
 
 use App\Http\Controllers\Backend\AdminController;
+use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UtilitiesController;
 use Illuminate\Support\Facades\Route;
 
 //===============FRONTEND ROUTES======================
-Route::get('/contact', [AdminController::class, 'Contact'])->name('contact_us');
+Route::get('/contact', [FrontendController::class, 'Contact'])->name('contact_us');
 
-Route::get('/about', [AdminController::class, 'About'])->name('about_us');
+Route::get('/about', [FrontendController::class, 'About'])->name('about_us');
 
-Route::get('/gallery', [AdminController::class, 'gallery'])->name('gallery');
+Route::get('/gallery', [FrontendController::class, 'Gallery'])->name('gallery');
 
 
 //===============ADMIN ROUTES======================
