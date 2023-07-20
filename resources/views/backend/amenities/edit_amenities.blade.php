@@ -4,7 +4,7 @@
 
 <div class="d-flex justify-content-between align-items-center">
     <div class="header">
-        <h1>Update Amenities</h1>
+        <h1>Update Amenity</h1>
     </div>
 
     <div class="button">

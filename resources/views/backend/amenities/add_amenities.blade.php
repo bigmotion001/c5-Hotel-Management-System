@@ -4,7 +4,7 @@
 
 <div class="d-flex justify-content-between align-items-center">
     <div class="header">
-        <h1>Add Amenities</h1>
+        <h1>Add Amenity</h1>
     </div>
 
     <div class="button">
@@ -20,7 +20,7 @@
         <div class="col-md-12 ">
             <div class="card">
                 <div class="card-header with-border">
-                    <h3 class="card-title ">Add Amenities</h3>
+                    <h3 class="card-title ">Add Amenity</h3>
                 </div>
                 <div class="card-body">
                     <form class="form" action="{{route('save_amenities')}}" method="POST" enctype="multipart/form-data">
