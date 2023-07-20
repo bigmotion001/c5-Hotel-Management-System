@@ -29,7 +29,6 @@
                         <div class="row">
                             <div class="col-md-12 col-12">
                                 <div class="mb-2">
-                                    <!-- <label class="form-label mb-1">Academic Session</label> -->
                                     <input type="text" id="" class="form-control" placeholder="Update Title" name="title" value="{{ $datas->title }}" />
                                     @error('title')
                                     <span class="text-danger">{{ $message }}</span>
