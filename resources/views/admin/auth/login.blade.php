@@ -71,6 +71,11 @@
 
                                 <form class="auth-login-form mt-2" action="{{ route('admin.login') }}" method="POST">
                                     @csrf
+                                    @if (Session::has('error'))
+<div class="alert alert-danger" role="alert">
+<strong>{{ session::get('error') }}</strong>
+</div>
+@endif
                                     <div class="mb-1">
                                         <label for="login-email" class="form-label">Email</label>
                                         <input type="email" class="form-control" id="email" name="email"
