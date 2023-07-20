@@ -32,13 +32,11 @@ class UtilitiesController extends Controller
     {
         $request->validate([
             'title' => 'required|string',
-            'icon' => 'required',
         ]);
 
         $data = new Amenities;
 
         $data->title = $request->title;
-        $data->icon = $request->icon;
 
         $data->save();
 
@@ -62,11 +60,9 @@ class UtilitiesController extends Controller
 
         $request->validate([
             'title' => 'required|string',
-            'icon' => 'required',
         ]);
 
         $data->title = $request->title;
-        $data->icon = $request->icon;
 
         $data->save();
 
@@ -352,7 +348,10 @@ class UtilitiesController extends Controller
             'description' => 'required',
             'cancellation_policy' => 'required',
 
-            'image' => 'required',
+            'image1' => 'required',
+            'image2' => 'required',
+            'image3' => 'required',
+            'image4' => 'required',
         ]);
 
         $data = new Roomtype;
@@ -369,11 +368,29 @@ class UtilitiesController extends Controller
         $data->description = $request->description;
         $data->cancellation_policy = $request->cancellation_policy;
 
-        $imageName = time() . '_' . $request->image->getClientOriginalExtension();
+        $imageName = time() . '_' . $request->image1->getClientOriginalExtension();
 
-        $request->image->move('backend/assets/images', $imageName);
+        $request->image1->move('backend/assets/images', $imageName);
 
-        $data->image = $imageName;
+        $data->image1 = $imageName;
+
+        $imageName = time() . '_' . $request->image2->getClientOriginalExtension();
+
+        $request->image2->move('backend/assets/images', $imageName);
+
+        $data->image2 = $imageName;
+
+        $imageName = time() . '_' . $request->image3->getClientOriginalExtension();
+
+        $request->image3->move('backend/assets/images', $imageName);
+
+        $data->image3 = $imageName;
+
+        $imageName = time() . '_' . $request->image4->getClientOriginalExtension();
+
+        $request->image4->move('backend/assets/images', $imageName);
+
+        $data->image4 = $imageName;
 
 
         $data->save();
@@ -427,12 +444,36 @@ class UtilitiesController extends Controller
         $data->description = $request->description;
         $data->cancellation_policy = $request->cancellation_policy;
 
-        if ($request->image) {
-            $imageName = time() . '_' . $request->image->getClientOriginalExtension();
+        if ($request->image1) {
+            $imageName = time() . '_' . $request->image1->getClientOriginalExtension();
 
-            $request->image->move('backend/assets/images', $imageName);
+            $request->image1->move('backend/assets/images', $imageName);
 
-            $data->image = $imageName;
+            $data->image1 = $imageName;
+        }
+
+        if ($request->image2) {
+            $imageName = time() . '_' . $request->image2->getClientOriginalExtension();
+
+            $request->image2->move('backend/assets/images', $imageName);
+
+            $data->image2 = $imageName;
+        }
+
+        if ($request->image3) {
+            $imageName = time() . '_' . $request->image3->getClientOriginalExtension();
+
+            $request->image3->move('backend/assets/images', $imageName);
+
+            $data->image3 = $imageName;
+        }
+
+        if ($request->image4) {
+            $imageName = time() . '_' . $request->image4->getClientOriginalExtension();
+
+            $request->image4->move('backend/assets/images', $imageName);
+
+            $data->image4 = $imageName;
         }
 
         $data->save();

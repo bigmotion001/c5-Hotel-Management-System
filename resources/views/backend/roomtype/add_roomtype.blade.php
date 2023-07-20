@@ -99,7 +99,7 @@
                                     <select name="complements" class="form-control" id="">
                                         <option value="{{ old('complements') }}">{{ old('complements') }}</option>
                                         @foreach($complements as $complement)
-                                        <option value="{{$complement->id}}">{{$complement->title}}</option>
+                                        <option value="{{$complement->title}}">{{$complement->title}}</option>
                                         @endforeach
                                     </select>
                                     @error('complements')
@@ -155,10 +155,32 @@
 
                             <div class="row col-md-12 col-12">
 
-                                <div class="mb-2">
-                                    <label class="form-label mb-1">Image</label>
-                                    <input type="file" id="" class="form-control" name="image" value="{{ old('image') }}" />
-                                    @error('image')
+                                <div class="mb-2 col-sm-12 col-md-6">
+                                    <label class="form-label">Image 1</label>
+                                    <input type="file" id="" class="form-control" name="image1" value="{{ old('image1') }}" />
+                                    @error('image1')
+                                    <span class="text-danger">{{ $message }}</span>
+                                    @enderror
+                                </div>
+
+                                <div class="mb-2 col-sm-12 col-md-6">
+                                    <label class="form-label">Image 2</label>
+                                    <input type="file" id="" class="form-control" name="image2" value="{{ old('image2') }}" />
+                                    @error('image2')
+                                    <span class="text-danger">{{ $message }}</span>
+                                    @enderror
+                                </div>
+                                <div class="mb-2 col-sm-12 col-md-6">
+                                    <label class="form-label">Image 3</label>
+                                    <input type="file" id="" class="form-control" name="image3" value="{{ old('image3') }}" />
+                                    @error('image3')
+                                    <span class="text-danger">{{ $message }}</span>
+                                    @enderror
+                                </div>
+                                <div class="mb-2 col-sm-12 col-md-6">
+                                    <label class="form-label">Image 4</label>
+                                    <input type="file" id="" class="form-control" name="image4" value="{{ old('image4') }}" />
+                                    @error('image4')
                                     <span class="text-danger">{{ $message }}</span>
                                     @enderror
                                 </div>
