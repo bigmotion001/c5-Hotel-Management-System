@@ -1,3 +1,8 @@
+@php
+    $site = App\Models\SiteSetting::find(1);
+@endphp
+
+
 <!DOCTYPE html>
 <html lang="zxx">
 
@@ -8,7 +13,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="Ansonika">
-    <title>C5</title>
+    <title>{{ $site->name }}</title>
 
     <!-- Favicons-->
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
@@ -31,7 +36,7 @@
     <!-- YOUR CUSTOM CSS -->
     <link href="{{ ('frontend/css/custom.css') }}" rel="stylesheet">
 
-   
+
 </head>
 
 <body class="datepicker_mobile_full">
@@ -47,7 +52,7 @@
         <div class="nav__bar">
             <div class="icons-box">
                 <label for="show-menu" class="menu-icon"><i class="fa fa-bars"></i></label>
-                <a href="/" class="c5">C5<span class="hotel">HOTEL</span></a>
+                <a href="{{ url('/') }}" class="c5"><img src="{{ asset($site->logo) }}" alt=""></a>
             </div>
 
 
@@ -58,7 +63,7 @@
                 <ul>
                     <li><a href="/">Home</a></li>
                     <li><a href="{{route('about_us')}}">About Us</a></li>
-                    
+
 
                     <li class="dropdown">
                         <a id="rooms">Rooms & Suites <i id="angle" class="fa fa-angle-down" aria-hidden="true"></i></a>
@@ -96,7 +101,7 @@
 
                     <li><a href="{{route('contact_us')}}">Contact</a></li>
                     <li><a href="{{route('gallery')}}">Photo Gallery</a></li>
-                    
+
                 </ul>
 
             </nav>
