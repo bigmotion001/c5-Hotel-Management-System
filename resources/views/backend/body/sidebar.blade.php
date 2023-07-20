@@ -32,6 +32,9 @@
                     <li class="#">
                         <a class="d-flex align-items-center" href="{{ route('room') }}"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="List">Room</span></a>
                     </li>
+                    <li class="#">
+                        <a class="d-flex align-items-center" href="{{ route('roomtype') }}"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="List">Room Types</span></a>
+                    </li>
 
             </li>
         </ul>

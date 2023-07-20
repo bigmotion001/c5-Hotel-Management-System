@@ -90,3 +90,16 @@ Route::get('/delete_room/{id}', [UtilitiesController::class, 'Delete_room'])->na
 Route::get('/enable/{id}', [UtilitiesController::class, 'Enable'])->name('enable');
 
 Route::get('/disable/{id}', [UtilitiesController::class, 'Disable'])->name('disable');
+
+//Room Types routes
+Route::get('/roomtype', [UtilitiesController::class, 'Roomtype'])->name('roomtype');
+
+Route::get('/add_roomtype', [UtilitiesController::class, 'Add_roomtype'])->name('add_roomtype');
+
+Route::post('/save_roomtype', [UtilitiesController::class, 'Save_roomtype'])->name('save_roomtype');
+
+Route::get('/edit_roomtype/{id}', [UtilitiesController::class, 'Edit_roomtype'])->name('edit_roomtype');
+
+Route::post('/updated_roomtype/{id}', [UtilitiesController::class, 'Updated_roomtype'])->name('updated_roomtype');
+
+Route::get('/delete_roomtype/{id}', [UtilitiesController::class, 'Delete_roomtype'])->name('delete_roomtype');

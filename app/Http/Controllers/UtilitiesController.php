@@ -6,6 +6,7 @@ use App\Models\Amenities;
 use App\Models\Bedtype;
 use App\Models\Complement;
 use App\Models\Room;
+use App\Models\Roomtype;
 use Illuminate\Http\Request;
 use RealRashid\SweetAlert\Facades\Alert;
 
@@ -177,7 +178,7 @@ class UtilitiesController extends Controller
         $data->delete();
 
         Alert::success('Complement Deleted Successfully');
-        
+
         return redirect('complement');
     }
 
@@ -252,7 +253,7 @@ class UtilitiesController extends Controller
         $data->delete();
 
         Alert::success('Bed Tpye Deleted Successfully');
-        
+
         return redirect('bedtype');
     }
 
@@ -271,7 +272,6 @@ class UtilitiesController extends Controller
 
         return view('backend/room/add_room');
     }
-
 
     //add room function
     function Save_room(Request $request)
@@ -334,7 +334,7 @@ class UtilitiesController extends Controller
         $data->delete();
 
         Alert::success('Room Deleted Successfully');
-        
+
         return redirect('room');
     }
 
@@ -348,7 +348,7 @@ class UtilitiesController extends Controller
         $data->save();
 
         Alert::success('Room Status Disabled');
-        
+
         return redirect('room');
     }
 
@@ -362,8 +362,147 @@ class UtilitiesController extends Controller
         $data->save();
 
         Alert::success('Room Status Enabled');
-        
+
         return redirect('room');
     }
 
+    //fetch all room page
+    public function Roomtype()
+    {
+        $datas = Roomtype::orderBy('id', 'desc')->get();
+
+
+        return view('backend/roomtype/roomtype', compact('datas'));
+    }
+
+    //add room page
+    function Add_roomtype()
+    {
+
+        $amenities = Amenities::orderBy('id', 'desc')->get();
+
+        $complements = Complement::orderBy('id', 'desc')->get();
+
+        return view('backend/roomtype/add_roomtype', compact('amenities', 'complements'));
+    }
+
+    //add room function
+    function Save_roomtype(Request $request)
+    {
+        $request->validate([
+            'name' => 'required',
+            'adult' => 'required',
+            'child' => 'required',
+            'fare' => 'required',
+            'cancellation_fee' => 'required',
+            'amenities' => 'required',
+            'complements' => 'required',
+            'total_rooms' => 'required',
+            'total_beds' => 'required',
+            'description' => 'required',
+            'cancellation_policy' => 'required',
+
+            'image' => 'required',
+        ]);
+
+        $data = new Roomtype;
+
+        $data->name = $request->name;
+        $data->adult = $request->adult;
+        $data->child = $request->child;
+        $data->fare = $request->fare;
+        $data->cancellation_fee = $request->cancellation_fee;
+        $data->amenities = $request->amenities;
+        $data->complements = $request->complements;
+        $data->total_rooms = $request->total_rooms;
+        $data->total_beds = $request->total_beds;
+        $data->description = $request->description;
+        $data->cancellation_policy = $request->cancellation_policy;
+
+        $imageName = time() . '_' . $request->image->getClientOriginalExtension();
+
+        $request->image->move('backend/assets/images', $imageName);
+
+        $data->image = $imageName;
+
+
+        $data->save();
+
+        Alert::success('Room Type Added Successfully');
+        return redirect('roomtype');
+    }
+
+    //update room page
+    public function Edit_roomtype($id)
+    {
+
+        $datas = Roomtype::findOrFail($id);
+
+        $amenities = Amenities::orderBy('id', 'desc')->get();
+
+        $complements = Complement::orderBy('id', 'desc')->get();
+
+        // dd($datas);
+
+        return view('backend/roomtype/edit_roomtype', compact('datas', 'amenities', 'complements'));
+    }
+
+    //update room function
+    function Updated_roomtype(Request $request, $id)
+    {
+        $data = Roomtype::findOrFail($id);
+
+        $request->validate([
+            'name' => 'required',
+            'adult' => 'required',
+            'child' => 'required',
+            'fare' => 'required',
+            'cancellation_fee' => 'required',
+            'amenities' => 'required',
+            'complements' => 'required',
+            'total_rooms' => 'required',
+            'total_beds' => 'required',
+            'description' => 'required',
+            'cancellation_policy' => 'required',
+
+        ]);
+
+
+        $data->name = $request->name;
+        $data->adult = $request->adult;
+        $data->child = $request->child;
+        $data->fare = $request->fare;
+        $data->cancellation_fee = $request->cancellation_fee;
+        $data->amenities = $request->amenities;
+        $data->complements = $request->complements;
+        $data->total_rooms = $request->total_rooms;
+        $data->total_beds = $request->total_beds;
+        $data->description = $request->description;
+        $data->cancellation_policy = $request->cancellation_policy;
+
+        if ($request->image) {
+            $imageName = time() . '_' . $request->image->getClientOriginalExtension();
+
+            $request->image->move('backend/assets/images', $imageName);
+
+            $data->image = $imageName;
+        }
+
+        $data->save();
+
+        Alert::success('Room Type Updated Successfully');
+        return redirect('roomtype');
+    }
+
+    //Delete room function
+    public function Delete_roomtype($id)
+    {
+        $data = Roomtype::findOrFail($id);
+
+        $data->delete();
+
+        Alert::success('Room Type Deleted Successfully');
+
+        return redirect('roomtype');     
+    }
 }
