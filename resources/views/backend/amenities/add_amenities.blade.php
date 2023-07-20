@@ -8,7 +8,7 @@
     </div>
 
     <div class="button">
-        <a href="{{ route('amenities') }}" class="btn btn-warning"><span style="font-weight: bolder;">&lt; </span>  Go Back</a>
+        <a href="{{ route('amenities') }}" class="btn btn-warning"><span style="font-weight: bolder;">&lt; </span> Go Back</a>
     </div>
 </div>
 
@@ -32,8 +32,8 @@
                                     <!-- <label class="form-label mb-1">Academic Session</label> -->
                                     <input type="text" id="" class="form-control" placeholder="Add Title" name="title" value="{{ old('title') }}" />
                                     @error('title')
-                                        <span class="text-danger">{{ $message }}</span>
-                                        @enderror
+                                    <span class="text-danger">{{ $message }}</span>
+                                    @enderror
                                 </div>
                             </div>
 
@@ -42,13 +42,13 @@
                                     <label class="form-label">Choose Icon</label>
                                     <input type="file" id="" class="form-control" name="icon" />
                                     @error('icon')
-                                        <span class="text-danger">{{ $message }}</span>
-                                        @enderror
+                                    <span class="text-danger">{{ $message }}</span>
+                                    @enderror
                                 </div>
                             </div>
 
                             <div class="card-footer">
-                                <button type="submit" class="btn btn-primary me-1">Add Amenities</button>
+                                <button type="submit" class="btn btn-primary me-1">Add Amenity</button>
                             </div>
                         </div>
                     </form>

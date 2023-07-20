@@ -20,7 +20,7 @@
         <div class="col-md-12 ">
             <div class="card">
                 <div class="card-header with-border">
-                    <h3 class="card-title ">Update Amenities</h3>
+                    <h3 class="card-title ">Update Amenity</h3>
                 </div>
                 <div class="card-body">
                     <form class="form" action="{{route('updated_amenity', $datas->id)}}" method="POST" enctype="multipart/form-data">
@@ -50,7 +50,7 @@
                             </div>
 
                             <div class="card-footer">
-                                <button type="submit" class="btn btn-primary me-1">Update Amenities</button>
+                                <button type="submit" class="btn btn-primary me-1">Update Amenity</button>
                             </div>
                         </div>
                     </form>
