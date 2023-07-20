@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Amenities;
 use App\Models\Bedtype;
 use App\Models\Complement;
+use App\Models\Gallery;
 use App\Models\Room;
 use App\Models\Roomtype;
 use Illuminate\Http\Request;
@@ -504,5 +505,95 @@ class UtilitiesController extends Controller
         Alert::success('Room Type Deleted Successfully');
 
         return redirect('roomtype');     
+    }
+
+    //fetch all Gallery page
+    function Create_gallery()
+    {
+        $datas = Gallery::orderBy('id', 'desc')->get();
+
+        return view('backend/gallery/gallery', compact('datas'));
+    }
+
+    //add gallery page
+    function Add_gallery()
+    {
+
+        return view('backend/gallery/add_gallery');
+    }
+
+
+    //add gallery function
+    function Save_gallery(Request $request)
+    {
+
+        $request->validate([
+            'title' => 'required|string',
+            'image' => 'required',
+        ]);
+
+        $data = new Gallery;
+
+        $data->title = $request->title;
+
+        $imageName = time() . '_' . $request->image->getClientOriginalExtension();
+
+        $request->image->move('backend/assets/images', $imageName);
+
+        $data->image = $imageName;
+
+        $data->save();
+
+        Alert::success('Image Added Successfully');
+        return redirect('create_gallery');
+    }
+
+
+    //update gallery page
+    function Edit_gallery($id)
+    {
+
+        $datas = Gallery::findOrFail($id);
+
+
+        return view('backend/gallery/edit_gallery', compact('datas'));
+    }
+
+
+    //update gallery function
+    function updated_gallery(Request $request, $id)
+    {
+        $data = Gallery::findOrFail($id);
+
+        $request->validate([
+            'title' => 'required|string',
+        ]);
+
+        $data->title = $request->title;
+
+        if ($request->image) {
+
+            $imageName = time() . '_' . $request->image->getClientOriginalExtension();
+
+            $request->image->move('backend/assets/images', $imageName);
+
+            $data->image = $imageName;
+        }
+
+        $data->save();
+
+        Alert::success('Galery Updated Successfully');
+        return redirect('create_gallery');
+    }
+
+    //Delete gallery function
+    public function Delete_gallery($id)
+    {
+        $data = Gallery::findOrFail($id);
+
+        $data->delete();
+
+        Alert::success('Image Deleted Successfully');
+        return redirect('create_gallery');
     }
 }

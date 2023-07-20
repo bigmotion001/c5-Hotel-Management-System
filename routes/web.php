@@ -5,6 +5,14 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UtilitiesController;
 use Illuminate\Support\Facades\Route;
 
+//===============FRONTEND ROUTES======================
+Route::get('/contact', [AdminController::class, 'Contact'])->name('contact_us');
+
+Route::get('/about', [AdminController::class, 'About'])->name('about_us');
+
+Route::get('/gallery', [AdminController::class, 'gallery'])->name('gallery');
+
+
 //===============ADMIN ROUTES======================
 Route::prefix('management')->group(function (){
    //admin login
@@ -103,3 +111,16 @@ Route::get('/edit_roomtype/{id}', [UtilitiesController::class, 'Edit_roomtype'])
 Route::post('/updated_roomtype/{id}', [UtilitiesController::class, 'Updated_roomtype'])->name('updated_roomtype');
 
 Route::get('/delete_roomtype/{id}', [UtilitiesController::class, 'Delete_roomtype'])->name('delete_roomtype');
+
+//Create Gallery routes
+Route::get('/create_gallery', [UtilitiesController::class, 'Create_gallery'])->name('create_gallery');
+
+Route::get('/add_gallery', [UtilitiesController::class, 'Add_gallery'])->name('add_gallery');
+
+Route::post('/save_gallery', [UtilitiesController::class, 'Save_gallery'])->name('save_gallery');
+
+Route::get('/edit_gallery/{id}', [UtilitiesController::class, 'Edit_gallery'])->name('edit_gallery');
+
+Route::post('/updated_gallery/{id}', [UtilitiesController::class, 'Updated_gallery'])->name('updated_gallery');
+
+Route::get('/delete_gallery/{id}', [UtilitiesController::class, 'Delete_gallery'])->name('delete_gallery');
