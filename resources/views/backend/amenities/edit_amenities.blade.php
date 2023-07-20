@@ -40,7 +40,7 @@
                             <div class="col-md-12 col-12">
                                 <div class="mb-2">
                                     <label class="form-label">
-                                    {{$datas->icon}}
+                                    <img style="width: 80px;" src="../../backend/assets/icons/{{$datas->icon}}" alt="{{$datas->icon}}">
                                     </label>
                                     <input type="file" id="" class="form-control" name="icon" />
                                     @error('icon')
