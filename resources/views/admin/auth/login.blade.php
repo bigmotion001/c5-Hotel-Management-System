@@ -69,10 +69,11 @@
                                 <h4 class="card-title mb-1">Welcome👋</h4>
                                 <p class="card-text mb-2">Please sign-in </p>
 
-                                <form class="auth-login-form mt-2" action="" method="POST">
+                                <form class="auth-login-form mt-2" action="{{ route('admin.login') }}" method="POST">
+                                    @csrf
                                     <div class="mb-1">
                                         <label for="login-email" class="form-label">Email</label>
-                                        <input type="email" class="form-control" id="login-email" name="email"
+                                        <input type="email" class="form-control" id="email" name="email"
                                             placeholder="john@example.com" aria-describedby="login-email" tabindex="1"
                                             autofocus />
                                     </div>
@@ -83,7 +84,7 @@
 
                                         </div>
                                         <div class="input-group input-group-merge form-password-toggle">
-                                            <input type="password" class="form-control form-control-merge validate"
+                                            <input type="password" class="form-control form-control-merge"
                                                 id="password" name="password" tabindex="2"
                                                 placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;"
                                                 aria-describedby="password" />

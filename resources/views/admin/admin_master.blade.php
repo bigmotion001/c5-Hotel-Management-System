@@ -1,9 +1,9 @@
-@include('backend.body.header')
+@include('admin.body.header')
 <!-- END: Header-->
 
 
 <!-- BEGIN: Main Menu-->
-@include('backend.body.sidebar')
+@include('admin.body.sidebar')
 <!-- END: Main Menu-->
 
 <!-- BEGIN: Content-->
@@ -30,4 +30,4 @@
 
 <!-- Footer -->
 
-@include('backend.body.footer')
+@include('admin.body.footer')

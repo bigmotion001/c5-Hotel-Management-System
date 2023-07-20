@@ -18,7 +18,7 @@ Route::get('/gallery', [FrontendController::class, 'Gallery'])->name('gallery');
 Route::prefix('management')->group(function (){
    //admin login
    Route::get('login', [AdminController::class, 'Index'])->name('admin_login');
-   Route::post('/login/owner', [AdminController::class, 'Login'])->name('admin.login');
+   Route::post('/login/owner', [AdminController::class, 'AdminLogin'])->name('admin.login');
    Route::get('/dashboard', [AdminController::class, 'Dashboard'])->name('admin.dashboard');
 });
 //===============END ADMIN ROUTES======================
