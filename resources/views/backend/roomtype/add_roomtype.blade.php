@@ -86,7 +86,7 @@
                                     <select name="amenities" class="form-control" id="">
                                         <option value="{{ old('amenities') }}">{{ old('amenities') }}</option>
                                         @foreach($amenities as $amenity)
-                                        <option value="{{$amenity->id}}">{{$amenity->title}}</option>
+                                        <option value="{{$amenity->title}}">{{$amenity->title}}</option>
                                         @endforeach
                                     </select>
                                     @error('amenities')
