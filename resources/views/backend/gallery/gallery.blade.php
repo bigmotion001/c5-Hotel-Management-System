@@ -45,10 +45,10 @@
                                     </td>
 
                                     <td class="d-flex mt-3">
-                                        <a href="{{route('edit_gallery', $data->id)}}" class="btn btn-success btn-sm"><i class="fa fa-eye"></i>Edit</a>
+                                        <a href="{{route('edit_gallery', $data->id)}}" class="btn btn-success btn-sm"></i>Edit</a>
                                         <span class="m-1 d-block"></span>
                                         
-                                        <a href="{{route('delete_gallery', $data->id)}}" onclick="confirmation(event)" class="btn btn-danger btn-sm" id="delete"><i class="fa fa-eye"></i>Delete</a>
+                                        <a href="{{route('delete_gallery', $data->id)}}" onclick="confirmation(event)" class="btn btn-danger btn-sm" id="delete"></i>Delete</a>
                                     </td>
                                 </tr>
                                 @endforeach
