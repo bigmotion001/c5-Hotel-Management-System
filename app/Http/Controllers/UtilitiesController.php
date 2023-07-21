@@ -18,15 +18,12 @@ class UtilitiesController extends Controller
     {
         $datas = Amenities::orderBy('id', 'desc')->get();
 
-        // dd($datas);
-
         return view('backend/amenities/amenities', compact('datas'));
     }
 
     //add amenity page
     function Add_amenities()
     {
-
         return view('backend/amenities/add_amenities');
     }
 
@@ -34,7 +31,6 @@ class UtilitiesController extends Controller
     //add amenity function
     function Save_amenities(Request $request)
     {
-
         $request->validate([
             'title' => 'required|string',
             'icon' => 'required',
@@ -43,26 +39,18 @@ class UtilitiesController extends Controller
         $data = new Amenities;
 
         $data->title = $request->title;
-
-        $imageName = time() . '_' . $request->icon->getClientOriginalExtension();
-
-        $request->icon->move('backend/assets/icons', $imageName);
-
-        $data->icon = $imageName;
+        $data->icon = $request->icon;
 
         $data->save();
 
-        Alert::success('Amenity Added Successfully');
-        return redirect('amenities');
+        return redirect('amenities')->with('success', 'Amenity Added Successfully');
     }
 
 
     //update amenity page
     function Edit_amenity($id)
     {
-
         $datas = Amenities::findOrFail($id);
-
 
         return view('backend/amenities/edit_amenities', compact('datas'));
     }
@@ -90,8 +78,7 @@ class UtilitiesController extends Controller
 
         $data->save();
 
-        Alert::success('Amenity Updated Successfully');
-        return redirect('amenities');
+        return redirect('amenities')->with('success', 'Amenity Updated Successfully');
     }
 
     //Delete amenity function
@@ -101,8 +88,7 @@ class UtilitiesController extends Controller
 
         $data->delete();
 
-        Alert::success('Amenity Deleted Successfully');
-        return redirect('amenities');
+        return redirect('amenities')->with('success', 'Amenity Deleted Successfully');
     }
 
     //fetch all Complement page
@@ -110,14 +96,12 @@ class UtilitiesController extends Controller
     {
         $datas = Complement::orderBy('id', 'desc')->get();
 
-
         return view('backend/complement/complement', compact('datas'));
     }
 
     //add complement page
     function Add_complement()
     {
-
         return view('backend/complement/add_complement');
     }
 
@@ -138,14 +122,12 @@ class UtilitiesController extends Controller
 
         $data->save();
 
-        Alert::success('Complement Added Successfully');
-        return redirect('complement');
+        return redirect('complement')->with('success', 'Complement Added Successfully');
     }
 
     //update complement page
     public function Edit_complement($id)
     {
-        // dd($id);
 
         $datas = Complement::findOrFail($id);
 
@@ -167,8 +149,7 @@ class UtilitiesController extends Controller
 
         $data->save();
 
-        Alert::success('Complement Updated Successfully');
-        return redirect('complement');
+        return redirect('complement')->with('success', 'Complement Updated Successfully');
     }
 
     //Delete Complement function
@@ -178,9 +159,7 @@ class UtilitiesController extends Controller
 
         $data->delete();
 
-        Alert::success('Complement Deleted Successfully');
-
-        return redirect('complement');
+        return redirect('complement')->with('success', 'Complement Deleted Successfully');
     }
 
 
@@ -189,14 +168,12 @@ class UtilitiesController extends Controller
     {
         $datas = Bedtype::orderBy('id', 'desc')->get();
 
-
         return view('backend/bedtype/bedtype', compact('datas'));
     }
 
     //add bedtype page
     function Add_bedtype()
     {
-
         return view('backend/bedtype/add_bedtype');
     }
 
@@ -215,15 +192,12 @@ class UtilitiesController extends Controller
 
         $data->save();
 
-        Alert::success('Bed Type Added Successfully');
-        return redirect('bedtype');
+        return redirect('bedtype')->with('success', 'Bed Type Added Successfully');
     }
 
     //update bedtype page
     public function Edit_bedtype($id)
     {
-        // dd($id);
-
         $datas = Bedtype::findOrFail($id);
 
         return view('backend/bedtype/edit_bedtype', compact('datas'));
@@ -242,8 +216,7 @@ class UtilitiesController extends Controller
 
         $data->save();
 
-        Alert::success('Bed Type Updated Successfully');
-        return redirect('bedtype');
+        return redirect('bedtype')->with('success', 'Bed Type Updated Successfully');
     }
 
     //Delete bedtype function
@@ -253,9 +226,7 @@ class UtilitiesController extends Controller
 
         $data->delete();
 
-        Alert::success('Bed Tpye Deleted Successfully');
-
-        return redirect('bedtype');
+        return redirect('bedtype')->with('success', 'Bed Tpye Deleted Successfully');
     }
 
     //fetch all room page
@@ -263,14 +234,12 @@ class UtilitiesController extends Controller
     {
         $datas = Room::orderBy('id', 'desc')->get();
 
-
         return view('backend/room/room', compact('datas'));
     }
 
     //add room page
     function Add_room()
     {
-
         return view('backend/room/add_room');
     }
 
@@ -292,15 +261,12 @@ class UtilitiesController extends Controller
 
         $data->save();
 
-        Alert::success('Room Added Successfully');
-        return redirect('room');
+        return redirect('room')->with('success', 'Room Added Successfully');
     }
 
     //update room page
     public function Edit_room($id)
     {
-        // dd($id);
-
         $datas = room::findOrFail($id);
 
         return view('backend/room/edit_room', compact('datas'));
@@ -323,8 +289,7 @@ class UtilitiesController extends Controller
 
         $data->save();
 
-        Alert::success('Room Updated Successfully');
-        return redirect('room');
+        return redirect('room')->with('success', 'Room Updated Successfully');
     }
 
     //Delete room function
@@ -334,9 +299,7 @@ class UtilitiesController extends Controller
 
         $data->delete();
 
-        Alert::success('Room Deleted Successfully');
-
-        return redirect('room');
+        return redirect('room')->with('success', 'Room Deleted Successfully');
     }
 
     //Enable room status
@@ -348,9 +311,7 @@ class UtilitiesController extends Controller
 
         $data->save();
 
-        Alert::success('Room Status Disabled');
-
-        return redirect('room');
+        return redirect('room')->with('success', 'Room Status Disabled');
     }
 
     //Enable room status
@@ -362,9 +323,7 @@ class UtilitiesController extends Controller
 
         $data->save();
 
-        Alert::success('Room Status Enabled');
-
-        return redirect('room');
+        return redirect('room')->with('success', 'Room Status Enabled');
     }
 
     //fetch all room page
@@ -372,14 +331,12 @@ class UtilitiesController extends Controller
     {
         $datas = Roomtype::orderBy('id', 'desc')->get();
 
-
         return view('backend/roomtype/roomtype', compact('datas'));
     }
 
     //add room page
     function Add_roomtype()
     {
-
         $amenities = Amenities::orderBy('id', 'desc')->get();
 
         $complements = Complement::orderBy('id', 'desc')->get();
@@ -429,8 +386,7 @@ class UtilitiesController extends Controller
 
         $data->save();
 
-        Alert::success('Room Type Added Successfully');
-        return redirect('roomtype');
+        return redirect('roomtype')->with('success', 'Room Type Added Successfully');
     }
 
     //update room page
@@ -442,8 +398,6 @@ class UtilitiesController extends Controller
         $amenities = Amenities::orderBy('id', 'desc')->get();
 
         $complements = Complement::orderBy('id', 'desc')->get();
-
-        // dd($datas);
 
         return view('backend/roomtype/edit_roomtype', compact('datas', 'amenities', 'complements'));
     }
@@ -491,8 +445,7 @@ class UtilitiesController extends Controller
 
         $data->save();
 
-        Alert::success('Room Type Updated Successfully');
-        return redirect('roomtype');
+        return redirect('roomtype')->with('success', 'Room Type Updated Successfully');
     }
 
     //Delete room function
@@ -502,9 +455,7 @@ class UtilitiesController extends Controller
 
         $data->delete();
 
-        Alert::success('Room Type Deleted Successfully');
-
-        return redirect('roomtype');     
+        return redirect('roomtype')->with('success', 'Room Type Deleted Successfully');
     }
 
     //fetch all Gallery page
@@ -518,7 +469,6 @@ class UtilitiesController extends Controller
     //add gallery page
     function Add_gallery()
     {
-
         return view('backend/gallery/add_gallery');
     }
 
@@ -526,7 +476,6 @@ class UtilitiesController extends Controller
     //add gallery function
     function Save_gallery(Request $request)
     {
-
         $request->validate([
             'title' => 'required|string',
             'image' => 'required',
@@ -544,17 +493,14 @@ class UtilitiesController extends Controller
 
         $data->save();
 
-        Alert::success('Image Added Successfully');
-        return redirect('create_gallery');
+        return redirect('create_gallery')->with('success', 'Image Added Successfully');
     }
 
 
     //update gallery page
     function Edit_gallery($id)
     {
-
         $datas = Gallery::findOrFail($id);
-
 
         return view('backend/gallery/edit_gallery', compact('datas'));
     }
@@ -582,8 +528,7 @@ class UtilitiesController extends Controller
 
         $data->save();
 
-        Alert::success('Galery Updated Successfully');
-        return redirect('create_gallery');
+        return redirect('create_gallery')->with('success', 'Galery Updated Successfully');
     }
 
     //Delete gallery function
@@ -593,7 +538,6 @@ class UtilitiesController extends Controller
 
         $data->delete();
 
-        Alert::success('Image Deleted Successfully');
-        return redirect('create_gallery');
+        return redirect('create_gallery')->with('success', 'Image Deleted Successfully');
     }
 }
