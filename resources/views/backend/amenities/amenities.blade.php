@@ -30,7 +30,7 @@
                                 <tr>
                                     <th>S|N</th>
                                     <th>Title</th>
-                                    <th>Icon</th>
+                                    <!-- <th>Icon</th> -->
                                     <th>Action</th>
                                 </tr>
 
@@ -40,9 +40,9 @@
                                 <tr>
                                     <td>{{$key + 1}}</td>
                                     <td>{{$data->title}}</td>
-                                    <td>
+                                    <!-- <td>
                                         <span class="fa {{$data->icon}}"></span>
-                                    </td>
+                                    </td> -->
 
                                     <td class="d-flex">
                                         <a href="{{route('edit_amenity', $data->id)}}" class="btn btn-success btn-sm">Edit</a>

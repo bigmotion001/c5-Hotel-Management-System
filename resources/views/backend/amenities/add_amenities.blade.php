@@ -37,16 +37,6 @@
                                 </div>
                             </div>
 
-                            <div class="col-md-12 col-12">
-                                <div class="mb-2">
-                                    <!-- <label class="form-label">Choose Icon</label> -->
-                                    <input type="text" id="" class="form-control" placeholder="Icon Name" name="icon" />
-                                    @error('icon')
-                                    <span class="text-danger">{{ $message }}</span>
-                                    @enderror
-                                </div>
-                            </div>
-
                             <div class="card-footer">
                                 <button type="submit" class="btn btn-primary me-1">Add Amenity</button>
                             </div>

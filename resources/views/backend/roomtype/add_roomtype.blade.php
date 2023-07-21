@@ -99,7 +99,7 @@
                                     <select name="complements" class="form-control" id="">
                                         <option value="{{ old('complements') }}">{{ old('complements') }}</option>
                                         @foreach($complements as $complement)
-                                        <option value="{{$complement->id}}">{{$complement->title}}</option>
+                                        <option value="{{$complement->title}}">{{$complement->title}}</option>
                                         @endforeach
                                     </select>
                                     @error('complements')

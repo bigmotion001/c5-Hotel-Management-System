@@ -32,13 +32,11 @@ class UtilitiesController extends Controller
     {
         $request->validate([
             'title' => 'required|string',
-            'icon' => 'required',
         ]);
 
         $data = new Amenities;
 
         $data->title = $request->title;
-        $data->icon = $request->icon;
 
         $data->save();
 
@@ -62,11 +60,9 @@ class UtilitiesController extends Controller
 
         $request->validate([
             'title' => 'required|string',
-            'icon' => 'required',
         ]);
 
         $data->title = $request->title;
-        $data->icon = $request->icon;
 
         $data->save();
 

@@ -36,14 +36,14 @@
                                 </div>
                             </div>
 
-                            <div class="col-md-12 col-12">
+                            <!-- <div class="col-md-12 col-12">
                                 <div class="mb-2">
                                     <input type="text" id="" placeholder="Icon Name" class="form-control" name="icon" />
                                     @error('icon')
                                     <span class="text-danger">{{ $message }}</span>
                                     @enderror
                                 </div>
-                            </div>
+                            </div> -->
 
                             <div class="card-footer">
                                 <button type="submit" class="btn btn-primary me-1">Update Amenity</button>

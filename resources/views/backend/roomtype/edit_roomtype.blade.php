@@ -86,7 +86,7 @@
                                     <select name="amenities" class="form-control" id="">
                                         <option value="{{ $datas->amenities }}">{{ $datas->amenities }}</option>
                                         @foreach($amenities as $amenity)
-                                        <option value="{{$amenity->id}}">{{$amenity->title}}</option>
+                                        <option value="{{$amenity->title}}">{{$amenity->title}}</option>
                                         @endforeach
                                     </select>
                                     @error('amenities')
@@ -99,7 +99,7 @@
                                     <select name="complements" class="form-control" id="">
                                         <option value="{{ $datas->complements }}">{{ $datas->complements }}</option>
                                         @foreach($complements as $complement)
-                                        <option value="{{$complement->id}}">{{$complement->title}}</option>
+                                        <option value="{{$complement->title}}">{{$complement->title}}</option>
                                         @endforeach
                                     </select>
                                     @error('complements')
