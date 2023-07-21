@@ -63,18 +63,11 @@ class UtilitiesController extends Controller
 
         $request->validate([
             'title' => 'required|string',
+            'icon' => 'required',
         ]);
 
         $data->title = $request->title;
-
-        if ($request->icon) {
-
-            $imageName = time() . '_' . $request->icon->getClientOriginalExtension();
-
-            $request->icon->move('backend/assets/icons', $imageName);
-
-            $data->icon = $imageName;
-        }
+        $data->icon = $request->icon;
 
         $data->save();
 
