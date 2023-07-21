@@ -65,10 +65,12 @@
                         <div id="all_rooms" class="dropdown-content">
 
                             <ul>
-                                <a href="/">
-                                    <li>Standard Room</li>
-                                </a>
-                                <a href="/">
+                                @foreach($roomtype as $key => $room)
+                                    <a href="/">
+                                        <li>{{$room->name}}</li>
+                                    </a>
+                                @endforeach
+                                <!-- <a href="/">
                                     <li>Executive Room</li>
                                 </a>
                                 <a href="/">
@@ -88,7 +90,7 @@
                                 </a>
                                 <a href="/">
                                     <li>Presidential Suite</li>
-                                </a>
+                                </a> -->
                             </ul>
 
                         </div>
