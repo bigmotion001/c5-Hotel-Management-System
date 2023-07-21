@@ -83,31 +83,33 @@
 
                                 <div class="mb-2 col-sm-12 col-md-6">
                                     <label class="form-label">Choose Amenities</label>
-
                                     <select required name="amenities[]" class="form-control" id="amenities">
-
-                                        <select name="amenities" class="select2-size-lg form-select" multiple="multiple" id="large-select-multi">
-                                            @foreach($amenities as $amenity)
-                                            <option value="{{$amenity->title}}">{{$amenity->title}}</option>
-                                            @endforeach
-                                        </select>
-                                        @error('amenities')
-                                        <span class="text-danger">{{ $message }}</span>
-                                        @enderror
+                                    <select name="amenities" class="select2-size-lg form-select" multiple="multiple" id="large-select-multi">
+                                        <option value="{{ old('amenities') }}">{{ old('amenities') }}</option>
+                                        @foreach($amenities as $amenity)
+                                        <option value="{{$amenity->title}}">{{$amenity->title}}</option>
+                                        @endforeach
+                                    </select>
+                                    @error('amenities')
+                                    <span class="text-danger">{{ $message }}</span>
+                                    @enderror
                                 </div>
 
                                 <div class="mb-2 col-sm-12 col-md-6">
                                     <label class="form-label">Choose Complements</label>
+
                                     <select required name="complements[]" class="form-control" id="complements">
 
-                                        <select name="complements" class="select2-size-lg form-select" multiple="multiple" id="large-select-multi">
-                                            @foreach($complements as $complement)
-                                            <option value="{{$complement->title}}">{{$complement->title}}</option>
-                                            @endforeach
-                                        </select>
-                                        @error('complements')
-                                        <span class="text-danger">{{ $message }}</span>
-                                        @enderror
+                                    <select name="complements" class="select2-size-lg form-select" multiple="multiple" id="large-select-multi">
+                                        <option value="{{ old('complements') }}">{{ old('complements') }}</option>
+
+                                        @foreach($complements as $complement)
+                                        <option value="{{$complement->title}}">{{$complement->title}}</option>
+                                        @endforeach
+                                    </select>
+                                    @error('complements')
+                                    <span class="text-danger">{{ $message }}</span>
+                                    @enderror
                                 </div>
 
                             </div>
