@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Backend\AdminController;
+use App\Http\Controllers\Backend\SettingsController;
 use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ReceptionController;
@@ -44,7 +45,13 @@ Route::prefix('reception')->group(function () {
 
 
 Route::get('/', function () {
-    return view('frontend.index');
+    $site = App\Models\SiteSetting::find(1);
+    if($site->maintenace == 1){
+        return view('frontend.coming-soon');
+
+    }else{
+        return view('frontend.index');
+    }
 });
 
 Route::get('/dashboard', function () {
@@ -60,6 +67,7 @@ Route::middleware('auth')->group(function () {
 //admin protected routes
 
 Route::middleware('admin')->group(function () {
+
     //====================>>>>amenities routes
     Route::get('/amenities', [UtilitiesController::class, 'amenities'])->name('amenities');
 
@@ -144,6 +152,24 @@ Route::middleware('admin')->group(function () {
     Route::post('/updated_gallery/{id}', [UtilitiesController::class, 'Updated_gallery'])->name('updated_gallery');
 
     Route::get('/delete_gallery/{id}', [UtilitiesController::class, 'Delete_gallery'])->name('delete_gallery');
+
+
+
+
+//===========================WEBSITE SEETINGS CONTROLLER ROUTES
+
+Route::controller(SettingsController::class)->group(function () {
+    //site setting page
+    Route::get('/setting/site', 'SiteSetting')->name('site-setting');
+    //site update
+    Route::post('/setting/site/update', 'UpdateSiteSetting')->name('update-site');
+    //site update logo
+    Route::post('/setting/site/update/logo', 'UpdateSiteSettingLogo')->name('update-site-logo');
+
+});
+
+
+
 
 });
 

@@ -4,7 +4,9 @@
 
 @section('content')
 
-
+@php
+    $site = App\Models\SiteSetting::find(1);
+@endphp
 
 <div class="hero medium-height jarallax" data-jarallax data-speed="0.2">
     <img class="jarallax-img" src="frontend/img/hero_home_2.jpg" alt="">
@@ -25,17 +27,17 @@
                     <li>
                         <i class="bi bi-geo-alt"></i>
                         <h4>Address</h4>
-                        <div>PO Box 97845 Baker st. 567, Los Angeles<br>California - US.</div>
+                        <div>{{ $site->address }}</div>
                     </li>
                     <li>
                         <i class="bi bi-envelope-paper"></i>
                         <h4>Email address</h4>
-                        <p><a href="#0">booking@c5hotel.com</a> - <a href="#0">info@c5hotel.com</a></p>
+                        <p><a href="#">{{ $site->email }}</a></p>
                     </li>
                     <li>
                         <i class="bi bi-telephone"></i>
                         <h4>Telephone</h4>
-                        <div>+ 61 (2) 8093 3402 + 61 (2) 8093 3402<br><small>Monday to Friday 9am - 7pm</small></div>
+                        <div>{{ $site->phone }}<br><small>Monday to Friday 9am - 7pm</small></div>
                     </li>
                 </ul>
             </div>
@@ -43,7 +45,7 @@
         <div class="col-xl-7 col-lg-7 order-lg-1">
             <h3 class="mb-3">Get in Touch</h3>
             <div id="message-contact"></div>
-            <form method="post" action="https://ansonika.com/paradise/phpmailer/contact_template_email.php" id="contactform" autocomplete="off">
+            <form method="post" action="#" id="contactform" autocomplete="off">
                 <div class="row">
                     <div class="col-sm-6">
                         <div class="form-floating mb-4">

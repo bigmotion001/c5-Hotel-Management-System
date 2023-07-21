@@ -97,7 +97,7 @@
 
         <li class="  nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="settings"></i><span class="menu-title text-truncate" data-i18n="Invoice">Settings</span></a>
             <ul class="menu-content">
-                <li class="#"><a class="d-flex align-items-center" href="#"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="List">Site Settings</span></a>
+                <li class="#"><a class="d-flex align-items-center" href="{{ route('site-setting') }}"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="List">Site Settings</span></a>
                 </li>
                 <li class="#"><a class="d-flex align-items-center" href="#"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="List">SEO Settings</span></a>
                 </li>
