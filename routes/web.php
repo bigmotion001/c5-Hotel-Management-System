@@ -24,7 +24,35 @@ Route::prefix('management')->group(function () {
 
 
     //==================== Utility Routes ===================
+});
+//===============END  ROUTES======================
 
+
+//===============reception ROUTES======================
+Route::prefix('reception')->group(function () {
+    //admin login
+    Route::get('login', [ReceptionController::class, 'Index'])->name('reception_login');
+    Route::post('/login/owner', [ReceptionController::class, 'ReceptionLogin'])->name('reception.login');
+    Route::get('/dashboard', [ReceptionController::class, 'Dashboard'])->name('reception.dashboard')->middleware('reception');
+});
+//===============END reception ROUTES======================
+
+
+Route::get('/', function () {
+    return view('frontend.index');
+});
+
+Route::get('/dashboard', function () {
+    return view('backend.index');
+})->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
+
+Route::middleware('admin')->group(function () {
     //====================>>>>amenities routes
     Route::get('/amenities', [UtilitiesController::class, 'amenities'])->name('amenities');
 
@@ -107,32 +135,6 @@ Route::prefix('management')->group(function () {
     Route::post('/updated_gallery/{id}', [UtilitiesController::class, 'Updated_gallery'])->name('updated_gallery');
 
     Route::get('/delete_gallery/{id}', [UtilitiesController::class, 'Delete_gallery'])->name('delete_gallery');
-});
-//===============END  ROUTES======================
-
-
-//===============reception ROUTES======================
-Route::prefix('reception')->group(function () {
-    //admin login
-    Route::get('login', [ReceptionController::class, 'Index'])->name('reception_login');
-    Route::post('/login/owner', [ReceptionController::class, 'ReceptionLogin'])->name('reception.login');
-    Route::get('/dashboard', [ReceptionController::class, 'Dashboard'])->name('reception.dashboard')->middleware('reception');
-});
-//===============END reception ROUTES======================
-
-
-Route::get('/', function () {
-    return view('frontend.index');
-});
-
-Route::get('/dashboard', function () {
-    return view('backend.index');
-})->middleware(['auth', 'verified'])->name('dashboard');
-
-Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
 require __DIR__ . '/auth.php';
