@@ -137,7 +137,7 @@
 
     @foreach($roomtype as $key => $rooms)
     @if($key > 0 && $key < 3) <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6">
-        <a href="room-details.html" class="box_cat_rooms">
+        <a href="{{route('room_details', $rooms->id)}}" class="box_cat_rooms">
             <figure>
                 <div class="background-image" data-background="url(frontend/img/rooms/2.jpg)"></div>
                 <div class="info">

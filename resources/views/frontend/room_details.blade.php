@@ -1,3 +1,12 @@
+<?php
+$str = $datas->amenities;
+$str2 = $datas->complements;
+
+eval("\$amenity = $str;");
+
+eval("\$complements = $str2;");
+
+?>
 @extends('frontend.frontend_master')
 
 
@@ -7,13 +16,13 @@
 
 
 <div class="hero full-height jarallax" data-jarallax data-speed="0.2">
-    <img class="jarallax-img kenburns" src="img/rooms/1.jpg" alt="">
+    <img class="jarallax-img kenburns" src="../frontend/img/rooms/1.jpg" alt="">
     <div class="wrapper opacity-mask d-flex align-items-center  text-center animate_hero" data-opacity-mask="rgba(0, 0, 0, 0.5)">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-8">
-                    <small class="slide-animated one">Luxury Hotel Experience</small>
-                    <h1 class="slide-animated two">Sierra Double Room</h1>
+                    <small class="slide-animated one">C5 Luxury Hotel Experience</small>
+                    <h1 class="slide-animated two">{{$datas->name}}</h1>
                     <p class="slide-animated three">Exquisite furnishings for a cosy ambience</p>
                 </div>
             </div>
@@ -33,26 +42,36 @@
         <div class="row justify-content-between">
             <div class="col-lg-4">
                 <div class="title">
-                    <small>Luxury Experience</small>
-                    <h2>A deeply space that invites you to truly Switch Off.</h2>
+                    <small>C5 Luxury Experience</small>
+                    <h2>{{$datas->name}}</h2>
                 </div>
-                <p>The dark wood panelling and furnishings, deluxe red-draped four-poster bed, and magnificent black stone bathroom evoke the charm of a secluded Sierra Nevada getaway. The intimate scale and finish give the room a distinctly personal feel.</p>
-                <p>The dark wood panelling and furnishings, deluxe red-draped four-poster bed, and magnificent black stone bathroom evoke the charm.</p>
+                <p>{{$datas->description}}</p>
+                
             </div>
-            <div class="col-lg-6">
-                <div class="room_facilities_list">
+            <div class="row col-lg-6">
+                <div class="col-sm-12 room_facilities_list">
+                    
                     <ul data-cues="slideInLeft">
-                        <li><i class="icon-hotel-double_bed_2"></i> King Size Bed</li>
-                        <li><i class="icon-hotel-safety_box"></i> Safety Box</li>
-                        <li><i class="icon-hotel-patio"></i>Balcony</li>
-                        <li><i class="icon-hotel-tv"></i> 32 Inch TV</li>
-                        <li><i class="icon-hotel-disable"></i> Disable Access</li>
-                        <li><i class="icon-hotel-dog"></i> Pet Allowed</li>
-                        <li><i class="icon-hotel-bottle"></i> Welcome Bottle</li>
-                        <li><i class="icon-hotel-wifi"></i> Wifi / Netflix access</li>
-                        <li><i class="icon-hotel-hairdryer"></i> Air Dryer</li>
-                        <li><i class="icon-hotel-condition"></i> Air Condition</li>
-                        <li><i class="icon-hotel-loundry"></i>Loundry Service</li>
+
+                        <h5 style="margin-left: 5px;">Amenities:</h5>
+
+                        @foreach($amenity as $item)
+                        <li><i style="font-size: 18px;" class="fa fa-dot-circle-o"></i>{{$item}}</li>
+                        @endforeach
+
+                    </ul>
+
+                </div>
+
+                <div class="col-sm-12 room_facilities_list" >
+                    <ul data-cues="slideInLeft">
+
+                        <h5 style="margin-left: 5px; padding-top: 25px;">Complements:</h5>
+
+                        @foreach($complements as $items)
+                        <li><i style="font-size: 18px;" class="fa fa-dot-circle-o"></i>{{$items}}</li>
+                        @endforeach
+
                     </ul>
                 </div>
             </div>
@@ -68,24 +87,24 @@
         <div data-cues="zoomIn">
             <div class="owl-carousel owl-theme carousel_item_centered kenburns rounded-img">
                 <div class="item">
-                    <img src="img/rooms/opt_5.jpg" alt="">
+                    <img src="../backend/assets/images/{{$datas->image1}}" alt="">
                 </div>
                 <div class="item">
-                    <img src="img/rooms/opt_1.jpg" alt="">
+                    <img src="../backend/assets/images/{{$datas->image2}}" alt="">
                 </div>
                 <div class="item">
-                    <img src="img/rooms/opt_4.jpg" alt="">
+                    <img src="../backend/assets/images/{{$datas->image3}}" alt="">
                 </div>
                 <div class="item">
-                    <img src="img/rooms/opt_6.jpg" alt="">
+                    <img src="../backend/assets/images/{{$datas->image4}}" alt="">
                 </div>
             </div>
         </div>
         <div class="text-center mt-5">
-            <a class="btn_1 outline" data-fslightbox="gallery_1" data-type="image" href="img/rooms/opt_5.jpg">FullScreen Gallery</a>
-            <a data-fslightbox="gallery_1" data-type="image" href="img/rooms/opt_1.jpg"></a>
-            <a data-fslightbox="gallery_1" data-type="image" href="img/rooms/opt_4.jpg"></a>
-            <a data-fslightbox="gallery_1" data-type="image" href="img/rooms/opt_6.jpg"></a>
+            <a class="btn_1 outline" data-fslightbox="gallery_1" data-type="image" href="../backend/assets/images/{{$datas->image1}}">FullScreen Gallery</a>
+            <a data-fslightbox="gallery_1" data-type="image" href="../backend/assets/images/{{$datas->image2}}"></a>
+            <a data-fslightbox="gallery_1" data-type="image" href="../backend/assets/images/{{$datas->image3}}"></a>
+            <a data-fslightbox="gallery_1" data-type="image" href="../backend/assets/images/{{$datas->image4}}"></a>
         </div>
     </div>
 </div>

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Roomtype;
 use Illuminate\Http\Request;
 
 class FrontendController extends Controller
@@ -23,6 +24,8 @@ class FrontendController extends Controller
     //gallery route
     function Room_details($id) {
 
-        return view('frontend/room_details');
+        $datas = Roomtype::findOrFail($id);
+
+        return view('frontend/room_details', compact('datas'));
     }
 }

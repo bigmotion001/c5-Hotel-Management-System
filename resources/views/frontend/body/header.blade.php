@@ -22,6 +22,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500&amp;family=Montserrat:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <script src="https://use.fontawesome.com/34a4d426e8.js"></script>
 
     <!-- BASE CSS -->
     <link href="{{ ('../frontend/css/bootstrap.min.css') }}" rel="stylesheet">
@@ -66,7 +67,7 @@
 
                             <ul>
                                 @foreach($roomtype as $key => $room)
-                                    <a href="/">
+                                    <a href="{{route('room_details', $room->id)}}">
                                         <li>{{$room->name}}</li>
                                     </a>
                                 @endforeach
