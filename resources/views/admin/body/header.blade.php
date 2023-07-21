@@ -15,7 +15,7 @@
     <link rel="shortcut icon" type="image/x-icon" href="https://pixinvent.com/demo/vuexy-html-bootstrap-admin-template/app-assets/images/ico/favicon.ico">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500;1,600" rel="stylesheet">
 
-
+    <script src="https://use.fontawesome.com/34a4d426e8.js"></script>
 
     <link rel="stylesheet" type="text/css" href="{{ asset('backendapp-assets/vendors/css/vendors.min.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('backend/app-assets/vendors/css/animate/animate.min.css') }}">

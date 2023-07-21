@@ -41,7 +41,7 @@
                                     <label class="form-label">
                                     <img style="width: 80px;" src="../../backend/assets/icons/{{$datas->icon}}" alt="{{$datas->icon}}">
                                     </label>
-                                    <input type="file" id="" class="form-control" name="icon" />
+                                    <input type="text" id="" placeholder="Icon Name" class="form-control" name="icon" />
                                     @error('icon')
                                     <span class="text-danger">{{ $message }}</span>
                                     @enderror

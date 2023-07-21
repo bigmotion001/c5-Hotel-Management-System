@@ -39,8 +39,8 @@
 
                             <div class="col-md-12 col-12">
                                 <div class="mb-2">
-                                    <label class="form-label">Choose Icon</label>
-                                    <input type="file" id="" class="form-control" name="icon" />
+                                    <!-- <label class="form-label">Choose Icon</label> -->
+                                    <input type="text" id="" class="form-control" placeholder="Icon Name" name="icon" />
                                     @error('icon')
                                     <span class="text-danger">{{ $message }}</span>
                                     @enderror

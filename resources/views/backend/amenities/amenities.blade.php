@@ -41,14 +41,14 @@
                                     <td>{{$key + 1}}</td>
                                     <td>{{$data->title}}</td>
                                     <td>
-                                        <img style="width: 25px;" src="backend/assets/icons/{{$data->icon}}" alt="{{$data->title}}">
+                                        <span class="fa {{$data->icon}}"></span>
                                     </td>
 
                                     <td class="d-flex">
-                                        <a href="{{route('edit_amenity', $data->id)}}" class="btn btn-success btn-sm"><i class="fa fa-eye"></i>Edit</a>
+                                        <a href="{{route('edit_amenity', $data->id)}}" class="btn btn-success btn-sm">Edit</a>
                                         <span class="m-1 d-block"></span>
                                         
-                                        <a href="{{route('delete_amenity', $data->id)}}" onclick="confirmation(event)" class="btn btn-danger btn-sm" id="delete"><i class="fa fa-eye"></i>Delete</a>
+                                        <a href="{{route('delete_amenity', $data->id)}}" onclick="confirmation(event)" class="btn btn-danger btn-sm" id="delete">Delete</a>
                                     </td>
                                 </tr>
                                 @endforeach
