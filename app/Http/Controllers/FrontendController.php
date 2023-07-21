@@ -21,11 +21,20 @@ class FrontendController extends Controller
     function Gallery() {
         return view('frontend/gallery');
     }
-    //gallery route
+
+    //Room_details route
     function Room_details($id) {
 
         $datas = Roomtype::findOrFail($id);
 
         return view('frontend/room_details', compact('datas'));
+    }
+
+    //All_roomsroute
+    function All_rooms() {
+
+        $datas = Roomtype::orderBy('id', 'desc')->get();
+
+        return view('frontend/all_rooms', compact('datas'));
     }
 }

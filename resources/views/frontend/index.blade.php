@@ -123,7 +123,7 @@
         @if($key < 1) <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12">
             <a href="{{route('room_details', $room->id)}}" class="box_cat_rooms">
                 <figure>
-                    <div class="background-image" data-background="url(frontend/img/rooms/1.jpg)"></div>
+                    <div class="background-image" data-background="url(../backend/assets/images/{{$room->image1}})"></div>
                     <div class="info">
                         <small>From &#8358;{{$room->fare}}/night</small>
                         <h3>{{$room->name}}</h3>
@@ -139,7 +139,7 @@
     @if($key > 0 && $key < 3) <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6">
         <a href="{{route('room_details', $rooms->id)}}" class="box_cat_rooms">
             <figure>
-                <div class="background-image" data-background="url(frontend/img/rooms/2.jpg)"></div>
+                <div class="background-image" data-background="url(../backend/assets/images/{{$rooms->image1}})"></div>
                 <div class="info">
                     <small>From &#8358;{{$rooms->fare}}/night</small>
                     <h3>{{$rooms->name}}</h3>
@@ -151,7 +151,7 @@
 @endif
 @endforeach
 
-<p class="text-end"><a href="room-list-1.html" class="btn_1 outline mt-2">View all Rooms</a></p>
+<p class="text-end"><a href="{{route('all_rooms')}}" class="btn_1 outline mt-2">View all Rooms</a></p>
 </div>
 <!-- /row-->
 
