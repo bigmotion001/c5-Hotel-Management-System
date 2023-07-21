@@ -68,7 +68,6 @@
                             </div>
                             <div class="row col-md-12 col-12">
 
-
                                 <div class="mb-2 col-sm-12 col-md-6">
                                     <!-- <label class="form-label mb-1">Academic Session</label> -->
                                     <input type="number" min="0" id="" class="form-control" placeholder="Cancellation Fee/Night" name="cancellation_fee" value="{{ $datas->cancellation_fee }}" />

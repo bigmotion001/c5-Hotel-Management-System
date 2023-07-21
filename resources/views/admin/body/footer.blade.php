@@ -71,10 +71,6 @@
 
 <!---datatable--->
 
-<script src="{{ asset('backend/app-assets/vendors/js/forms/select/select2.full.min.js')}}"></script>
-
-<script src="{{ asset('backend/app-assets/js/scripts/forms/form-select2.min.js')}}"></script>
-
 
 
 <script>
