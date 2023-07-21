@@ -2,6 +2,9 @@
 
 @section('content')
 
+@php
+    $room = App\Models\Room::all();
+@endphp
 
 <div class="content-wrapper container-xxl p-0">
     <div class="content-header row">
@@ -14,17 +17,19 @@
                     <div class="card text-center">
                         <div class="card-body">
                             <a href="">
-                                <div class="avatar bg-light-info p-50 mb-1">
+                                <div class="avatar bg-light-danger p-50 mb-1">
                                     <div class="avatar-content">
                                         <i data-feather='book'></i>
                                     </div>
                                 </div>
-                                <h2 class="fw-bolder">#</h2>
-                                <p class="card-text">Today's Booked Room</p>
+                                <h2 class="fw-bolder">{{ count($room) }}</h2>
+                                <p class="card-text">Total Rooms</p>
                             </a>
                         </div>
                     </div>
                 </div>
+
+
                 <div class="col-6 col-sm-3 col-lg-2 col-xl-3 col-md-3">
                     <div class="card text-center">
                         <div class="card-body">
@@ -35,11 +40,29 @@
                                     </div>
                                 </div>
                                 <h2 class="fw-bolder">#</h2>
-                                <p class="card-text">Today's Available Room</p>
+                                <p class="card-text">Today's Available Rooms</p>
                             </a>
                         </div>
                     </div>
                 </div>
+
+
+                <div class="col-6 col-sm-3 col-lg-3 col-xl-3 col-md-3">
+                    <div class="card text-center">
+                        <div class="card-body">
+                            <a href="">
+                                <div class="avatar bg-light-info p-50 mb-1">
+                                    <div class="avatar-content">
+                                        <i data-feather='book'></i>
+                                    </div>
+                                </div>
+                                <h2 class="fw-bolder">#</h2>
+                                <p class="card-text">Today's Reserved Rooms</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="col-6 col-sm-3 col-lg-3 col-xl-3 col-md-3">
                     <div class="card text-center">
                         <div class="card-body">
@@ -50,26 +73,12 @@
                                     </div>
                                 </div>
                                 <h2 class="fw-bolder">#</h2>
-                                <p class="card-text">Total Booked Room</p>
+                                <p class="card-text">Total Booked Rooms</p>
                             </a>
                         </div>
                     </div>
                 </div> <!-- list and filter end -->
-                <div class="col-6 col-sm-3 col-lg-3 col-xl-3 col-md-3">
-                    <div class="card text-center">
-                        <div class="card-body">
-                            <a href="">
-                                <div class="avatar bg-light-danger p-50 mb-1">
-                                    <div class="avatar-content">
-                                        <i data-feather='book'></i>
-                                    </div>
-                                </div>
-                                <h2 class="fw-bolder">#</h2>
-                                <p class="card-text">Total Room</p>
-                            </a>
-                        </div>
-                    </div>
-                </div> <!-- list and filter end -->
+               <!-- list and filter end -->
         </section>
         <!-- users list ends -->
 
@@ -99,7 +108,7 @@
                                     </div>
                                 </div>
                                 <h2 class="fw-bolder">#</h2>
-                                <p class="card-text">Total Booking Completed</p>
+                                <p class="card-text">Total Registered Guest</p>
                             </a>
                         </div>
                     </div>
