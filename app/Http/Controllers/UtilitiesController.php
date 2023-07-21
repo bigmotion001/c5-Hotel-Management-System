@@ -369,25 +369,25 @@ class UtilitiesController extends Controller
         $data->description = $request->description;
         $data->cancellation_policy = $request->cancellation_policy;
 
-        $imageName = time() . '_' . $request->image1->getClientOriginalExtension();
+        $imageName = time() . '_image1' . $request->image1->getClientOriginalExtension();
 
         $request->image1->move('backend/assets/images', $imageName);
 
         $data->image1 = $imageName;
 
-        $imageName = time() . '_' . $request->image2->getClientOriginalExtension();
+        $imageName = time() . '_image2' . $request->image2->getClientOriginalExtension();
 
         $request->image2->move('backend/assets/images', $imageName);
 
         $data->image2 = $imageName;
 
-        $imageName = time() . '_' . $request->image3->getClientOriginalExtension();
+        $imageName = time() . '_image3' . $request->image3->getClientOriginalExtension();
 
         $request->image3->move('backend/assets/images', $imageName);
 
         $data->image3 = $imageName;
 
-        $imageName = time() . '_' . $request->image4->getClientOriginalExtension();
+        $imageName = time() . '_image4' . $request->image4->getClientOriginalExtension();
 
         $request->image4->move('backend/assets/images', $imageName);
 
@@ -448,7 +448,7 @@ class UtilitiesController extends Controller
         $data->cancellation_policy = $request->cancellation_policy;
 
         if ($request->image1) {
-            $imageName = time() . '_' . $request->image1->getClientOriginalExtension();
+            $imageName = time() . '_image1' . $request->image1->getClientOriginalExtension();
 
             $request->image1->move('backend/assets/images', $imageName);
 
@@ -456,7 +456,7 @@ class UtilitiesController extends Controller
         }
 
         if ($request->image2) {
-            $imageName = time() . '_' . $request->image2->getClientOriginalExtension();
+            $imageName = time() . '_image2' . $request->image2->getClientOriginalExtension();
 
             $request->image2->move('backend/assets/images', $imageName);
 
@@ -464,7 +464,7 @@ class UtilitiesController extends Controller
         }
 
         if ($request->image3) {
-            $imageName = time() . '_' . $request->image3->getClientOriginalExtension();
+            $imageName = time() . '_image3' . $request->image3->getClientOriginalExtension();
 
             $request->image3->move('backend/assets/images', $imageName);
 
@@ -472,7 +472,7 @@ class UtilitiesController extends Controller
         }
 
         if ($request->image4) {
-            $imageName = time() . '_' . $request->image4->getClientOriginalExtension();
+            $imageName = time() . '_image4' . $request->image4->getClientOriginalExtension();
 
             $request->image4->move('backend/assets/images', $imageName);
 
