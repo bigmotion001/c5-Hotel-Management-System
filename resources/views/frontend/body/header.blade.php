@@ -24,12 +24,12 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
 
     <!-- BASE CSS -->
-    <link href="{{ ('frontend/css/bootstrap.min.css') }}" rel="stylesheet">
-    <link href="{{ ('frontend/css/style.css') }}" rel="stylesheet">
-    <link href="{{ ('frontend/css/vendors.min.css') }}" rel="stylesheet">
+    <link href="{{ ('../frontend/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ ('../frontend/css/style.css') }}" rel="stylesheet">
+    <link href="{{ ('../frontend/css/vendors.min.css') }}" rel="stylesheet">
 
     <!-- YOUR CUSTOM CSS -->
-    <link href="{{ ('frontend/css/custom.css') }}" rel="stylesheet">
+    <link href="{{ ('../frontend/css/custom.css') }}" rel="stylesheet">
 
    
 </head>

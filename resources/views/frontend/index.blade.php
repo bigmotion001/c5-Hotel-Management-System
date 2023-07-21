@@ -121,7 +121,7 @@
     <div class="row justify-content-center add_bottom_90" data-cues="slideInUp" data-delay="300">
         @foreach($roomtype as $key => $room)
         @if($key < 1) <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12">
-            <a href="room-details.html" class="box_cat_rooms">
+            <a href="{{route('room_details', $room->id)}}" class="box_cat_rooms">
                 <figure>
                     <div class="background-image" data-background="url(frontend/img/rooms/1.jpg)"></div>
                     <div class="info">

@@ -20,4 +20,9 @@ class FrontendController extends Controller
     function Gallery() {
         return view('frontend/gallery');
     }
+    //gallery route
+    function Room_details($id) {
+
+        return view('frontend/room_details');
+    }
 }

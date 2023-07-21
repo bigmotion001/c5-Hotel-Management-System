@@ -14,6 +14,8 @@ Route::get('/about', [FrontendController::class, 'About'])->name('about_us');
 
 Route::get('/gallery', [FrontendController::class, 'Gallery'])->name('gallery');
 
+Route::get('/room_details/{id}', [FrontendController::class, 'Room_details'])->name('room_details');
+
 
 //===============ADMIN ROUTES======================
 Route::prefix('management')->group(function () {

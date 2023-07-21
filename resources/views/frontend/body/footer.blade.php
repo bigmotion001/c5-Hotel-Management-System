@@ -69,10 +69,10 @@
 <!-- /back to top -->
 
 <!-- COMMON SCRIPTS -->
-<script src="{{ ('frontend/js/common_scripts.js') }}"></script>
-<script src="{{ ('frontend/js/common_functions.js') }}"></script>
-<script src="{{ ('frontend/js/datepicker_inline.js') }}"></script>
-<script src="{{ ('frontend/js/slider.js') }}"></script>
+<script src="{{ ('../frontend/js/common_scripts.js') }}"></script>
+<script src="{{ ('../frontend/js/common_functions.js') }}"></script>
+<script src="{{ ('../frontend/js/datepicker_inline.js') }}"></script>
+<script src="{{ ('../frontend/js/slider.js') }}"></script>
 
 
 
