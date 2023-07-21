@@ -16,14 +16,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500;1,600" rel="stylesheet">
 
     <script src="https://use.fontawesome.com/34a4d426e8.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+   
+
 
     <link rel="stylesheet" type="text/css" href="{{ asset('backendapp-assets/vendors/css/vendors.min.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('backend/app-assets/vendors/css/animate/animate.min.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('backend/app-assets/vendors/css/extensions/sweetalert2.min.css') }}">
-
-
-
-
 
     <!-- END: Page CSS-->
 
@@ -53,6 +52,11 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('backend/assets/css/style.css') }}">
     <!-- END: Custom CSS-->
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" integrity="sha512-nMNlpuaDPrqlEls3IX/Q56H36qvBASwb3ipuo3MxeWbsQB1881ox0cRv7UPTgBlriqoynt35KjEwgGUeUXIPnw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js" integrity="sha512-2ImtlRlf2VVmiGZsjm9bEyhjGW4dU7B6TNwh/hx/iSByxNENtj3WVE6o/9Lj4TJeVXPi4bnOIMXFIJJAeufa0A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
 </head>
 <!-- END: Head-->
 
@@ -93,5 +97,3 @@
             </ul>
         </div>
     </nav>
-
-

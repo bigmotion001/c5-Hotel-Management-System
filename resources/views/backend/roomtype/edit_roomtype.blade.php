@@ -83,8 +83,7 @@
 
                                 <div class="mb-2 col-sm-12 col-md-6">
                                     <label class="form-label">Choose Amenities</label>
-                                    <select name="amenities" class="form-control" id="">
-                                        <option value="{{ $datas->amenities }}">{{ $datas->amenities }}</option>
+                                    <select name="amenities[]" class="form-control" id="amenities">
                                         @foreach($amenities as $amenity)
                                         <option value="{{$amenity->title}}">{{$amenity->title}}</option>
                                         @endforeach
@@ -96,8 +95,7 @@
 
                                 <div class="mb-2 col-sm-12 col-md-6">
                                     <label class="form-label">Choose Complements</label>
-                                    <select name="complements" class="form-control" id="">
-                                        <option value="{{ $datas->complements }}">{{ $datas->complements }}</option>
+                                    <select name="complements[]" class="form-control" id="complements">
                                         @foreach($complements as $complement)
                                         <option value="{{$complement->title}}">{{$complement->title}}</option>
                                         @endforeach
@@ -205,7 +203,15 @@
 
 
 
+<script>
+     $('#amenities').select2({
+        multiple: true
+    })
 
+    $('#complements').select2({
+        multiple: true
+    })
+</script>
 
 
 

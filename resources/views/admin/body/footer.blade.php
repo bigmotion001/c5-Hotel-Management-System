@@ -45,6 +45,8 @@
 <script src="{{ asset('backend/app-assets/js/scripts/pages/dashboard-ecommerce.min.js') }}"></script>
 <!-- END: Page JS-->
 
+
+
 <script>
   function confirmation(e) {
 

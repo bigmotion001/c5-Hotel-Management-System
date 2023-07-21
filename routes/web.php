@@ -69,6 +69,8 @@ Route::middleware('admin')->group(function () {
 
     Route::get('/delete_amenities/{id}', [UtilitiesController::class, 'Delete_amenity'])->name('delete_amenity');
 
+    Route::get('/categories', [UtilitiesController::class, 'getAmenity'])->name('get-amenity');
+
 
     //====================>>>>complement routes
     Route::get('/complement', [UtilitiesController::class, 'complement'])->name('complement');
