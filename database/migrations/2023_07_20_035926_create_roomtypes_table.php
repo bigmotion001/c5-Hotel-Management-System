@@ -24,7 +24,10 @@ return new class extends Migration
             $table->string('total_beds')->nullable();
             $table->string('description')->nullable();
             $table->string('cancellation_policy')->nullable();
-            $table->string('image')->nullable();
+            $table->string('image1')->nullable();
+            $table->string('image2')->nullable();
+            $table->string('image3')->nullable();
+            $table->string('image4')->nullable();
             $table->timestamps();
         });
     }

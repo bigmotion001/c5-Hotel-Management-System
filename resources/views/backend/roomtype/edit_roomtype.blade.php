@@ -155,14 +155,37 @@
 
                             <div class="row col-md-12 col-12">
 
-                                <div class="mb-2">
-                                    <label class="form-label">Active Image: {{ $datas->image }}</label>
-                                    <input type="file" id="" class="form-control" name="image" value="{{ old('image') }}" />
-                                    @error('image')
+                                <div class="mb-2 col-sm-12 col-md-6">
+                                    <label class="form-label"><img style="width: 100px; height:100px; object-fit:cover;" src="../../backend/assets/images/{{$datas->image1}}" alt="{{$datas->name}} 1"></label>
+                                    <input type="file" id="" class="form-control" name="image1" value="{{ old('image1') }}" />
+                                    @error('image1')
                                     <span class="text-danger">{{ $message }}</span>
                                     @enderror
                                 </div>
 
+                                <div class="mb-2 col-sm-12 col-md-6">
+                                    <label class="form-label"><img style="width: 100px; height:100px; object-fit:cover;" src="../../backend/assets/images/{{$datas->image2}}" alt="{{$datas->name}} 2"></label>
+                                    <input type="file" id="" class="form-control" name="image2" value="{{ old('image2') }}" />
+                                    @error('image2')
+                                    <span class="text-danger">{{ $message }}</span>
+                                    @enderror
+                                </div>
+
+                                <div class="mb-2 col-sm-12 col-md-6">
+                                    <label class="form-label"><img style="width: 100px; height:100px; object-fit:cover;" src="../../backend/assets/images/{{$datas->image3}}" alt="{{$datas->name}} 3"></label>
+                                    <input type="file" id="" class="form-control" name="image3" value="{{ old('image3') }}" />
+                                    @error('image3')
+                                    <span class="text-danger">{{ $message }}</span>
+                                    @enderror
+                                </div>
+
+                                <div class="mb-2 col-sm-12 col-md-6">
+                                    <label class="form-label"><img style="width: 100px; height:100px; object-fit:cover;" src="../../backend/assets/images/{{$datas->image4}}" alt="{{$datas->name}} 4"></label>
+                                    <input type="file" id="" class="form-control" name="image4" value="{{ old('image4') }}" />
+                                    @error('image4')
+                                    <span class="text-danger">{{ $message }}</span>
+                                    @enderror
+                                </div>
 
                             </div>
 
