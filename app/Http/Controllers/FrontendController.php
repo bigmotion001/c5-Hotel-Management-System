@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Gallery;
 use App\Models\Roomtype;
 use Illuminate\Http\Request;
 
@@ -19,7 +20,10 @@ class FrontendController extends Controller
     
     //gallery route
     function Gallery() {
-        return view('frontend/gallery');
+
+        $datas = Gallery::orderBy('id', 'desc')->get();
+
+        return view('frontend/gallery', compact('datas'));
     }
 
     //Room_details route
