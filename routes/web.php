@@ -53,6 +53,8 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+//admin protected routes
+
 Route::middleware('admin')->group(function () {
     //====================>>>>amenities routes
     Route::get('/amenities', [UtilitiesController::class, 'amenities'])->name('amenities');
