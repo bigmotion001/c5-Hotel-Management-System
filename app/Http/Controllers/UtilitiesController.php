@@ -9,7 +9,6 @@ use App\Models\Gallery;
 use App\Models\Room;
 use App\Models\Roomtype;
 use Illuminate\Http\Request;
-use RealRashid\SweetAlert\Facades\Alert;
 
 class UtilitiesController extends Controller
 {
