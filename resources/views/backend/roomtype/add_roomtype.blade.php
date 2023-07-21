@@ -83,8 +83,7 @@
 
                                 <div class="mb-2 col-sm-12 col-md-6">
                                     <label class="form-label">Choose Amenities</label>
-                                    <select name="amenities" class="select2-size-lg form-select" multiple="multiple" id="large-select-multi">
-                                        <option value="{{ old('amenities') }}">{{ old('amenities') }}</option>
+                                    <select required name="amenities[]" class="form-control" id="amenities">
                                         @foreach($amenities as $amenity)
                                         <option value="{{$amenity->title}}">{{$amenity->title}}</option>
                                         @endforeach
@@ -96,8 +95,7 @@
 
                                 <div class="mb-2 col-sm-12 col-md-6">
                                     <label class="form-label">Choose Complements</label>
-                                    <select name="complements" class="select2-size-lg form-select" multiple="multiple" id="large-select-multi">
-                                        <option value="{{ old('complements') }}">{{ old('complements') }}</option>
+                                    <select required name="complements[]" class="form-control" id="complements">
                                         @foreach($complements as $complement)
                                         <option value="{{$complement->title}}">{{$complement->title}}</option>
                                         @endforeach
@@ -184,8 +182,6 @@
                                     <span class="text-danger">{{ $message }}</span>
                                     @enderror
                                 </div>
-
-
                             </div>
 
 
@@ -204,7 +200,15 @@
 
 
 
+<script>
+    $('#amenities').select2({
+        multiple: true
+    })
 
+    $('#complements').select2({
+        multiple: true
+    })
+</script>
 
 
 

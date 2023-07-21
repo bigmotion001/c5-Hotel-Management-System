@@ -13,7 +13,7 @@ use Illuminate\Http\Request;
 class UtilitiesController extends Controller
 {
     //fetch all amenity page
-    function amenities()
+    public function amenities()
     {
         $datas = Amenities::orderBy('id', 'desc')->get();
 
@@ -21,14 +21,14 @@ class UtilitiesController extends Controller
     }
 
     //add amenity page
-    function Add_amenities()
+    public function Add_amenities()
     {
         return view('backend/amenities/add_amenities');
     }
 
 
     //add amenity function
-    function Save_amenities(Request $request)
+    public function Save_amenities(Request $request)
     {
         $request->validate([
             'title' => 'required|string',
@@ -43,9 +43,8 @@ class UtilitiesController extends Controller
         return redirect('amenities')->with('success', 'Amenity Added Successfully');
     }
 
-
     //update amenity page
-    function Edit_amenity($id)
+    public function Edit_amenity($id)
     {
         $datas = Amenities::findOrFail($id);
 
@@ -54,7 +53,7 @@ class UtilitiesController extends Controller
 
 
     //update amenity function
-    function updated_amenity(Request $request, $id)
+    public function updated_amenity(Request $request, $id)
     {
         $data = Amenities::findOrFail($id);
 
@@ -361,8 +360,10 @@ class UtilitiesController extends Controller
         $data->child = $request->child;
         $data->fare = $request->fare;
         $data->cancellation_fee = $request->cancellation_fee;
-        $data->amenities = $request->amenities;
-        $data->complements = $request->complements;
+
+        $data->amenities = json_encode($request->amenities);
+        $data->complements = json_encode($request->complements);
+
         $data->total_rooms = $request->total_rooms;
         $data->total_beds = $request->total_beds;
         $data->description = $request->description;
@@ -437,8 +438,10 @@ class UtilitiesController extends Controller
         $data->child = $request->child;
         $data->fare = $request->fare;
         $data->cancellation_fee = $request->cancellation_fee;
-        $data->amenities = $request->amenities;
-        $data->complements = $request->complements;
+
+        $data->amenities = json_encode($request->amenities);
+        $data->complements = json_encode($request->complements);
+
         $data->total_rooms = $request->total_rooms;
         $data->total_beds = $request->total_beds;
         $data->description = $request->description;

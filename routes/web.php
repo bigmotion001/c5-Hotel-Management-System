@@ -15,6 +15,10 @@ Route::get('/about', [FrontendController::class, 'About'])->name('about_us');
 
 Route::get('/gallery', [FrontendController::class, 'Gallery'])->name('gallery');
 
+Route::get('/room_details/{id}', [FrontendController::class, 'Room_details'])->name('room_details');
+
+Route::get('/all_rooms', [FrontendController::class, 'All_rooms'])->name('all_rooms');
+
 
 //===============ADMIN ROUTES======================
 Route::prefix('management')->group(function () {
@@ -76,6 +80,8 @@ Route::middleware('admin')->group(function () {
     Route::post('/updated_amenities/{id}', [UtilitiesController::class, 'updated_amenity'])->name('updated_amenity');
 
     Route::get('/delete_amenities/{id}', [UtilitiesController::class, 'Delete_amenity'])->name('delete_amenity');
+
+    Route::get('/categories', [UtilitiesController::class, 'getAmenity'])->name('get-amenity');
 
 
     //====================>>>>complement routes

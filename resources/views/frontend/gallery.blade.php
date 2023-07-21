@@ -20,64 +20,17 @@
 <div class="container margin_120_95">
     <div class="isotope-wrapper">
         <div class="row justify-content-center">
-            <div class="item col-xl-4 col-lg-6 col-mb-6 mb-4">
+            @foreach($datas as $key => $data)
+            <div class="item col-xl-4 col-lg-6 col-mb-6 mb-4" style="height: 250px; overflow:hidden;border-radius:5%">
                 <div class="item-img" data-cue="slideInUp">
-                    <img src="frontend/img/gallery/1.jpg" alt="" />
+                    <img style="width:100%; height: 250px; object-fit:cover;" src="../backend/assets/images/{{$data->image}}" alt="" />
                     <div class="content">
-                        <a data-fslightbox="gallery_1" data-type="image" href="frontend/img/gallery/1.jpg"><i class="bi bi-arrows-angle-expand"></i></a>
+                        <a data-fslightbox="gallery_1" data-type="image" href="frontend/img/gallery/1.jpg">{{$data->title}}</a>
                     </div>
                 </div>
             </div>
-            <div class="item col-xl-4 col-lg-6 col-mb-6 mb-4">
-                <div class="item-img" data-cue="slideInUp">
-                    <img src="frontend/img/gallery/2.jpg" alt="" />
-                    <div class="content">
-                        <a data-fslightbox="gallery_1" data-type="image" href="frontend/img/gallery/2.jpg"><i class="bi bi-arrows-angle-expand"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="item col-xl-4 col-lg-6 col-mb-6 mb-4">
-                <div class="item-img" data-cue="slideInUp">
-                    <img src="frontend/img/gallery/3.jpg" alt="" />
-                    <div class="content">
-                        <a data-fslightbox="gallery_1" data-type="image" href="frontend/img/gallery/3.jpg"><i class="bi bi-arrows-angle-expand"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="item col-xl-4 col-lg-6 col-mb-6 mb-4">
-                <div class="item-img" data-cue="slideInUp">
-                    <img src="frontend/img/gallery/4.jpg" alt="" />
-                    <div class="content">
-                        <a data-fslightbox="gallery_1" data-type="image" href="frontend/img/gallery/4.jpg"><i class="bi bi-arrows-angle-expand"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="item col-xl-4 col-lg-6 col-mb-6 mb-4">
-                <div class="item-img" data-cue="slideInUp">
-                    <img src="frontend/img/gallery/5.jpg" alt="" />
-                    <div class="content">
-                        <a data-fslightbox="gallery_1" data-type="image" href="frontend/img/gallery/5.jpg"><i class="bi bi-arrows-angle-expand"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="item col-xl-4 col-lg-6 mb-4">
-                <div class="item-img" data-cue="slideInUp">
-                    <img src="frontend/img/gallery/6.jpg" alt="" />
-                    <div class="content">
-                        <a data-fslightbox="gallery_1" data-type="image" href="frontend/img/gallery/6.jpg"><i class="bi bi-arrows-angle-expand"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="item col-xl-4 col-lg-6 mb-4">
-                <div class="item-img" data-cue="slideInUp">
-                    <img src="frontend/img/gallery/7.jpg" alt="" />
-                    <div class="content">
-                        <a data-fslightbox="gallery_1" data-type="image" href="frontend/img/gallery/7.jpg"><i class="bi bi-arrows-angle-expand"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!--/row -->
+            @endforeach
+            
     </div>
     <!--/isotope-wrapper -->
 

@@ -10,61 +10,67 @@
         <div class="owl-slide background-image cover" data-background="url(frontend/img/hero_home_1.jpg)">
             <div class="opacity-mask d-flex align-items-center" data-opacity-mask="rgba(0, 0, 0, 0.5)">
                 <div class="container">
-                    <div class="row justify-content-center">
+                    <div class="row justify-content-center justify-content-md-start">
                         <div class="col-lg-6 static">
-                            <div class="slide-text white text-center">
+                            <div class="slide-text white">
                                 <small class="owl-slide-animated owl-slide-title">C5 Luxury Hotel
                                     Experience</small>
-                                <h2 class="owl-slide-animated owl-slide-title-2">A UNIQUE EXPERIENCE
-                                    WHERE TO STAY
-                                </h2>
-                                <div class="owl-slide-animated owl-slide-title-3">
-
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-10">
-                            <div class="row g-0 booking_form">
-                                <div class="col-lg-4 ">
-                                    <div class="form-group">
-                                        <input class="form-control" type="text" name="dates" placeholder="Check in / Check out" readonly="readonly">
-                                        <i class="bi bi-calendar2"></i>
-                                    </div>
-                                </div>
-                                <div class="col-lg-3 col-sm-6 pe-lg-0 pe-sm-1">
-                                    <div class="qty-buttons">
-                                        <label>Adults</label>
-                                        <input type="button" value="+" class="qtyplus" name="adults">
-                                        <input type="text" name="adults" id="adults" value="" class="qty form-control">
-                                        <input type="button" value="-" class="qtyminus" name="adults">
-                                    </div>
-                                </div>
-                                <div class="col-lg-3 col-sm-6 ps-lg-0 ps-sm-1">
-                                    <div class="qty-buttons">
-                                        <label>Childs</label>
-                                        <input type="button" value="+" class="qtyplus" name="childs">
-                                        <input type="text" name="childs" id="childs" value="" class="qty form-control">
-                                        <input type="button" value="-" class="qtyminus" name="childs">
-                                    </div>
-                                </div>
-                                <div class="col-lg-2">
-                                    <input type="submit" class="btn_search" value="Search">
-                                </div>
+                                <h2 class="owl-slide-animated owl-slide-title-2">A unique experience where to
+                                    stay</h2>
+                                <!-- <div class="owl-slide-animated owl-slide-title-3"><a class="btn_1 outline white mt-3" href="room-list-1.html">Read more</a>
+                                </div> -->
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        <!--/owl-slide-->
+        <div class="owl-slide background-image cover" data-background="url(frontend/img/hero_home_2.jpg)">
+            <div class="opacity-mask d-flex align-items-center" data-opacity-mask="rgba(0, 0, 0, 0.5)">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-6 static">
+                            <div class="slide-text white text-center">
+                                <small class="owl-slide-animated owl-slide-title">C5 Luxury Hotel
+                                    Experience</small>
+                                <h2 class="owl-slide-animated owl-slide-title-2">A truly immersive relax place
+                                </h2>
+                                <!-- <div class="owl-slide-animated owl-slide-title-3"><a class="btn_1 outline white mt-3" href="room-list-2.html">Read more</a>
+                                </div> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--/owl-slide-->
+        <div class="owl-slide background-image cover" data-background="url(frontend/img/parallax_bg.jpg)">
+            <div class="opacity-mask d-flex align-items-center" data-opacity-mask="rgba(0, 0, 0, 0.6)">
+                <div class="container">
+                    <div class="row justify-content-center justify-content-md-end">
+                        <div class="col-lg-6 static">
+                            <div class="slide-text text-end white">
+                                <small class="owl-slide-animated owl-slide-title">C5 Luxury Hotel
+                                    Experience</small>
+                                <h2 class="owl-slide-animated owl-slide-title-2">The experience of unique
+                                    holidays</h2>
+                                <!-- <div class="owl-slide-animated owl-slide-title-3"><a class="btn_1 outline white mt-3" href="room-list-3.html">Read more</a>
+                                </div> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--/owl-slide-->
+        </div>
     </div>
-</div>
-</div>
-<div class="mouse_wp">
-    <a href="#first_section" class="btn_scrollto">
-        <div class="mouse"></div>
-    </a>
-</div>
-<!-- / mouse -->
+    <div class="mouse_wp">
+        <a href="#first_section" class="btn_scrollto">
+            <div class="mouse"></div>
+        </a>
+    </div>
+    <!-- / mouse -->
 </div>
 <!--/carousel-->
 
@@ -115,85 +121,81 @@
 
 <div class="container margin_120_95">
     <div class="title mb-3">
-        <small data-cue="slideInUp">Luxury experience</small>
+        <small data-cue="slideInUp">C5 Luxury experience</small>
         <h2 data-cue="slideInUp" data-delay="200">Rooms & Suites</h2>
     </div>
     <div class="row justify-content-center add_bottom_90" data-cues="slideInUp" data-delay="300">
-        <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12">
-            <a href="room-details.html" class="box_cat_rooms">
+        @foreach($roomtype as $key => $room)
+        @if($key < 1) <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12">
+            <a href="{{route('room_details', $room->id)}}" class="box_cat_rooms">
                 <figure>
-                    <div class="background-image" data-background="url(frontend/img/rooms/1.jpg)"></div>
+                    <div class="background-image" data-background="url(../backend/assets/images/{{$room->image1}})"></div>
                     <div class="info">
-                        <small>From $250/night</small>
-                        <h3>Junior Suite</h3>
+                        <small>From &#8358;{{$room->fare}}/night</small>
+                        <h3>{{$room->name}}</h3>
                         <span>Read more</span>
                     </div>
                 </figure>
             </a>
-        </div>
-        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6">
-            <a href="room-details.html" class="box_cat_rooms">
-                <figure>
-                    <div class="background-image" data-background="url(frontend/img/rooms/2.jpg)"></div>
-                    <div class="info">
-                        <small>From $190/night</small>
-                        <h3>Deluxe Room</h3>
-                        <span>Read more</span>
-                    </div>
-                </figure>
-            </a>
-        </div>
-        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6">
-            <a href="room-details.html" class="box_cat_rooms">
-                <figure>
-                    <div class="background-image" data-background="url(frontend/img/rooms/3.jpg)"></div>
-                    <div class="info">
-                        <small>From $240/night</small>
-                        <h3>Superior Room</h3>
-                        <span>Read more</span>
-                    </div>
-                </figure>
-            </a>
-        </div>
-        <p class="text-end"><a href="room-list-1.html" class="btn_1 outline mt-2">View all Rooms</a></p>
     </div>
-    <!-- /row-->
+    @endif
+    @endforeach
 
-    <div class="title text-center mb-5">
-        <small data-cue="slideInUp">C5 Hotel</small>
-        <h2 data-cue="slideInUp" data-delay="100">Main Facilities</h2>
-    </div>
-    <div class="row mt-4">
-        <div class="col-xl-3 col-md-6">
-            <div class="box_facilities no-border" data-cue="slideInUp">
-                <!-- <i class="customicon-private-parking"></i> -->
-                <h3>Private Parking</h3>
-                <p>Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam.</p>
-            </div>
-        </div>
-        <div class="col-xl-3 col-md-6">
-            <div class="box_facilities" data-cue="slideInUp">
-                <!-- <i class="customicon-wifi"></i> -->
-                <h3>High Speed Wifi</h3>
-                <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium.</p>
-            </div>
-        </div>
-        <div class="col-xl-3 col-md-6">
-            <div class="box_facilities" data-cue="slideInUp">
-                <!-- <i class="customicon-cocktail"></i> -->
-                <h3>Bar & Restaurant</h3>
-                <p>Similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.</p>
-            </div>
-        </div>
-        <div class="col-xl-3 col-md-6">
-            <div class="box_facilities" data-cue="slideInUp">
-                <!-- <i class="customicon-swimming-pool"></i> -->
-                <h3>Swimming Pool</h3>
-                <p>Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus.</p>
-            </div>
+    @foreach($roomtype as $key => $rooms)
+    @if($key > 0 && $key < 3) <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6">
+        <a href="{{route('room_details', $rooms->id)}}" class="box_cat_rooms">
+            <figure>
+                <div class="background-image" data-background="url(../backend/assets/images/{{$rooms->image1}})"></div>
+                <div class="info">
+                    <small>From &#8358;{{$rooms->fare}}/night</small>
+                    <h3>{{$rooms->name}}</h3>
+                    <span>Read more</span>
+                </div>
+            </figure>
+        </a>
+</div>
+@endif
+@endforeach
+
+<p class="text-end"><a href="{{route('all_rooms')}}" class="btn_1 outline mt-2">View all Rooms</a></p>
+</div>
+<!-- /row-->
+
+<div class="title text-center mb-5">
+    <small data-cue="slideInUp">C5 Hotel</small>
+    <h2 data-cue="slideInUp" data-delay="100">Main Facilities</h2>
+</div>
+<div class="row mt-4">
+    <div class="col-xl-3 col-md-6">
+        <div class="box_facilities no-border" data-cue="slideInUp">
+            <!-- <i class="customicon-private-parking"></i> -->
+            <h3>Private Parking</h3>
+            <p>Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam.</p>
         </div>
     </div>
-    <!-- /Row -->
+    <div class="col-xl-3 col-md-6">
+        <div class="box_facilities" data-cue="slideInUp">
+            <!-- <i class="customicon-wifi"></i> -->
+            <h3>High Speed Wifi</h3>
+            <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium.</p>
+        </div>
+    </div>
+    <div class="col-xl-3 col-md-6">
+        <div class="box_facilities" data-cue="slideInUp">
+            <!-- <i class="customicon-cocktail"></i> -->
+            <h3>Bar & Restaurant</h3>
+            <p>Similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.</p>
+        </div>
+    </div>
+    <div class="col-xl-3 col-md-6">
+        <div class="box_facilities" data-cue="slideInUp">
+            <!-- <i class="customicon-swimming-pool"></i> -->
+            <h3>Swimming Pool</h3>
+            <p>Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus.</p>
+        </div>
+    </div>
+</div>
+<!-- /Row -->
 </div>
 <!-- /container-->
 

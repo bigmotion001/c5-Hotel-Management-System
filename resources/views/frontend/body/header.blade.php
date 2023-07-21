@@ -24,14 +24,15 @@
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500&amp;family=Montserrat:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <script src="https://use.fontawesome.com/34a4d426e8.js"></script>
 
     <!-- BASE CSS -->
-    <link href="{{ ('frontend/css/bootstrap.min.css') }}" rel="stylesheet">
-    <link href="{{ ('frontend/css/style.css') }}" rel="stylesheet">
-    <link href="{{ ('frontend/css/vendors.min.css') }}" rel="stylesheet">
+    <link href="{{ ('../frontend/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ ('../frontend/css/style.css') }}" rel="stylesheet">
+    <link href="{{ ('../frontend/css/vendors.min.css') }}" rel="stylesheet">
 
     <!-- YOUR CUSTOM CSS -->
-    <link href="{{ ('frontend/css/custom.css') }}" rel="stylesheet">
+    <link href="{{ ('../frontend/css/custom.css') }}" rel="stylesheet">
 
 
 </head>
@@ -67,10 +68,12 @@
                         <div id="all_rooms" class="dropdown-content">
 
                             <ul>
-                                <a href="/">
-                                    <li>Standard Room</li>
-                                </a>
-                                <a href="/">
+                                @foreach($roomtype as $key => $room)
+                                    <a href="{{route('room_details', $room->id)}}">
+                                        <li>{{$room->name}}</li>
+                                    </a>
+                                @endforeach
+                                <!-- <a href="/">
                                     <li>Executive Room</li>
                                 </a>
                                 <a href="/">
@@ -90,7 +93,7 @@
                                 </a>
                                 <a href="/">
                                     <li>Presidential Suite</li>
-                                </a>
+                                </a> -->
                             </ul>
 
                         </div>
