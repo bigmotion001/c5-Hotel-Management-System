@@ -28,6 +28,12 @@ Route::prefix('management')->group(function () {
     Route::get('login', [AdminController::class, 'Index'])->name('admin_login');
     Route::post('/login/owner', [AdminController::class, 'AdminLogin'])->name('admin.login');
     Route::get('/dashboard', [AdminController::class, 'Dashboard'])->name('admin.dashboard')->middleware('admin');
+    //admin profile
+    Route::get('/profile', [AdminController::class, 'AdminProfile'])->name('admin_profile')->middleware('admin');
+    //admin profile update
+    Route::post('/profile/update', [AdminController::class, 'AdminProfileUpdate'])->name('admin_update_profile')->middleware('admin');
+    //admin password update
+    Route::post('/update/password', [AdminController::class, 'AdminPasswordUpdate'])->name('admin_update_password')->middleware('admin');
 
 
 

@@ -3,8 +3,10 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Admin;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class AdminController extends Controller
 {
@@ -26,5 +28,42 @@ class AdminController extends Controller
     //admin dash baord
     public function Dashboard(){
         return view('admin.index');
+    }
+
+    //admin profile
+    public function AdminProfile(){
+        $admin = Admin::where('id', Auth::guard('admin')->user()->id)->first();
+
+return view('admin.profile.index', compact('admin'));
+    }
+
+    //admin update profile
+    public function AdminProfileUpdate(Request $request){
+        Admin::where('id', Auth::guard('admin')->user()->id)->update([
+            'name' => $request->name,
+            'email' => $request->email,
+        ]);
+        return redirect()->back()->with('success', 'Admin profile updated Successfully');
+    }
+
+    //admin update password
+    public function AdminPasswordUpdate(Request $request){
+
+        $request->validate([
+            'password'=>'required|confirmed',
+            'current_password'=>'required',
+        ]);
+    //check password
+    $hashedPassword = Auth::guard('admin')->user()->password;
+        if(Hash::check($request->current_password, $hashedPassword)){
+            Admin::findorFail(Auth::guard('admin')->user()->id)->update([
+            'password' => Hash::make($request->password),
+            ]);
+            return redirect()->back()->with('success', 'Password updated Successfully');
+
+    }else{
+        return redirect()->back()->with('error', 'Current password is incorrect');
+
+    }
     }
 }

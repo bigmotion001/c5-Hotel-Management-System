@@ -55,11 +55,11 @@
 
 
 
-<<<<<<< HEAD
+
 <script src="{{ asset('backend/assets/vendor_components/datatable/datatables.min.js') }}"></script>
-=======
+
 <script src="{{ asset('../assets/vendor_components/datatable/datatables.min.js') }}"></script>
->>>>>>> e03c6ea42f358c8b26bd312b2809698465678647
+
 <script src="{{ asset('backend/js/pages/data-table.js') }}"></script>
 
 
@@ -78,10 +78,6 @@
 
 <!---datatable--->
 
-<<<<<<< HEAD
-<script src="{{ asset('backend/app-assets/vendors/js/forms/select/select2.full.min.js') }}"></script>
-
-<script src="{{ asset('backend/app-assets/js/scripts/forms/form-select2.min.js') }}"></script>
 
 
 <script>
@@ -93,8 +89,8 @@
             });
         }
     })
-</script>
-<script>
+
+
     $(function() {
 
         @if (Session::has('success'))
@@ -121,53 +117,53 @@
             text: '{{ Session::get('warning') }}'
         })
     @endif
-=======
 
 
-<script>
-  $(window).on('load', function() {
-    if (feather) {
-      feather.replace({
-        width: 14,
-        height: 14
-      });
-    }
-  })
-</script>
-<script>
-  $(function() {
 
-    @if(Session::has('success'))
-    Swal.fire({
-      icon: 'success',
-      title: 'Great!',
-      text: '{{ Session::get("success") }}'
+
+    $(window).on('load', function() {
+        if (feather) {
+            feather.replace({
+                width: 14,
+                height: 14
+            });
+        }
     })
+
+
+    $(function() {
+
+        @if (Session::has('success'))
+            Swal.fire({
+                icon: 'success',
+                title: 'Great!',
+                text: '{{ Session::get('success') }}'
+            })
+        @endif
+    });
+
+    @if (Session::has('error'))
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: '{{ Session::get('error') }}'
+        })
     @endif
-  });
 
-  @if(Session::has('error'))
-  Swal.fire({
-    icon: 'error',
-    title: 'Oops...',
-    text: '{{ Session::get("error") }}'
-  })
-  @endif
-
-  @if(Session::has('warning'))
-  Swal.fire({
-    icon: 'warning',
-    title: 'Oops...',
-    text: '{{ Session::get("warning") }}'
-  })
-  @endif
->>>>>>> e03c6ea42f358c8b26bd312b2809698465678647
+    @if (Session::has('warning'))
+        Swal.fire({
+            icon: 'warning',
+            title: 'Oops...',
+            text: '{{ Session::get('warning') }}'
+        })
+    @endif
 
 
 
 
 
-<<<<<<< HEAD
+
+
     //delete
     $(function() {
         $(document).on('click', '#delete', function(e) {
@@ -197,45 +193,45 @@
 
 
         });
-=======
-  //delete
-  $(function() {
-    $(document).on('click', '#delete', function(e) {
-      e.preventDefault();
-      var link = $(this).attr("href");
+
+        //delete
+        $(function() {
+            $(document).on('click', '#delete', function(e) {
+                e.preventDefault();
+                var link = $(this).attr("href");
 
 
-      Swal.fire({
-        title: 'Are you sure?',
-        text: "To Deleted This Data!",
-        icon: 'warning',
-        showCancelButton: true,
-        confirmButtonColor: '#3085d6',
-        cancelButtonColor: '#d33',
-        cancelButtonText: 'No',
-        confirmButtonText: 'Yes, Delete!'
-      }).then((result) => {
-        if (result.isConfirmed) {
-          Swal.fire(
-            'Deleted!',
-            'Data Has Been Deleted Successfully.',
-            'success'
-          )
-          window.location.href = link
-        }
-      });
+                Swal.fire({
+                    title: 'Are you sure?',
+                    text: "To Deleted This Data!",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    cancelButtonText: 'No',
+                    confirmButtonText: 'Yes, Delete!'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        Swal.fire(
+                            'Deleted!',
+                            'Data Has Been Deleted Successfully.',
+                            'success'
+                        )
+                        window.location.href = link
+                    }
+                });
+
+
+            });
+
+        });
 
 
     });
 
-  });
->>>>>>> e03c6ea42f358c8b26bd312b2809698465678647
-
-    });
 
 
 
-<<<<<<< HEAD
 
     //toastr notification
     window.addEventListener('alert', event => {
@@ -266,37 +262,35 @@
             }
         });
     });
-=======
-  //toastr notification
-  window.addEventListener('alert', event => {
-    toastr[event.detail.type](event.detail.message,
-      event.detail.title ?? ''), toastr.options = {
-      "closeButton": true,
-      "progressBar": true,
-    }
-  });
 
-
-
-  ClassicEditor
-    .create(document.querySelector('#editor'))
-    .then(editor => {
-      console.log(editor);
-    })
-    .catch(error => {
-      console.error(error);
+    window.addEventListener('alert', event => {
+        toastr[event.detail.type](event.detail.message,
+            event.detail.title ?? ''), toastr.options = {
+            "closeButton": true,
+            "progressBar": true,
+        }
     });
 
-  $(window).ready(function() {
-    $("form").on("keypress", function(event) {
-      var keyPressed = event.keyCode || event.which;
-      if (keyPressed === 13) {
-        event.preventDefault();
-        return false;
-      }
+
+
+    ClassicEditor
+        .create(document.querySelector('#editor'))
+        .then(editor => {
+            console.log(editor);
+        })
+        .catch(error => {
+            console.error(error);
+        });
+
+    $(window).ready(function() {
+        $("form").on("keypress", function(event) {
+            var keyPressed = event.keyCode || event.which;
+            if (keyPressed === 13) {
+                event.preventDefault();
+                return false;
+            }
+        });
     });
-  });
->>>>>>> e03c6ea42f358c8b26bd312b2809698465678647
 </script>
 </body>
 
