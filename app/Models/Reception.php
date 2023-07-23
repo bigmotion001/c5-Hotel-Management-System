@@ -21,6 +21,7 @@ protected $gard = 'reception';
 
     protected $fillable = [
         'name',
+        'phone',
         'email',
         'password',
         'status',

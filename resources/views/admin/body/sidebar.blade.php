@@ -116,7 +116,7 @@
 
 
 
-        <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="users"></i><span class="menu-title text-truncate" data-i18n="users">Receptionists</span></a></li>
+        <li class=" nav-item"><a class="d-flex align-items-center" href="{{ route('admin-view-reception') }}"><i data-feather="users"></i><span class="menu-title text-truncate" data-i18n="users">Receptionists</span></a></li>
 
         <li class=" nav-item"><a class="d-flex align-items-center" href="{{ route('admin_profile') }}"><i data-feather="user"></i><span class="menu-title text-truncate" data-i18n="user">Admin Profile</span></a></li>
 
