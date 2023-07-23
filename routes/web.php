@@ -5,6 +5,7 @@ use App\Http\Controllers\Backend\SettingsController;
 use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ReceptionController;
+use App\Http\Controllers\SectionsController;
 use App\Http\Controllers\UtilitiesController;
 use Illuminate\Support\Facades\Route;
 
@@ -162,6 +163,15 @@ Route::middleware('admin')->group(function () {
     Route::get('/delete_gallery/{id}', [UtilitiesController::class, 'Delete_gallery'])->name('delete_gallery');
 
 
+
+//===========================WEBSITE SEETINGS CONTROLLER ROUTES
+
+Route::controller(SectionsController::class)->group(function () {
+    //carousel page
+    Route::get('/carousel', 'Carousel')->name('carousel');
+  
+
+});
 
 
 //===========================WEBSITE SEETINGS CONTROLLER ROUTES
