@@ -85,7 +85,7 @@
                 </li>
 
                 <li class="#">
-                    <a class="d-flex align-items-center" href="#"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="List">About Us</span></a>
+                    <a class="d-flex align-items-center" href="{{route('about_us')}}"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="List">About Us</span></a>
                 </li>
 
         </li>
