@@ -28,7 +28,7 @@
               <div class="col-lg-5">
                   <div class="intro">
                       <div class="title">
-                          <small>Paradise Hotel</small>
+                          <small>C5 Hotel</small>
                           <h2>Our History</h2>
                       </div>
                       <p class="lead">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab.</p>
@@ -42,53 +42,7 @@
       </div>
       <!-- /container -->
 
-      <div class="bg_white">
-          <div class="container margin_120_95">
-              <div>
-                  <div class="row justify-content-between">
-                      <div class="col-lg-5 fixed_title">
-                          <div class="title">
-                              <small>Paradise Hotel</small>
-                              <h2>Local Amenities</h2>
-                              <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. </p>
-                          </div>
-                          <div class="list_ok">
-                              <ul>
-                                  <li data-cue="slideInUp" data-delay="200">
-                                      <h5>Local Restaurants</h5>
-                                      <p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur.</p>
-                                  </li>
-                                  <li data-cue="slideInUp" data-delay="300">
-                                      <h5>Nature</h5>
-                                      <p>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur.</p>
-                                  </li>
-                                  <li data-cue="slideInUp" data-delay="400">
-                                      <h5>Art and Culture</h5>
-                                      <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.</p>
-                                  </li>
-                              </ul>
-                          </div>
-                      </div>
-                      <div class="col-lg-6 ">
-                          <div data-cue="fadeIn" data-delay="500">
-                              <figure><img src="frontend/img/local_amenities_1.jpg" alt="" class="img-fluid rounded-img"></figure>
-                          </div>
-                          <div data-cue="fadeIn" data-delay="500">
-                              <figure>
-                                  <img src="frontend/img/local_amenities_2.jpg" alt="" class="img-fluid rounded-img">
-                              </figure>
-                          </div>
-                          <div data-cue="fadeIn" data-delay="500">
-                              <figure>
-                                  <img src="frontend/img/local_amenities_3.jpg" alt="" class="img-fluid rounded-img">
-                              </figure>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-          </div>
-          <!-- /container-->
-      </div>
+      
       <!-- /bg_white -->
 
 
