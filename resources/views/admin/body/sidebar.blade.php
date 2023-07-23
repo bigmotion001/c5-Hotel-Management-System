@@ -79,7 +79,7 @@
 
         <li class="  nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="home"></i><span class="menu-title text-truncate" data-i18n="Invoice">Manage Section</span></a>
             <ul class="menu-content">
-
+                
                 <li class="#">
                     <a class="d-flex align-items-center" href="{{route('carousel')}}"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="List">Carousel</span></a>
                 </li>
@@ -88,7 +88,8 @@
                     <a class="d-flex align-items-center" href="#"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="List">About Us</span></a>
                 </li>
 
-            </ul>
+        </li>
+        </ul>
         </li>
 
 

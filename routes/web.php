@@ -167,8 +167,19 @@ Route::middleware('admin')->group(function () {
 //===========================WEBSITE SEETINGS CONTROLLER ROUTES
 
 Route::controller(SectionsController::class)->group(function () {
-    //carousel page
+    
+    //===========================>>>Carousel
     Route::get('/carousel', 'Carousel')->name('carousel');
+
+    Route::get('/add_carousel', 'Add_carousel')->name('add_carousel');
+
+    Route::post('/save_carousel', 'Save_carousel')->name('save_carousel');
+
+    Route::get('/edit_carousel/{id}', 'Edit_carousel')->name('edit_carousel');
+
+    Route::post('/updated_carousel/{id}', 'Updated_carousel')->name('updated_carousel');
+
+    Route::get('/delete_carousel/{id}', 'Delete_carousel')->name('delete_carousel');
   
 
 });
