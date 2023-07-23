@@ -41,4 +41,11 @@ class FrontendController extends Controller
 
         return view('frontend/all_rooms', compact('datas'));
     }
+
+    //user_dashboard route
+    function user_dashboard() {
+
+
+        return view('frontend/user_dashboard');
+    }
 }

@@ -49,7 +49,7 @@
 
         <div class="nav__bar">
             <div class="icons-box">
-                <label for="show-menu" class="menu-icon"><i class="fa fa-bars"></i></label>
+                <label id="menu" for="show-menu" class="menu-icon"><i class="fa fa-bars"></i></label>
                 <a href="{{ url('/') }}" class="c5"><img src="{{ asset($site->logo) }}" alt=""></a>
             </div>
 
@@ -60,6 +60,7 @@
             <nav class="menu-list">
                 <ul>
                     <li><a href="/">Home</a></li>
+
                     <li><a href="{{route('about_us')}}">About Us</a></li>
 
 
@@ -69,7 +70,7 @@
 
                             <ul>
                                 @foreach($roomtype as $key => $room)
-                                    <a href="{{route('room_details', $room->id)}}">
+                                    <a class="drop" href="{{route('room_details', $room->id)}}">
                                         <li>{{$room->name}}</li>
                                     </a>
                                 @endforeach
@@ -101,6 +102,7 @@
 
                     <li><a href="{{route('contact_us')}}">Contact</a></li>
                     <li><a href="{{route('gallery')}}">Photo Gallery</a></li>
+                    <li><a href="{{route('user_dashboard')}}">Dashboard</a></li>
 
                 </ul>
 

@@ -1,6 +1,6 @@
 </main>
 
-<footer class="revealed">
+<footer class="revealed" style="z-index: -1;">
     <div class="footer_bg">
         <div class="gradient_over"></div>
         <div class="background-image" data-background="url(img/rooms/3.jpg)"></div>
@@ -87,16 +87,38 @@
 <script>
     let rooms = document.getElementById('rooms')
 
+    let sideBar = document.getElementById('side_bar')
+
+    let openBtn = document.getElementById('open')
+
+    let all_rooms = document.getElementById('all_rooms')
+
+    let menu = document.getElementById('menu')
+
+
     rooms.addEventListener('click', function() {
-
-        let all_rooms = document.getElementById('all_rooms')
-
-        // console.log(all_rooms)
 
         all_rooms.classList.toggle('dropdown_ative')
 
+        sideBar.classList.remove('side__bar__active')
+
         document.getElementById('angle').classList.toggle('rotate')
     })
+
+
+    openBtn.addEventListener('click', function() {
+        // console.log(sideBar)
+
+        sideBar.classList.toggle('side__bar__active')
+
+        all_rooms.classList.remove('dropdown_ative')
+    })
+
+    menu.addEventListener('click', function(){
+        sideBar.classList.remove('side__bar__active')
+        all_rooms.classList.remove('dropdown_ative')
+    })
+
 </script>
 
 </body>
