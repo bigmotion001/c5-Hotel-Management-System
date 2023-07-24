@@ -61,7 +61,7 @@
                 <ul>
                     <li><a href="/">Home</a></li>
 
-                    <li><a href="{{route('about_us')}}">About Us</a></li>
+                    <li><a href="{{route('about_us_frontend')}}">About Us</a></li>
 
 
                     <li class="dropdown">

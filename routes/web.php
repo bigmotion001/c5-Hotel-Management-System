@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Route;
 //===============FRONTEND ROUTES======================
 Route::get('/contact', [FrontendController::class, 'Contact'])->name('contact_us');
 
-Route::get('/about', [FrontendController::class, 'About'])->name('about_us');
+Route::get('/about', [FrontendController::class, 'About'])->name('about_us_frontend');
 
 Route::get('/gallery', [FrontendController::class, 'Gallery'])->name('gallery');
 
