@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\About;
 use App\Models\Carousel;
 use App\Models\Facilities;
+use App\Models\Testimonials;
 use Illuminate\Http\Request;
 
 class SectionsController extends Controller
@@ -214,5 +215,91 @@ class SectionsController extends Controller
         $data->delete();
 
         return redirect('facilities')->with('success', 'Facilities Deleted Successfully');
+    }
+
+
+    //testimonials page
+    public function Testimonials()
+    {
+        $datas = Testimonials::orderBy('id', 'desc')->get();
+
+        return view('backend.testimonials.testimonials', compact('datas'));
+    }
+
+
+    //Add testimonials page
+    function Add_testimonials()
+    {
+        return view('backend.testimonials.add_testimonials');
+    }
+
+
+    //Add testimonials function
+    function Save_testimonials(Request $request)
+    {
+        $request->validate([
+            'name' => 'required',
+            'testimony' => 'required',
+            'image' => 'required',
+        ]);
+
+        $data = new Testimonials();
+
+        $data->name = $request->name;
+        $data->testimony = $request->testimony;
+
+        $imageName = time() . '_' . $request->image->getClientOriginalExtension();
+
+        $request->image->move('uploads/images', $imageName);
+
+        $data->image = $imageName;
+
+        $data->save();
+
+        return redirect('testimonials')->with('success', 'Testimonials Added Successfully');
+    }
+
+    //Edit testimonials page
+    public function Edit_testimonials($id)
+    {
+        $datas = Testimonials::findOrFail($id);
+
+        return view('backend.testimonials.edit_testimonials', compact('datas'));
+    }
+
+    //Update testimonials function
+    function Updated_testimonials(Request $request, $id)
+    {
+        $data = Testimonials::findOrFail($id);
+
+        $request->validate([
+            'name' => 'required',
+            'testimony' => 'required',
+        ]);
+
+        $data->name = $request->name;
+        $data->testimony = $request->testimony;
+
+        if ($request->image) {
+            $imageName = time() . '_' . $request->image->getClientOriginalExtension();
+
+            $request->image->move('uploads/images', $imageName);
+
+            $data->image = $imageName;
+        }
+
+        $data->save();
+
+        return redirect('testimonials')->with('success', 'Testimonials Updated Successfully');
+    }
+
+    //Delete testimonials function
+    public function Delete_testimonials($id)
+    {
+        $data = Testimonials::findOrFail($id);
+
+        $data->delete();
+
+        return redirect('testimonials')->with('success', 'Testimonials Deleted Successfully');
     }
 }

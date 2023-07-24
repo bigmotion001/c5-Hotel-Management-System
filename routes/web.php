@@ -201,7 +201,7 @@ Route::middleware('admin')->group(function () {
         Route::get('/delete_facilities/{id}', 'Delete_facilities')->name('delete_facilities');
 
         //===========================>>>Testimonial Routes
-        Route::get('/testimonials', 'testimonials')->name('testimonials');
+        Route::get('/testimonials', 'Testimonials')->name('testimonials');
 
         Route::get('/add_testimonials', 'Add_testimonials')->name('add_testimonials');
 
