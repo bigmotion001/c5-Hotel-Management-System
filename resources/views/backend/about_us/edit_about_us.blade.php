@@ -60,7 +60,7 @@
                                 </div>
 
                                 <div class="mb-2 col-sm-12 col-md-6">
-                                    <label class="form-label"><img style="width: 100px; height:100px; object-fit:cover;" src="../../uploads/images/{{$datas->image1}}" alt="{{$datas->name}} 1"></label>
+                                    <label class="form-label"><img style="width: 100px; height:100px; object-fit:cover;" src="../../uploads/images/{{$datas->image2}}" alt="{{$datas->name}} 1"></label>
                                     <input type="file" id="" class="form-control" name="image2" value="{{ old('image2') }}" />
                                     @error('image2')
                                     <span class="text-danger">{{ $message }}</span>

@@ -15,8 +15,7 @@
                             <div class="slide-text white">
                                 <small class="owl-slide-animated owl-slide-title">C5 Luxury Hotel
                                     Experience</small>
-                                <h2 class="owl-slide-animated owl-slide-title-2">A unique experience where to
-                                    stay</h2>
+                                <h2 class="owl-slide-animated owl-slide-title-2">A unique experience where to stay</h2>
                                 <!-- <div class="owl-slide-animated owl-slide-title-3"><a class="btn_1 outline white mt-3" href="room-list-1.html">Read more</a>
                                 </div> -->
                             </div>
