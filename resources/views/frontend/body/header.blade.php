@@ -17,7 +17,7 @@
 
     <!-- Favicons-->
     <link rel="shortcut icon" href="{{ asset($site->favicon) }}" type="image/x-icon">
-    
+
 
     <!-- GOOGLE WEB FONT-->
     <link rel="preconnect" href="https://fonts.googleapis.com/">
@@ -102,14 +102,18 @@
 
                     <li><a href="{{route('contact_us')}}">Contact</a></li>
                     <li><a href="{{route('gallery')}}">Photo Gallery</a></li>
+                    @guest()
+                    <li><a href="{{route('login')}}">Login</a></li>
+                    @else
                     <li><a href="{{route('user_dashboard')}}">Dashboard</a></li>
+                    @endguest
 
                 </ul>
 
             </nav>
 
             <div>
-                <a href="/" class="btn_book">Book Now</a>
+                <a href="/#booking_section" class="btn_book">Book Now</a>
 
             </div>
 

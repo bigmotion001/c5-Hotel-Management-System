@@ -33,8 +33,8 @@
             <!-- <span class="close fa fa-close"></span> -->
 
             <ul>
-                <li><a href="/"><span class="fa fa-home"></span> Dashboard</a></li>
-                <li><a href="/"><span class="fa fa-sticky-note"></span> Booking Request</a></li>
+                <li><a href="{{ route('user_dashboard') }}"><span class="fa fa-home"></span> Dashboard</a></li>
+                <li><a href="/#booking_section"><span class="fa fa-sticky-note"></span> Booking Request</a></li>
                 <li><a href="/"><span class="fa fa-medium"></span> My Bookings</a></li>
                 <li><a href="/"><span class="fa fa-credit-card-alt"></span> Payment Log</a></li>
                 <li><a href="/"><span class="fa fa-ticket"></span> Open Ticket</a></li>
@@ -156,7 +156,7 @@
                         <td>Active</td>
                         <td>Change</td>
                     </tr>
-                    
+
                 </table>
             </div>
 

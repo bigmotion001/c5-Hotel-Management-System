@@ -46,11 +46,11 @@ eval("\$complements = $str2;");
                     <h2>{{$datas->name}}</h2>
                 </div>
                 <p>{{$datas->description}}</p>
-                
+
             </div>
             <div class="row col-lg-6">
                 <div class="col-sm-12 room_facilities_list">
-                    
+
                     <ul data-cues="slideInLeft">
 
                         <h5 style="margin-left: 5px;">Amenities:</h5>
@@ -73,8 +73,17 @@ eval("\$complements = $str2;");
                         @endforeach
 
                     </ul>
+
                 </div>
+
             </div>
+           <div class="text-center mt-5">
+            @guest()
+            <a class="btn_1 outline" href="/#booking_section">Login to make a reservation</a>
+            @else
+            <a class="btn_1 outline" href="#booking_section">Make a reservation</a>
+            @endguest
+           </div>
         </div>
         <!-- /row -->
     </div>
