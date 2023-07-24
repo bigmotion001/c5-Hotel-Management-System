@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\About;
 use App\Models\Carousel;
-
+use App\Models\Facilities;
 use Illuminate\Http\Request;
 
 class SectionsController extends Controller
@@ -143,5 +143,76 @@ class SectionsController extends Controller
         $data->save();
 
         return redirect('about_us')->with('success', 'About Us Updated Successfully');
+    }
+
+
+    //facilities page
+    public function Facilities()
+    {
+        $datas = Facilities::orderBy('id', 'desc')->get();
+
+        return view('backend.facilities.facilities', compact('datas'));
+    }
+
+
+    //Add facilities page
+    function Add_facilities()
+    {
+        return view('backend.facilities.add_facilities');
+    }
+
+
+    //Add facilities function
+    function Save_facilities(Request $request)
+    {
+        $request->validate([
+            'title' => 'required',
+            'sub_title' => 'required',
+        ]);
+
+        $data = new Facilities();
+
+        $data->title = $request->title;
+        $data->sub_title = $request->sub_title;
+
+        $data->save();
+
+        return redirect('facilities')->with('success', 'Facilities Added Successfully');
+    }
+
+    //Edit facilities page
+    public function Edit_facilities($id)
+    {
+        $datas = Facilities::findOrFail($id);
+
+        return view('backend.facilities.edit_facilities', compact('datas'));
+    }
+
+    //Update facilities function
+    function Updated_facilities(Request $request, $id)
+    {
+        $data = Facilities::findOrFail($id);
+
+        $request->validate([
+            'title' => 'required',
+            'sub_title' => 'required',
+        ]);
+
+        $data->title = $request->title;
+        $data->sub_title = $request->sub_title;
+
+        $data->save();
+
+        return redirect('facilities')->with('success', 'Facilities Updated Successfully');
+    }
+
+    //Delete facilities function
+    public function Delete_facilities($id)
+    {
+        $data = Facilities::findOrFail($id);
+
+        $data->delete();
+
+        return redirect('facilities')->with('success', 'Facilities Deleted Successfully');
     }
 }

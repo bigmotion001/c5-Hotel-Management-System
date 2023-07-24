@@ -199,6 +199,19 @@ Route::middleware('admin')->group(function () {
         Route::post('/updated_facilities/{id}', 'Updated_facilities')->name('updated_facilities');
 
         Route::get('/delete_facilities/{id}', 'Delete_facilities')->name('delete_facilities');
+
+        //===========================>>>Testimonial Routes
+        Route::get('/testimonials', 'testimonials')->name('testimonials');
+
+        Route::get('/add_testimonials', 'Add_testimonials')->name('add_testimonials');
+
+        Route::post('/save_testimonials', 'Save_testimonials')->name('save_testimonials');
+
+        Route::get('/edit_testimonials/{id}', 'Edit_testimonials')->name('edit_testimonials');
+
+        Route::post('/updated_testimonials/{id}', 'Updated_testimonials')->name('updated_testimonials');
+
+        Route::get('/delete_testimonials/{id}', 'Delete_testimonials')->name('delete_testimonials');
     });
 
 
