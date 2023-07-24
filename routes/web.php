@@ -37,6 +37,17 @@ Route::prefix('management')->group(function () {
     Route::post('/update/password', [AdminController::class, 'AdminPasswordUpdate'])->name('admin_update_password')->middleware('admin');
 
 
+    //admin view receptionist
+    Route::get('/receptionist', [AdminController::class, 'AdminViewReceptionists'])->name('admin-view-reception')->middleware('admin');
+
+    //admin add receptionist
+    Route::post('/receptionist/add', [AdminController::class, 'AdminAddReceptionists'])->name('admin-add-recept')->middleware('admin');
+    //admin dlelete receptionist
+    Route::get('/receptionist/delete/{id}', [AdminController::class, 'AdminDELETEReceptionists'])->name('delete-recept')->middleware('admin');
+    //admin edit receptionist
+    Route::post('/receptionist/update/{id}', [AdminController::class, 'AdminUPDATEReceptionists'])->name('admin-update-recept')->middleware('admin');
+
+
 
     //==================== Utility Routes ===================
 });
