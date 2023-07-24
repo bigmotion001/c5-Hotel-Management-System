@@ -5,13 +5,14 @@ use App\Http\Controllers\Backend\SettingsController;
 use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ReceptionController;
+use App\Http\Controllers\SectionsController;
 use App\Http\Controllers\UtilitiesController;
 use Illuminate\Support\Facades\Route;
 
 //===============FRONTEND ROUTES======================
 Route::get('/contact', [FrontendController::class, 'Contact'])->name('contact_us');
 
-Route::get('/about', [FrontendController::class, 'About'])->name('about_us');
+Route::get('/about', [FrontendController::class, 'About'])->name('about_us_frontend');
 
 Route::get('/gallery', [FrontendController::class, 'Gallery'])->name('gallery');
 
@@ -65,10 +66,9 @@ Route::prefix('reception')->group(function () {
 
 Route::get('/', function () {
     $site = App\Models\SiteSetting::find(1);
-    if($site->maintenace == 1){
+    if ($site->maintenace == 1) {
         return view('frontend.coming-soon');
-
-    }else{
+    } else {
         return view('frontend.index');
     }
 });
@@ -174,22 +174,68 @@ Route::middleware('admin')->group(function () {
 
 
 
+    //===========================WEBSITE SEETINGS CONTROLLER ROUTES
 
-//===========================WEBSITE SEETINGS CONTROLLER ROUTES
+    Route::controller(SectionsController::class)->group(function () {
 
-Route::controller(SettingsController::class)->group(function () {
-    //site setting page
-    Route::get('/setting/site', 'SiteSetting')->name('site-setting');
-    //site update
-    Route::post('/setting/site/update', 'UpdateSiteSetting')->name('update-site');
-    //site update logo
-    Route::post('/setting/site/update/logo', 'UpdateSiteSettingLogo')->name('update-site-logo');
+        //===========================>>>Carousel Routes
+        Route::get('/carousel', 'Carousel')->name('carousel');
 
-});
+        Route::get('/add_carousel', 'Add_carousel')->name('add_carousel');
+
+        Route::post('/save_carousel', 'Save_carousel')->name('save_carousel');
+
+        Route::get('/edit_carousel/{id}', 'Edit_carousel')->name('edit_carousel');
+
+        Route::post('/updated_carousel/{id}', 'Updated_carousel')->name('updated_carousel');
+
+        Route::get('/delete_carousel/{id}', 'Delete_carousel')->name('delete_carousel');
+
+        //===========================>>>About_us Routes
+        Route::get('/about_us', 'About_us')->name('about_us');
+
+        Route::get('/edit_about_us/{id}', 'Edit_about_us')->name('edit_about_us');
+
+        Route::post('/updated_about_us/{id}', 'Updated_about_us')->name('updated_about_us');
+
+        //===========================>>>Facilities Routes
+        Route::get('/facilities', 'Facilities')->name('facilities');
+
+        Route::get('/add_facilities', 'Add_facilities')->name('add_facilities');
+
+        Route::post('/save_facilities', 'Save_facilities')->name('save_facilities');
+
+        Route::get('/edit_facilities/{id}', 'Edit_facilities')->name('edit_facilities');
+
+        Route::post('/updated_facilities/{id}', 'Updated_facilities')->name('updated_facilities');
+
+        Route::get('/delete_facilities/{id}', 'Delete_facilities')->name('delete_facilities');
+
+        //===========================>>>Testimonial Routes
+        Route::get('/testimonials', 'Testimonials')->name('testimonials');
+
+        Route::get('/add_testimonials', 'Add_testimonials')->name('add_testimonials');
+
+        Route::post('/save_testimonials', 'Save_testimonials')->name('save_testimonials');
+
+        Route::get('/edit_testimonials/{id}', 'Edit_testimonials')->name('edit_testimonials');
+
+        Route::post('/updated_testimonials/{id}', 'Updated_testimonials')->name('updated_testimonials');
+
+        Route::get('/delete_testimonials/{id}', 'Delete_testimonials')->name('delete_testimonials');
+    });
 
 
+    //===========================WEBSITE SEETINGS CONTROLLER ROUTES
 
-
+    Route::controller(SettingsController::class)->group(function () {
+        //site setting page
+        Route::get('/setting/site', 'SiteSetting')->name('site-setting');
+        //site update
+        Route::post('/setting/site/update', 'UpdateSiteSetting')->name('update-site');
+        //site update logo
+        Route::post('/setting/site/update/logo', 'UpdateSiteSettingLogo')->name('update-site-logo');
+    });
 });
 
 require __DIR__ . '/auth.php';
