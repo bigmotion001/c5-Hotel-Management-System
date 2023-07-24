@@ -29,7 +29,7 @@ class AppServiceProvider extends ServiceProvider
             $view->with('carousel', Carousel::orderBy('id', 'desc')->get());
             $view->with('about', About::orderBy('id', 'desc')->get());
             $view->with('facilities', Facilities::orderBy('id', 'desc')->get());
-            $view->with('testimonials', Testimonials::orderBy('id', 'desc')->get());
+            $view->with('testimony', Testimonials::orderBy('id', 'desc')->get());
         });
     }
 }
