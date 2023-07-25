@@ -336,7 +336,8 @@
             <div class="col-xl-7">
                 <div data-cue="slideInUp" data-delay="200">
                     <div class="booking_wrapper">
-                        <form action="">
+                        <form action="{{ route('user_book_room') }}" method="POST">
+                            @csrf
                             <div class="row">
                                 <div class="col-lg-12">
                                     <div class="form-group">
@@ -353,12 +354,12 @@
                                 <div class="col-lg-6">
 
                                     <div class="custom_select">
-                                        <select class="wide">
+                                        <select class="wide" name="room_name">
                                             <option>Select Room</option>
-                                            <option>Double Room</option>
-                                            <option>Deluxe Room</option>
-                                            <option>Superior Room</option>
-                                            <option>Junior Suite</option>
+                                            <option value="Double room">Double Room</option>
+                                            <option value="Delux">Deluxe Room</option>
+                                            <option value="Su">Superior Room</option>
+                                            <option  value="J"> Junior Suite</option>
                                         </select>
                                     </div>
                                 </div>
@@ -384,13 +385,27 @@
                                                     name="childs_booking">
                                             </div>
                                         </div>
+
+                                    </div>
+
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="form-group">
+                                        <div class="mb-3 qty-buttons version_2">
+                                            <input type="button" value="+" class="qtyplus"
+                                                name="room_qty">
+                                            <input type="text" name="room_qty" id="room_qty"
+                                                value="" class="qty form-control" placeholder="Number of rooms">
+                                            <input type="button" value="-" class="qtyminus"
+                                                name="room_qty">
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                             @guest()
-                            <p class="text-end mt-4"><a href="#0" class="btn_1 outline">Login to make a reservation</a></p>
+                            <p class="text-end mt-4"><a href="{{ route('login') }}" class="btn_1 outline">Login to make a reservation</a></p>
                             @else
-                            <p class="text-end mt-4"><a href="#0" class="btn_1 outline">Make a reservation</a></p>
+                            <input type="submit" class="btn_1 outline" value="Make a reservation">
                             @endguest
                         </form>
                     </div>

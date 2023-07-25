@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Backend\AdminController;
 use App\Http\Controllers\Backend\SettingsController;
+use App\Http\Controllers\BookingController;
 use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ReceptionController;
@@ -74,8 +75,8 @@ Route::get('/', function () {
 });
 
 Route::get('/dashboard', function () {
-    return view('backend.index');
-})->middleware(['auth', 'verified'])->name('dashboard');
+    return view('user.index');
+})->middleware(['auth', 'verified'])->name('user_dashboard');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -325,3 +326,11 @@ Route::get('/edit_gallery/{id}', [UtilitiesController::class, 'Edit_gallery'])->
 Route::post('/updated_gallery/{id}', [UtilitiesController::class, 'Updated_gallery'])->name('updated_gallery');
 
 Route::get('/delete_gallery/{id}', [UtilitiesController::class, 'Delete_gallery'])->name('delete_gallery');
+
+
+//========================user all routes
+
+Route::middleware('auth')->group(function () {
+//user book room
+Route::post('/user/book/room', [BookingController::class, 'UserBookRoom'])->name('user_book_room');
+});

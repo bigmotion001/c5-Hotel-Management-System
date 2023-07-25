@@ -15,7 +15,7 @@
         <div class="container">
             <small class="slide-animated one">C5 Luxury Hotel Experience</small>
             <h1 class="slide-animated two">User Dashboard</h1>
-            <small class="slide-animated one">Welcome Joseph Onyekachi</small>
+            <small class="slide-animated one">Welcome {{ Auth::user()->name }}</small>
         </div>
     </div>
 </div>
@@ -34,7 +34,7 @@
 
             <ul>
                 <li><a href="{{ route('user_dashboard') }}"><span class="fa fa-home"></span> Dashboard</a></li>
-                <li><a href="/#booking_section"><span class="fa fa-sticky-note"></span> Booking Request</a></li>
+                <li><a href=""><span class="fa fa-sticky-note"></span> Booking Request</a></li>
                 <li><a href="/"><span class="fa fa-medium"></span> My Bookings</a></li>
                 <li><a href="/"><span class="fa fa-credit-card-alt"></span> Payment Log</a></li>
                 <li><a href="/"><span class="fa fa-ticket"></span> Open Ticket</a></li>

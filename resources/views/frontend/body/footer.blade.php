@@ -27,12 +27,12 @@
                 <h5>Explore</h5>
                 <div class="footer_links">
                     <ul>
-                        <li><a href="index-2.html">Home</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="room-list-1.html">Rooms &amp; Suites</a></li>
-                        <li><a href="news-1.html">News &amp; Events</a></li>
-                        <li><a href="contacts.html">Contacts</a></li>
-                        <li><a href="about.html">Terms and Conditions</a></li>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="{{ route('about_us_frontend') }}">About Us</a></li>
+                        <li><a href="{{ route('all_rooms') }}">Rooms &amp; Suites</a></li>
+                        <li><a href="#">News &amp; Events</a></li>
+                        <li><a href="{{ route('contact_us') }}">Contacts</a></li>
+                        <li><a href="#">Terms and Conditions</a></li>
                     </ul>
                 </div>
             </div>
@@ -40,7 +40,7 @@
                 <div id="newsletter">
                     <h5>Newsletter</h5>
                     <div id="message-newsletter"></div>
-                    <form method="post" action="https://ansonika.com/paradise/phpmailer/newsletter_template_email.php" name="newsletter_form" id="newsletter_form">
+                    <form method="post" action="#" name="newsletter_form" id="newsletter_form">
                         <div class="form-group">
                             <input type="email" name="email_newsletter" id="email_newsletter" class="form-control" placeholder="Your email">
                             <button type="submit" id="submit-newsletter"><i class="bi bi-send"></i></button>
