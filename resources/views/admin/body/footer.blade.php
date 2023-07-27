@@ -58,7 +58,7 @@
 
 <script src="{{ asset('backend/assets/vendor_components/datatable/datatables.min.js') }}"></script>
 
-<script src="{{ asset('../assets/vendor_components/datatable/datatables.min.js') }}"></script>
+<script src="{{ asset('backend/assets/vendor_components/datatable/datatables.min.js') }}"></script>
 
 <script src="{{ asset('backend/js/pages/data-table.js') }}"></script>
 
@@ -194,37 +194,7 @@
 
         });
 
-        //delete
-        $(function() {
-            $(document).on('click', '#delete', function(e) {
-                e.preventDefault();
-                var link = $(this).attr("href");
-
-
-                Swal.fire({
-                    title: 'Are you sure?',
-                    text: "To Deleted This Data!",
-                    icon: 'warning',
-                    showCancelButton: true,
-                    confirmButtonColor: '#3085d6',
-                    cancelButtonColor: '#d33',
-                    cancelButtonText: 'No',
-                    confirmButtonText: 'Yes, Delete!'
-                }).then((result) => {
-                    if (result.isConfirmed) {
-                        Swal.fire(
-                            'Deleted!',
-                            'Data Has Been Deleted Successfully.',
-                            'success'
-                        )
-                        window.location.href = link
-                    }
-                });
-
-
-            });
-
-        });
+       
 
 
     });
