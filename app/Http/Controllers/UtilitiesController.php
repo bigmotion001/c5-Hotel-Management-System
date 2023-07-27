@@ -365,6 +365,7 @@ class UtilitiesController extends Controller
         $data->complements = json_encode($request->complements);
 
         $data->total_rooms = $request->total_rooms;
+        $data->available_rooms = $request->total_rooms;
         $data->total_beds = $request->total_beds;
         $data->description = $request->description;
         $data->cancellation_policy = $request->cancellation_policy;

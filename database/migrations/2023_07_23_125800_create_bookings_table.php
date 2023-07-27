@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('bookings', function (Blueprint $table) {
             $table->id();
-            $table->integer('user_id')->nullable();
+            $table->integer('user')->nullable();
             $table->integer('room_id')->nullable();
             $table->string('booking_id')->nullable();
             $table->string('checking')->nullable();

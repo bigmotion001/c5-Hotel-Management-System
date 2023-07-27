@@ -93,7 +93,7 @@
             title:  e.detail.title,
             icon: e.detail.icon,
             iconColor: e.detail.iconColor,
-            timer: 3000,
+            timer: 10000,
             toast: true,
             position: 'center',
             toast:  true,

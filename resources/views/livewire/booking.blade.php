@@ -1,5 +1,5 @@
 @php
-    $rooms = App\Models\Roomtype::all();
+    $rooms = App\Models\Roomtype::where('available_rooms', '!=', 'total_booked')->where('available_rooms', '!=', 0)->get();
 @endphp
 
 
