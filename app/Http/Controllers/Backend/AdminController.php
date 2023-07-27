@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Admin;
+use App\Models\Booking;
 use App\Models\Reception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -130,7 +131,7 @@ class AdminController extends Controller
                 'name' => $request->name,
                 'phone' => $request->phone,
                 'email' => $request->email,
-                
+
                ]);
                return redirect()->back()->with('success', 'Receptionist Updated successfully');
 
@@ -139,5 +140,11 @@ class AdminController extends Controller
         $recp = Reception::findOrFail($id);
             return view('backend.receptionists.index', compact('recp'));
 
+    }
+
+    //admin view booking details
+    public function AdminViewBookingDetails($id){
+        $booking =  Booking::findOrFail($id)->first();
+        return view('backend.booking.booking_details', compact('booking'));
     }
 }

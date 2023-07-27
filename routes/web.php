@@ -47,6 +47,8 @@ Route::prefix('management')->group(function () {
     Route::get('/receptionist/delete/{id}', [AdminController::class, 'AdminDELETEReceptionists'])->name('delete-recept')->middleware('admin');
     //admin edit receptionist
     Route::post('/receptionist/update/{id}', [AdminController::class, 'AdminUPDATEReceptionists'])->name('admin-update-recept')->middleware('admin');
+    //admin view booking
+    Route::get('/booking/show/{id}', [AdminController::class, 'AdminViewBookingDetails'])->name('admin-view-booking')->middleware('admin');
 
 
 
@@ -61,6 +63,10 @@ Route::prefix('reception')->group(function () {
     Route::get('login', [ReceptionController::class, 'Index'])->name('reception_login');
     Route::post('/login/owner', [ReceptionController::class, 'ReceptionLogin'])->name('reception.login');
     Route::get('/dashboard', [ReceptionController::class, 'Dashboard'])->name('reception.dashboard')->middleware('reception');
+    //view booking
+    Route::get('/booking/view/{id}', [ReceptionController::class, 'ViewBookingDetails'])->name('view-booking')->middleware('reception');
+    //update booking
+    Route::post('/booking/update/{id}', [ReceptionController::class, 'UpdateBooking'])->name('update-booking')->middleware('reception');
 });
 //===============END reception ROUTES======================
 

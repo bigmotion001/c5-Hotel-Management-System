@@ -44,6 +44,6 @@ class User extends Authenticatable
     ];
 
     function booking(){
-        return $this->belongsToMany(Booking::class);
+        return $this->belongsTo(Booking::class);
     }
 }

@@ -7,11 +7,14 @@ use App\Models\Booking as ModelsBooking;
 use Livewire\Component;
 use App\Models\Roomtype;
 use App\Models\User;
+use App\Notifications\C5Notification;
+use Illuminate\Support\Facades\Notification;
 use Illuminate\Support\Facades\Auth;
+use Carbon\Carbon;
 
 class Booking extends Component
 {
-    public $room, $room_name, $adults_booking, $checking_date, $total_amount, $checkout_date, $childs_booking, $room_qty, $user;
+    public $room, $room_name, $adults_booking, $checking_date, $total_amount, $checkout_date, $childs_booking, $room_qty, $user, $booking_id;
 
     public function render()
     {
@@ -20,6 +23,7 @@ class Booking extends Component
     }
 
     public function Booking(){
+
 
          //validate
          $this->validate([
@@ -77,22 +81,42 @@ class Booking extends Component
 
         }
 else{
+    $this->booking_id = 'C5-'. rand(999948958,9748739872).'H';
     $this->room->available_rooms -=$this->room_qty;
     $this->room->total_booked +=$this->room_qty;
     $this->room->save();
 
     //send booking
-    ModelsBooking::create([
+   ModelsBooking::create([
         'user' => $this->user->name,
         'room_id' => $this->room->id,
-        'booking_id' => 'C5-'. rand(999948958,9748739872).'H',
-        'checking' => $this->checking_date,
-        'checkout' => $this->checkout_date,
+        'booking_id' => $this->booking_id,
+        'checking' => date('d F Y', strtotime($this->checking_date)),
+        'checkout' => date('d F Y', strtotime($this->checkout_date)),
         'amount' => $this->total_amount,
         'total_room' => $this->room_qty,
+        'total_day' => Carbon::parse($this->checking_date)->diffInDays(Carbon::parse($this->checkout_date)),
         'total_adults' => $this->adults_booking,
         'total_children' => $this->childs_booking,
+        'today_booking' => Carbon::now()->format('d F Y'),
+      'monthly_booking' => Carbon::now()->format('F'),
+      'yearly_booking' => Carbon::now()->format('Y'),
+        'created_at' => Carbon::now(),
     ]);
+
+
+
+//send email
+$notifyuserdata = [
+    'body' => $this->user->name. ','. ' ' . 'We have recieved your room reservation order, kindly walk in to any of our branch with your reservation number:' . ' ' . '#'.$this->booking_id . ' ' . ' to complete your order. Please note that, your reservation will expire within 24 hours.',
+    'text' => $this->booking_id,
+    'url' => route('login'),
+    'thankyou' => 'Status: Pending',
+];
+
+Notification::send($this->user, new C5Notification($notifyuserdata));
+
+
     $this->dispatchBrowserEvent('swal', [
         'title' => 'Dear, '. ' '. $this->user->name. ' '. 'your reservation has been processed, kindly check your email address for your reservation number',
         'icon'=>'success',

@@ -102,7 +102,13 @@
             <p class="text-end mt-4"><a href="{{ route('login') }}" class="btn_1 outline">Login to make
                     a reservation</a></p>
         @else
-            <input type="submit" class="btn_1 outline" value="Make a reservation">
+
+            <input type="submit" wire:loading.remove class="btn btn-info btn_1 outline" value="Make a reservation" wire:loading.attr="disabled">
+
+
+                         <div wire:loading >
+                           <button class="btn btn-danger btn_1 outline">Processing reservation...</button>
+                        </div>
         @endguest
     </form>
 

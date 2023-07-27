@@ -9,4 +9,8 @@ class Room extends Model
 {
     use HasFactory;
     protected $guarded = [];
+
+    function booking(){
+        return $this->belongsTo(Booking::class);
+    }
 }

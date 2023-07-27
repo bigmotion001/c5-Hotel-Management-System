@@ -52,10 +52,10 @@
 <script src="{{ asset('backend/app-assets/js/scripts/extensions/ext-component-sweet-alerts.min.js') }}"></script>
 <!-- END: Page JS-->
 
+<script src="{{ asset('backend/app-assets/js/scripts/charts/chart-chartjs.min.js') }}"></script>
 
 
-
-
+<script src="{{ asset('backend/app-assets/vendors/js/charts/chart.min.js') }}"></script>
 <script src="{{ asset('backend/assets/vendor_components/datatable/datatables.min.js') }}"></script>
 
 <script src="{{ asset('backend/assets/vendor_components/datatable/datatables.min.js') }}"></script>
@@ -194,7 +194,7 @@
 
         });
 
-       
+
 
 
     });
