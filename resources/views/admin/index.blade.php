@@ -3,6 +3,11 @@
 @section('content')
     @php
         $today = date('d F Y');
+        $dayly = App\Models\Booking::where('today_booking', $today)->sum('amount');
+        $month = date('F');
+        $monthly = App\Models\Booking::where('monthly_booking', $month)->sum('amount');
+        $year = date('Y');
+        $yearly = App\Models\Booking::where('yearly_booking', $year)->sum('amount');
         $user = App\Models\User::all();
         $room = App\Models\Roomtype::sum('total_rooms');
         $availableroom = App\Models\Roomtype::where('available_rooms', '!=', 0)->sum('available_rooms');
@@ -175,27 +180,79 @@
                             </div>
                         </div>
                     </div> <!-- list and filter end -->
+                    <div class="col-lg-4 col-sm-6">
+                        <div class="card text-center">
+                            <div class="card-body">
+                                <a href="">
+                                    <div class="avatar bg-light-success p-50 mb-1">
+                                        <div class="avatar-content">
+                                            <i data-feather='dollar-sign'></i>
+                                        </div>
+                                    </div>
+                                    <h2 class="fw-bolder">₦{{ Number_format( $dayly, 2)}}</h2>
+                                    <p class="card-text">Today's Booking Income</p>
+                                </a>
+                            </div>
+                        </div>
+                    </div> <!-- list and filter end -->
+                    <div class="col-lg-4 col-sm-6">
+                        <div class="card text-center">
+                            <div class="card-body">
+                                <a href="">
+                                    <div class="avatar bg-light-success p-50 mb-1">
+                                        <div class="avatar-content">
+                                            <i data-feather='dollar-sign'></i>
+                                        </div>
+                                    </div>
+                                    <h2 class="fw-bolder">₦{{ Number_format( $monthly, 2)}}</h2>
+                                    <p class="card-text">This Month Booking Income</p>
+                                </a>
+                            </div>
+                        </div>
+                    </div> <!-- list and filter end -->
+                    <div class="col-lg-4 col-sm-6">
+                        <div class="card text-center">
+                            <div class="card-body">
+                                <a href="">
+                                    <div class="avatar bg-light-success p-50 mb-1">
+                                        <div class="avatar-content">
+                                            <i data-feather='dollar-sign'></i>
+                                        </div>
+                                    </div>
+                                    <h2 class="fw-bolder">₦{{ Number_format( $yearly, 2)}}</h2>
+                                    <p class="card-text">This Year Booking Income</p>
+                                </a>
+                            </div>
+                        </div>
+                    </div> <!-- list and filter end -->
             </section>
             <!-- users list ends -->
 
         </div>
     </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     <hr>
+
+
+
+
+    <div class="row">
+        <br>
+        <div class="col-md-12 ">
+
+            <div class="card ">
+                <div class="card-header with-border">
+                    <h3 class="card-title ">Income Report</h3>
+                </div>
+
+                <!-- /.box-header -->
+                <div class="card-body p-6 m-20 rounded shadow">
+                    {!! $chart->container() !!}
+                </div>
+            </div>
+        </div>
+    </div>
+
+
 
 
 
@@ -268,7 +325,7 @@
 
                                 @empty
 
-                                    <h3>No booking yet</h3>
+                                    <center><h3 class="text-danger">No booking yet</h3></center>
                                 @endforelse
 
                             </tbody>
@@ -376,4 +433,6 @@
     </div>
     </section>
     <!-- Modal Sizes end -->
+    <script src="{{ $chart->cdn() }}"></script>
+{{ $chart->script() }}
 @endsection

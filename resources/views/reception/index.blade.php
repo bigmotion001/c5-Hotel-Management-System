@@ -181,6 +181,17 @@
         </div>
     </div>
 
+
+
+
+
+
+
+
+
+
+
+
     <hr>
     <div class="row">
         <br>
@@ -284,7 +295,7 @@
                                                 class="btn btn-primary">View</a></td>
 
                                     @empty
-                                        <h3>No booking yet</h3>
+                                    <center><h3 class="text-danger">No booking yet</h3></center>
                                     </tr>
                                 @endforelse
 
@@ -344,7 +355,7 @@
                             <tbody>
 
                                 @forelse ($rooms as $r)
-                   
+
                                     <tr>
 
                                         <td>{{ $r->name }}</td>

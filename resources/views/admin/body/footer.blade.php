@@ -58,12 +58,12 @@
 <script src="{{ asset('backend/app-assets/vendors/js/charts/chart.min.js') }}"></script>
 <script src="{{ asset('backend/assets/vendor_components/datatable/datatables.min.js') }}"></script>
 
-<script src="{{ asset('backend/assets/vendor_components/datatable/datatables.min.js') }}"></script>
 
+
+
+
+<script src="{{ asset('../assets/vendor_components/datatable/datatables.min.js') }}"></script>
 <script src="{{ asset('backend/js/pages/data-table.js') }}"></script>
-
-
-
 
 
 
@@ -81,6 +81,14 @@
 
 
 <script>
+
+
+
+
+
+
+
+
     $(window).on('load', function() {
         if (feather) {
             feather.replace({
@@ -214,7 +222,7 @@
 
 
 
-   
+
 
     $(window).ready(function() {
         $("form").on("keypress", function(event) {
