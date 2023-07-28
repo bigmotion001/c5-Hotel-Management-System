@@ -92,6 +92,11 @@ Route::prefix('reception')->group(function () {
     Route::get('/booknew', function () {
         return view('reception.booking.book-room');
     })->middleware(['reception'])->name('reception-book-room');
+
+    //room list
+    Route::get('/rooms/list', function () {
+        return view('reception.booking.room_list');
+    })->middleware(['reception'])->name('r-room-list');
 });
 //===============END reception ROUTES======================
 

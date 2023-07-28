@@ -68,7 +68,7 @@
                                 <td><a href="{{ route('view-booking', $i->id) }}" class="btn btn-primary">View</a></td>
 
                             @empty
-                                <h3>No booking yet</h3>
+                               <b><center><h4 class="text-danger">No result found. try search with booking number or customer name</h4></center></b>
                             </tr>
                             @endforelse
 

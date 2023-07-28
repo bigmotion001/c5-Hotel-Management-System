@@ -14,7 +14,11 @@
             ->where('status', 3)
             ->count();
         //booking
-        $todayreservation = App\Models\Booking::where('today_booking', $today)->orderBy('created_at', 'DESC')->get();
+        $todayreservation = App\Models\Booking::where('today_booking', $today)
+            ->orderBy('created_at', 'DESC')
+            ->get();
+
+        $rooms = App\Models\Roomtype::where('available_rooms', '!=', 0)->get();
     @endphp
 
 
@@ -231,40 +235,40 @@
 
                             <tbody>
 
-                                    @forelse ($todayreservation as $i)
-                                <tr>
+                                @forelse ($todayreservation as $i)
+                                    <tr>
 
-                                    <td>{{ $i->user }}</td>
-                                    <td>{{ $i->room->name }}</td>
-                                    <td>{{ $i->total_room }}</td>
-                                    <td><span class="badge bg-success" >{{ $i->checking }}</span></td>
-                                    <td><span class="badge bg-secondary" >{{ $i->checkout }}</span></td>
-                                    <td>₦{{ Number_format($i->amount, 2) }}</td>
-                                    <td>
-                                        @if ($i->paid == 0)
-                                        <span class="badge bg-danger" >Pending</span>
-                                        @elseif ($i->paid == 1)
-                                        <span class="badge bg-success" >Paid</span>
-                                        @endif
-                                    </td>
-                                    <td>
-                                        @if ($i->status == 0)
-                                        <span class="badge bg-danger" >Pending</span>
-                                        @elseif ($i->status == 1)
-                                        <span class="badge bg-success" >Confirmed</span>
-                                        @elseif ($i->status == 2)
-                                        <span class="badge bg-warning" >Cancelled</span>
-                                        @elseif ($i->status == 3)
-                                        <span class="badge bg-info" >Checkedout</span>
-                                        @endif
-                                    </td>
-                                    <td><a href="{{ route('admin-view-booking', $i->id) }}" class="btn btn-primary">View</a></td>
-                                </tr>
+                                        <td>{{ $i->user }}</td>
+                                        <td>{{ $i->room->name }}</td>
+                                        <td>{{ $i->total_room }}</td>
+                                        <td><span class="badge bg-success">{{ $i->checking }}</span></td>
+                                        <td><span class="badge bg-secondary">{{ $i->checkout }}</span></td>
+                                        <td>₦{{ Number_format($i->amount, 2) }}</td>
+                                        <td>
+                                            @if ($i->paid == 0)
+                                                <span class="badge bg-danger">Pending</span>
+                                            @elseif ($i->paid == 1)
+                                                <span class="badge bg-success">Paid</span>
+                                            @endif
+                                        </td>
+                                        <td>
+                                            @if ($i->status == 0)
+                                                <span class="badge bg-danger">Pending</span>
+                                            @elseif ($i->status == 1)
+                                                <span class="badge bg-success">Confirmed</span>
+                                            @elseif ($i->status == 2)
+                                                <span class="badge bg-warning">Cancelled</span>
+                                            @elseif ($i->status == 3)
+                                                <span class="badge bg-info">Checkedout</span>
+                                            @endif
+                                        </td>
+                                        <td><a href="{{ route('admin-view-booking', $i->id) }}"
+                                                class="btn btn-primary">View</a></td>
+                                    </tr>
 
                                 @empty
 
                                     <h3>No booking yet</h3>
-
                                 @endforelse
 
                             </tbody>
@@ -304,9 +308,44 @@
 
                     <div class="table-responsive ">
 
+
                         <table id="example1" class="table table-bordered table-striped">
 
+                            <thead>
+                                <tr>
 
+                                    <th>Name</th>
+                                    <th>Price</th>
+                                    <th>Total Rooms</th>
+                                    <th>Available Rooms</th>
+                                    <th>Total Booked</th>
+
+
+
+                                </tr>
+                            </thead>
+
+                            <tbody>
+
+                                @forelse ($rooms as $r)
+                                    <tr>
+
+                                        <td>{{ $r->name }}</td>
+                                        <td>₦{{ Number_format($r->fare, 2) }}</td>
+                                        <td>{{ $r->total_rooms }}</td>
+                                        <td>{{ $r->available_rooms }}</td>
+                                        <td>{{ $r->total_booked }}</td>
+
+
+
+
+
+                                    @empty
+                                        <h3>No booking yet</h3>
+                                    </tr>
+                                @endforelse
+
+                            </tbody>
 
                         </table>
 

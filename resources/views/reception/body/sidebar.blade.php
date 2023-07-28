@@ -60,11 +60,10 @@
 
 
 
-        <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="book"></i><span
+        <li class=" nav-item"><a class="d-flex align-items-center" href="{{ route('r-room-list') }}"><i data-feather="book"></i><span
                     class="menu-title text-truncate" data-i18n="user">Room Lists</span></a></li>
 
-        <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="user"></i><span
-                    class="menu-title text-truncate" data-i18n="user">Profile</span></a></li>
+        
 
 
 

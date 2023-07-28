@@ -183,7 +183,7 @@ $room = Roomtype::findOrfail($request->room_id);
     public function Search(Request $request){
         $item = $request->search;
 
-        $search = Booking::where('booking_id', 'LIKE', "%$item%")->
+        $search = Booking::where('booking_id', 'LIKE', "%$item%")->orwhere('user', 'LIKE', "%$item%")->
         select('user',  'room_id' , 'total_room', 'checking', 'checkout', 'amount', 'paid', 'status', 'id')->get();
         return view('reception.search.result', compact('search'));
     }

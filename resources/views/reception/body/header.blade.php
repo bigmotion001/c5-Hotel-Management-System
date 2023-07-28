@@ -109,15 +109,7 @@
 
 
 
-            <form method="POST" action="{{ route('search-p') }}">
-                @csrf
-                <div class="form-group">
-                    <input type="text" class="form-control"  id="search" name="search" placeholder="Search  Student Name" required />
-                </div>
-                </form>
-
-
-
+            
 
 
 
@@ -125,8 +117,9 @@
 
 
 
-                <li class="nav-item d-none d-lg-block"><a class="nav-link nav-link-style"><i class="ficon"
-                            data-feather="sun"></i></a></li>
+                <li class="nav-item d-none d-lg-block">
+                    <a class="nav-link nav-link-style"><i class="ficon" data-feather="sun"></i></a>
+                </li>
 
 
 
