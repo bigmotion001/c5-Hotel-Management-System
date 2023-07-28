@@ -10,9 +10,7 @@
         $todaybookedroom = App\Models\Booking::where('today_booking', $today)->sum('total_room');
         $runningbooking = App\Models\Booking::where('status', 1)->count();
         $canclledbooking = App\Models\Booking::where('status', 2)->count();
-        $checkoutbooking = App\Models\Booking::where('today_booking', $today)
-            ->where('status', 3)
-            ->count();
+        $checkoutbooking = App\Models\Booking::where('status', 3)->count('status');
         //booking
         $todayreservation = App\Models\Booking::where('today_booking', $today)
             ->orderBy('created_at', 'DESC')
@@ -276,7 +274,7 @@
                                         <td>
                                             @if ($i->paid == 0)
                                                 <span class="badge bg-danger">Pending</span>
-                                            @elseif ($i->piad == 1)
+                                            @elseif ($i->paid == 1)
                                                 <span class="badge bg-success">Paid</span>
                                             @endif
                                         </td>

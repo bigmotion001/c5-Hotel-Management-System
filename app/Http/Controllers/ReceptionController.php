@@ -98,6 +98,11 @@ class ReceptionController extends Controller
                 $room->available_rooms += $book->total_room;
                 $room->total_booked -= $book->total_room;
                 $room->save();
+            } elseif ($request->booking_status == 2) {
+                $room = Roomtype::where('id', $book->room_i)->first();
+                $room->available_rooms += $book->total_room;
+                $room->total_booked -= $book->total_room;
+                $room->save();
             }
             //don't send email
 
@@ -106,13 +111,6 @@ class ReceptionController extends Controller
                 'paid' => $payment,
                 'status' => $bstatus,
             ]);
-
-
-
-
-
-
-
 
 
             return redirect()->back()->with('success', 'Booking Updated Successfully..');
@@ -127,6 +125,11 @@ class ReceptionController extends Controller
 
             //update rooms
             if ($request->booking_status == 3) {
+                $room = Roomtype::where('id', $book->room_i)->first();
+                $room->available_rooms += $book->total_room;
+                $room->total_booked -= $book->total_room;
+                $room->save();
+            } elseif ($request->booking_status == 2) {
                 $room = Roomtype::where('id', $book->room_i)->first();
                 $room->available_rooms += $book->total_room;
                 $room->total_booked -= $book->total_room;
@@ -155,7 +158,7 @@ class ReceptionController extends Controller
     //reception booka room
     public function ReceptionBookRoom(Request $request)
     {
-$room = Roomtype::findOrfail($request->room_id);
+        $room = Roomtype::findOrfail($request->room_id);
         $total_amount = $room->fare * $request->total_room;
         Booking::create([
             'user' => $request->name,
@@ -180,11 +183,11 @@ $room = Roomtype::findOrfail($request->room_id);
 
 
     //search booking
-    public function Search(Request $request){
+    public function Search(Request $request)
+    {
         $item = $request->search;
 
-        $search = Booking::where('booking_id', 'LIKE', "%$item%")->orwhere('user', 'LIKE', "%$item%")->
-        select('user',  'room_id' , 'total_room', 'checking', 'checkout', 'amount', 'paid', 'status', 'id')->get();
+        $search = Booking::where('booking_id', 'LIKE', "%$item%")->orwhere('user', 'LIKE', "%$item%")->select('user',  'room_id', 'total_room', 'checking', 'checkout', 'amount', 'paid', 'status', 'id')->get();
         return view('reception.search.result', compact('search'));
     }
 }
