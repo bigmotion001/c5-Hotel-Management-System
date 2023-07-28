@@ -144,7 +144,7 @@ class AdminController extends Controller
 
     //admin view booking details
     public function AdminViewBookingDetails($id){
-        $booking =  Booking::findOrFail($id)->first();
+        $booking =  Booking::findOrFail($id);
         return view('backend.booking.booking_details', compact('booking'));
     }
 }

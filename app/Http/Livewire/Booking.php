@@ -89,6 +89,8 @@ else{
     //send booking
    ModelsBooking::create([
         'user' => $this->user->name,
+        'phone' => $this->user->phone,
+        'email' => $this->user->email,
         'room_id' => $this->room->id,
         'booking_id' => $this->booking_id,
         'checking' => date('d F Y', strtotime($this->checking_date)),

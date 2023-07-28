@@ -28,25 +28,30 @@
 
 
 
-
+                    <li class=" nav-item"><a class="d-flex align-items-center" href="{{ route('reception-book-room') }}"><i data-feather="user"></i><span
+                        class="menu-title text-truncate" data-i18n="user">Book a room</span></a></li>
 
 
 
             <li class="  nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="book"></i><span
                         class="menu-title text-truncate" data-i18n="Invoice">Bookings</span></a>
                 <ul class="menu-content">
-                    <li class="#"><a class="d-flex align-items-center" href="#"><i
+                    <li class="#"><a class="d-flex align-items-center" href="{{ route('r-pending-booking') }}"><i
                                 data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="List">Pending
                                 Booking</span></a>
                     </li>
 
-                    <li class=""><a class="d-flex align-items-center" href="#"><i
+                    <li class=""><a class="d-flex align-items-center" href="{{ route('r-active-booking') }}"><i
                                 data-feather="circle"></i><span class="menu-item text-truncate"
                                 data-i18n="Preview">Active Bookings</span></a>
                     </li>
-                    <li class=""><a class="d-flex align-items-center" href="#"><i
+                    <li class=""><a class="d-flex align-items-center" href="{{ route('r-cancelled-booking') }}"><i
                                 data-feather="circle"></i><span class="menu-item text-truncate"
-                                data-i18n="Preview">Canlled Bookings</span></a>
+                                data-i18n="Preview">Canceled Bookings</span></a>
+                    </li>
+                    <li class=""><a class="d-flex align-items-center" href="{{ route('r-checkedout-booking') }}"><i
+                                data-feather="circle"></i><span class="menu-item text-truncate"
+                                data-i18n="Preview">Checked out</span></a>
                     </li>
             </li>
         </ul>

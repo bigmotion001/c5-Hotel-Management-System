@@ -40,15 +40,15 @@ eval("\$complements = $str2;");
 <div class="bg_white" id="first_section">
     <div class="container margin_120_95">
         <div class="row justify-content-between">
-            <div class="col-lg-4">
+            <div class="col-lg-6">
                 <div class="title">
                     <small>C5 Luxury Experience</small>
                     <h2>{{$datas->name}}</h2>
                 </div>
-                <p>{{$datas->description}}</p>
+                <p>{!! $datas->description !!}</p>
 
             </div>
-            <div class="row col-lg-6">
+            <div class="row col-lg-4">
                 <div class="col-sm-12 room_facilities_list">
 
                     <ul data-cues="slideInLeft">

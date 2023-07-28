@@ -14,7 +14,7 @@
             ->where('status', 3)
             ->count();
         //booking
-        $todayreservation = App\Models\Booking::where('today_booking', $today)->get();
+        $todayreservation = App\Models\Booking::where('today_booking', $today)->orderBy('created_at', 'DESC')->get();
     @endphp
 
 
@@ -194,7 +194,7 @@
     <hr>
 
 
-  
+
 
 
 
@@ -230,8 +230,9 @@
                             </thead>
 
                             <tbody>
-                                <tr>
+
                                     @forelse ($todayreservation as $i)
+                                    <tr>
                                     <td>{{ $i->user }}</td>
                                     <td>{{ $i->room->name }}</td>
                                     <td>{{ $i->total_room }}</td>
@@ -260,8 +261,9 @@
 
                                 @empty
                                     <h3>No booking yet</h3>
-                                @endforelse
                                 </tr>
+                                @endforelse
+
                             </tbody>
 
                         </table>

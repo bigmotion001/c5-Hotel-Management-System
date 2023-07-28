@@ -73,6 +73,68 @@
 
 <script>
 
+$(function() {
+        var dtToday = new Date();
+
+        var month = dtToday.getMonth() + 1;
+        var day = dtToday.getDate();
+        var year = dtToday.getFullYear();
+        if (month < 10)
+            month = '0' + month.toString();
+        if (day < 10)
+            day = '0' + day.toString();
+
+        var minDate = year + '-' + month + '-' + day;
+
+        $('.date').attr('min', minDate);
+    });
+
+
+
+function search_result_hide(){
+    $("#searchproject").slideUp();
+ }
+
+ function search_result_show(){
+    $("#searchproject").slideDown();
+ }
+
+
+
+
+
+ $("body").on("keyup", "#search", function(){
+let text = $("#search").val();
+if(text.length > 0){
+$.ajax({
+   data: {search: text},
+   url:  "/reception/search/result",
+   method: 'post',
+   beforSend: function(request){
+      return request.setRequestHeader('X-CSRF-Token',("meta[name='csrf-token]"))
+   },
+   success:function(result){
+       $("#searchproject").html(result);
+   }
+
+});
+}//end if
+if(text.length < 1) $("#searchproject").html(" ");
+
+
+
+});
+
+$.ajaxSetup({
+headers: {
+ 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+}
+});
+
+$.ajax({
+
+});
+
 
 
   $(window).on('load',  function(){

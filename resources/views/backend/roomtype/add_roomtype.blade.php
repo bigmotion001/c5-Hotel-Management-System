@@ -37,14 +37,14 @@
 
                                 <div class="mb-2 col-sm-12 col-md-6">
                                     <!-- <label class="form-label mb-1">Academic Session</label> -->
-                                    <select name="name"class="select2 form-select" id="select2-basic" required>
+                                    <select name="name" class="select2 form-select" id="select2-basic" required>
                                         <option value="">Select Room</option>
                                         @foreach ($rooms as $room)
-                                        <option value="{{ $room->name }}">{{ $room->room_type }}</option>
+                                            <option value="{{ $room->room_type }}">{{ $room->room_type }}</option>
                                         @endforeach
 
 
-                                      </select>
+                                    </select>
                                     @error('name')
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
@@ -75,27 +75,14 @@
                                 <div class="mb-2 col-sm-12 col-md-6">
                                     <!-- <label class="form-label mb-1">Academic Session</label> -->
                                     <input type="number" min="0" id="" class="form-control"
-                                        placeholder="Fare/Night" name="fare" value="{{ old('fare') }}" />
+                                        placeholder="Price / Night" name="fare" value="{{ old('fare') }}" />
                                     @error('fare')
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
                                 </div>
 
                             </div>
-                            <div class="row col-md-12 col-12">
 
-
-                                <div class="mb-2 col-sm-12 col-md-6">
-                                    <!-- <label class="form-label mb-1">Academic Session</label> -->
-                                    <input type="number" min="0" id="" class="form-control"
-                                        placeholder="Cancellation Fee/Night" name="cancellation_fee"
-                                        value="{{ old('cancellation_fee') }}" />
-                                    @error('cancellation_fee')
-                                        <span class="text-danger">{{ $message }}</span>
-                                    @enderror
-                                </div>
-
-                            </div>
 
                             <div class="col-md-12 col-12 row">
 
@@ -147,27 +134,21 @@
 
                             </div>
 
-                            <div class="row col-md-12 col-12">
+                            <div class=" col-md-12 col-12 mb-1">
 
-                                <div class="mb-2 col-sm-12 col-md-6">
 
-                                    <label class="form-label">Room Description</label>
-                                    <textarea name="description" class="form-control" id="" cols="20" rows="5">{{ old('description') }}</textarea>
-                                    @error('description')
-                                        <span class="text-danger">{{ $message }}</span>
-                                    @enderror
 
-                                </div>
+                                <label class="form-label">Room Description</label>
+                                <textarea id="editor" name="description" rows="50" cols="90" class="form-control bg-dark">
+                                        {{ old('description') }}
+                                    </textarea>
+                                @error('description')
+                                    <span class="text-danger">{{ $message }}</span>
+                                @enderror
 
-                                <div class="mb-2 col-sm-12 col-md-6">
 
-                                    <label class="form-label">Cancellation Policy</label>
-                                    <textarea name="cancellation_policy" class="form-control" id="" cols="20" rows="5">{{ old('cancellation_policy') }}</textarea>
-                                    @error('cancellation_policy')
-                                        <span class="text-danger">{{ $message }}</span>
-                                    @enderror
 
-                                </div>
+
 
                             </div>
 

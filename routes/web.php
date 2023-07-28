@@ -67,6 +67,31 @@ Route::prefix('reception')->group(function () {
     Route::get('/booking/view/{id}', [ReceptionController::class, 'ViewBookingDetails'])->name('view-booking')->middleware('reception');
     //update booking
     Route::post('/booking/update/{id}', [ReceptionController::class, 'UpdateBooking'])->name('update-booking')->middleware('reception');
+    //book a new room booking
+    Route::post('/booking/store', [ReceptionController::class, 'ReceptionBookRoom'])->name('reception-reseve-room')->middleware('reception');
+    //book a new room booking
+    Route::post('/search/result', [ReceptionController::class, 'Search'])->name('search-p')->middleware('reception');
+
+    //pending booking
+    Route::get('/booking/pending', function () {
+        return view('reception.booking.pending');
+    })->middleware(['reception'])->name('r-pending-booking');
+    //active booking
+    Route::get('/booking/active', function () {
+        return view('reception.booking.active');
+    })->middleware(['reception'])->name('r-active-booking');
+    //compled booking
+    Route::get('/booking/completed', function () {
+        return view('reception.booking.checkedout');
+    })->middleware(['reception'])->name('r-checkedout-booking');
+    //cancelled booking
+    Route::get('/booking/canceled', function () {
+        return view('reception.booking.cancelled');
+    })->middleware(['reception'])->name('r-cancelled-booking');
+    //new  booking
+    Route::get('/booknew', function () {
+        return view('reception.booking.book-room');
+    })->middleware(['reception'])->name('reception-book-room');
 });
 //===============END reception ROUTES======================
 

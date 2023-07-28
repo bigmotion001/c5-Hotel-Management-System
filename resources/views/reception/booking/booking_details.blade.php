@@ -29,13 +29,13 @@
                                 @if ($booking->status == 0)
                                     <h4 class=""><b>Booking Status: <br> <span class="text-danger">Pending</span></b>
                                     </h4>
-                                @elseif ($booking->paid == 1)
+                                @elseif ($booking->status == 1)
                                     <h4 class=""><b>Booking Status: <br> <span
                                                 class="text-success">Confirmed</span></b></h4>
-                                @elseif ($booking->paid == 2)
+                                @elseif ($booking->status == 2)
                                     <h4 class=""><b>Booking Status: <br> <span
                                                 class="text-warning">Cancelled</span></b></h4>
-                                @elseif ($booking->paid == 3)
+                                @elseif ($booking->status == 3)
                                     <h4 class=""><b>Booking Status: <br> <span class="text-info">Checked
                                                 Out</span></b></h4>
                                 @endif
@@ -170,7 +170,10 @@
 
                         <div class="row mt-25">
                             <div class="col-lg-12">
+                                @if($booking->status == 3)
+                                @else
                                 <input type="submit" class="btn btn-primary" value="Update This Booking">
+                                @endif
                             </div>
                         </div>
                     </form>
