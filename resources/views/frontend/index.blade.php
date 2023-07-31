@@ -3,74 +3,9 @@
 
 
 @section('content')
-    <div id="carousel-home">
-        <div class="owl-carousel owl-theme kenburns">
-            <div class="owl-slide background-image cover" data-background="url(frontend/img/hero_home_1.jpg)">
-                <div class="opacity-mask d-flex align-items-center" data-opacity-mask="rgba(0, 0, 0, 0.5)">
-                    <div class="container">
-                        <div class="row justify-content-center justify-content-md-start">
-                            <div class="col-lg-6 static">
-                                <div class="slide-text white">
-                                    <small class="owl-slide-animated owl-slide-title">C5 Luxury Hotel
-                                        Experience</small>
-                                    <h2 class="owl-slide-animated owl-slide-title-2">A unique experience where to
-                                        stay</h2>
-                                    <!-- <div class="owl-slide-animated owl-slide-title-3"><a class="btn_1 outline white mt-3" href="room-list-1.html">Read more</a>
-                                        </div> -->
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!--/owl-slide-->
-            <div class="owl-slide background-image cover" data-background="url(frontend/img/hero_home_2.jpg)">
-                <div class="opacity-mask d-flex align-items-center" data-opacity-mask="rgba(0, 0, 0, 0.5)">
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-6 static">
-                                <div class="slide-text white text-center">
-                                    <small class="owl-slide-animated owl-slide-title">C5 Luxury Hotel
-                                        Experience</small>
-                                    <h2 class="owl-slide-animated owl-slide-title-2">A truly immersive relax place
-                                    </h2>
-                                    <!-- <div class="owl-slide-animated owl-slide-title-3"><a class="btn_1 outline white mt-3" href="room-list-2.html">Read more</a>
-                                        </div> -->
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!--/owl-slide-->
-            <div class="owl-slide background-image cover" data-background="url(frontend/img/parallax_bg.jpg)">
-                <div class="opacity-mask d-flex align-items-center" data-opacity-mask="rgba(0, 0, 0, 0.6)">
-                    <div class="container">
-                        <div class="row justify-content-center justify-content-md-end">
-                            <div class="col-lg-6 static">
-                                <div class="slide-text text-end white">
-                                    <small class="owl-slide-animated owl-slide-title">C5 Luxury Hotel
-                                        Experience</small>
-                                    <h2 class="owl-slide-animated owl-slide-title-2">The experience of unique
-                                        holidays</h2>
-                                    <!-- <div class="owl-slide-animated owl-slide-title-3"><a class="btn_1 outline white mt-3" href="room-list-3.html">Read more</a>
-                                        </div> -->
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!--/owl-slide-->
-            </div>
-        </div>
-        <div class="mouse_wp">
-            <a href="#first_section" class="btn_scrollto">
-                <div class="mouse"></div>
-            </a>
-        </div>
-        <!-- / mouse -->
-    </div>
-    <!--/carousel-->
+
+
+@include('frontend.body.carousel')
 
 
     <!-- About Page  -->
