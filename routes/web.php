@@ -19,6 +19,8 @@ Route::get('/gallery', [FrontendController::class, 'Gallery'])->name('gallery');
 
 Route::get('/room_details/{id}', [FrontendController::class, 'Room_details'])->name('room_details');
 
+Route::get('/facility_details/{id}', [FrontendController::class, 'Facility_details'])->name('facility_details');
+
 Route::get('/all_rooms', [FrontendController::class, 'All_rooms'])->name('all_rooms');
 
 Route::get('/user/dashboard', [FrontendController::class, 'User_dashboard'])->name('user_dashboard');

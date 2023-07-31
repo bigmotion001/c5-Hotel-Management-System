@@ -96,16 +96,16 @@ eval("\$complements = $str2;");
         <div data-cues="zoomIn">
             <div class="owl-carousel owl-theme carousel_item_centered kenburns rounded-img">
                 <div class="item">
-                    <img src="../backend/assets/images/{{$datas->image1}}" alt="">
+                    <img src="../backend/assets/images/{{$datas->image1}}" style="height: 350px; object-fit:cover" alt="">
                 </div>
                 <div class="item">
-                    <img src="../backend/assets/images/{{$datas->image2}}" alt="">
+                    <img src="../backend/assets/images/{{$datas->image2}}" style="height: 350px; object-fit:cover" alt="">
                 </div>
                 <div class="item">
-                    <img src="../backend/assets/images/{{$datas->image3}}" alt="">
+                    <img src="../backend/assets/images/{{$datas->image3}}" style="height: 350px; object-fit:cover" alt="">
                 </div>
                 <div class="item">
-                    <img src="../backend/assets/images/{{$datas->image4}}" alt="">
+                    <img src="../backend/assets/images/{{$datas->image4}}" style="height: 350px; object-fit:cover" alt="">
                 </div>
             </div>
         </div>

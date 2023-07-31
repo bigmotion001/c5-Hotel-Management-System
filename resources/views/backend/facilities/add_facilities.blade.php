@@ -43,7 +43,7 @@
                             <div class="row col-md-12 col-12">
 
                                 <div class="mb-2 col-sm-12">
-                                    <label class="form-label">Sub Title</label>
+                                    <label class="form-label">Description</label>
                                     <textarea name="sub_title" class="form-control" id="" cols="30" rows="3">{{ old('sub_title') }}</textarea>
                                     @error('sub_title')
                                     <span class="text-danger">{{ $message }}</span>
@@ -51,7 +51,40 @@
                                 </div>
 
                             </div>
-                            
+
+                            <div class="row col-md-12 col-12">
+
+                                <div class="mb-2 col-sm-12 col-md-6">
+                                    <label class="form-label">Image 1</label>
+                                    <input type="file" id="" class="form-control" name="image1" value="{{ old('image1') }}" />
+                                    @error('image1')
+                                    <span class="text-danger">{{ $message }}</span>
+                                    @enderror
+                                </div>
+
+                                <div class="mb-2 col-sm-12 col-md-6">
+                                    <label class="form-label">Image 2</label>
+                                    <input type="file" id="" class="form-control" name="image2" value="{{ old('image2') }}" />
+                                    @error('image2')
+                                    <span class="text-danger">{{ $message }}</span>
+                                    @enderror
+                                </div>
+                                <div class="mb-2 col-sm-12 col-md-6">
+                                    <label class="form-label">Image 3</label>
+                                    <input type="file" id="" class="form-control" name="image3" value="{{ old('image3') }}" />
+                                    @error('image3')
+                                    <span class="text-danger">{{ $message }}</span>
+                                    @enderror
+                                </div>
+                                <div class="mb-2 col-sm-12 col-md-6">
+                                    <label class="form-label">Image 4</label>
+                                    <input type="file" id="" class="form-control" name="image4" value="{{ old('image4') }}" />
+                                    @error('image4')
+                                    <span class="text-danger">{{ $message }}</span>
+                                    @enderror
+                                </div>
+                            </div>
+
 
                             <div class="card-footer">
                                 <button type="submit" class="btn btn-primary me-1">Add Facilities</button>
