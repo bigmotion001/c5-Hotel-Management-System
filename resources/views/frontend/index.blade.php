@@ -44,11 +44,13 @@
     @foreach($facilities as $key => $facility)
     @if($key < 4)
     <div class="col-xl-3 col-md-6">
-        <div class="box_facilities no-border" data-cue="slideInUp">
-            <!-- <i class="customicon-private-parking"></i> -->
-            <h3>{{$facility->title}}</h3>
-            <p>{{$facility->sub_title}}</p>
-        </div>
+        <a href="{{route('facility_details', $facility->id)}}">
+            <div class="box_facilities no-border" data-cue="slideInUp">
+                <!-- <i class="customicon-private-parking"></i> -->
+                <h3>{{$facility->title}}</h3>
+                <p>{{$facility->sub_title}}</p>
+            </div> 
+        </a>
     </div>
     @endif
     @endforeach

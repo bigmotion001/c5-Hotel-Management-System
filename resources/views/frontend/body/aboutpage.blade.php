@@ -24,6 +24,3 @@
 </div>
 @endforeach
 
-<!--Testimony-->
-@include('frontend.body.testimony')
-<!--Testimony-->
