@@ -169,12 +169,33 @@ class SectionsController extends Controller
         $request->validate([
             'title' => 'required',
             'sub_title' => 'required',
+            'image1' => 'required',
+            'image2' => 'required',
+            'image3' => 'required',
+            'image4' => 'required',
         ]);
 
         $data = new Facilities();
 
         $data->title = $request->title;
         $data->sub_title = $request->sub_title;
+
+
+        $imageName = time() . '_image1' . $request->image1->getClientOriginalExtension();
+        $request->image1->move('uploads/images', $imageName);
+        $data->image1 = $imageName;
+
+        $imageName = time() . '_image2' . $request->image2->getClientOriginalExtension();
+        $request->image2->move('uploads/images', $imageName);
+        $data->image2 = $imageName;
+
+        $imageName = time() . '_image3' . $request->image3->getClientOriginalExtension();
+        $request->image3->move('uploads/images', $imageName);
+        $data->image3 = $imageName;
+
+        $imageName = time() . '_image4' . $request->image4->getClientOriginalExtension();
+        $request->image4->move('uploads/images', $imageName);
+        $data->image4 = $imageName;
 
         $data->save();
 

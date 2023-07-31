@@ -7,7 +7,7 @@
 
 
 <div class="hero full-height jarallax" data-jarallax data-speed="0.2">
-    <img class="jarallax-img kenburns" src="../backend/assets/images/{{$datas->image1}}" alt="">
+    <img class="jarallax-img kenburns" src="../uploads/images/{{$datas->image1}}" alt="{{$datas->title}}">
     <div class="wrapper opacity-mask d-flex align-items-center  text-center animate_hero" data-opacity-mask="rgba(0, 0, 0, 0.5)">
         <div class="container">
             <div class="row justify-content-center">
@@ -50,24 +50,24 @@
         <div data-cues="zoomIn">
             <div class="owl-carousel owl-theme carousel_item_centered kenburns rounded-img">
                 <div class="item">
-                    <img src="../backend/assets/images/{{$datas->image1}}" alt="">
+                    <img src="../uploads/images/{{$datas->image1}}" style="height: 350px; object-fit:cover" alt="{{$datas->title}}">
                 </div>
                 <div class="item">
-                    <img src="../backend/assets/images/{{$datas->image2}}" alt="">
+                    <img src="../uploads/images/{{$datas->image2}}" style="height: 350px; object-fit:cover" alt="{{$datas->title}}">
                 </div>
                 <div class="item">
-                    <img src="../backend/assets/images/{{$datas->image3}}" alt="">
+                    <img src="../uploads/images/{{$datas->image3}}" style="height: 350px; object-fit:cover" alt="{{$datas->title}}">
                 </div>
                 <div class="item">
-                    <img src="../backend/assets/images/{{$datas->image4}}" alt="">
+                    <img src="../uploads/images/{{$datas->image4}}" style="height: 350px; object-fit:cover" alt="{{$datas->title}}">
                 </div>
             </div>
         </div>
         <div class="text-center mt-5">
-            <a class="btn_1 outline" data-fslightbox="gallery_1" data-type="image" href="../backend/assets/images/{{$datas->image1}}">FullScreen Gallery</a>
-            <a data-fslightbox="gallery_1" data-type="image" href="../backend/assets/images/{{$datas->image2}}"></a>
-            <a data-fslightbox="gallery_1" data-type="image" href="../backend/assets/images/{{$datas->image3}}"></a>
-            <a data-fslightbox="gallery_1" data-type="image" href="../backend/assets/images/{{$datas->image4}}"></a>
+            <a class="btn_1 outline" data-fslightbox="gallery_1" data-type="image" href="../uploads/images/{{$datas->image1}}">FullScreen Gallery</a>
+            <a data-fslightbox="gallery_1" data-type="image" href="../uploads/images/{{$datas->image2}}"></a>
+            <a data-fslightbox="gallery_1" data-type="image" href="../uploads/images/{{$datas->image3}}"></a>
+            <a data-fslightbox="gallery_1" data-type="image" href="../uploads/images/{{$datas->image4}}"></a>
         </div>
     </div>
 </div>
