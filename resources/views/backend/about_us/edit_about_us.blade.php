@@ -30,7 +30,7 @@
 
                             <div class="row col-md-12 col-12">
 
-                                <div class="mb-2 col-sm-12 col-md-6">
+                                <div class="mb-2 col-sm-12">
                                     <!-- <label class="form-label mb-1">Academic Session</label> -->
                                     <input type="text" id="" class="form-control" placeholder="Title" name="title" value="{{ $datas->title }}" />
                                     @error('title')
@@ -38,9 +38,14 @@
                                     @enderror
                                 </div>
 
-                                <div class="mb-2 col-sm-12 col-md-6">
-                                    <!-- <label class="form-label mb-1">Academic Session</label> -->
-                                    <input type="text" id="" class="form-control" placeholder="Sub Title" name="sub_title" value="{{ $datas->sub_title }}" />
+
+                            </div>
+                            <div class="row col-md-12 col-12">
+
+
+                                <div class="mb-2 col-sm-12">
+                                    <label class="form-label" for="sub_title">Sub Title</label>
+                                    <textarea name="sub_title" class="form-control" id="sub_title" cols="30" rows="4">{{ $datas->sub_title }}</textarea>
                                     @error('sub_title')
                                     <span class="text-danger">{{ $message }}</span>
                                     @enderror
