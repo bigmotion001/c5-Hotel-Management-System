@@ -4,15 +4,7 @@
 
 @section('content')
 
-
-
-
 @include('frontend.body.carousel')
-
-
-<!-- /pinned content -->
-
-
 <!-- /pinned content -->
 
 
