@@ -48,7 +48,7 @@
             <div class="box_facilities no-border" data-cue="slideInUp">
                 <!-- <i class="customicon-private-parking"></i> -->
                 <h3>{{$facility->title}}</h3>
-                <p>{{$facility->sub_title}}</p>
+                <p>{!! Str::limit($facility->sub_title, 75, '...') !!}</p>
             </div> 
         </a>
     </div>

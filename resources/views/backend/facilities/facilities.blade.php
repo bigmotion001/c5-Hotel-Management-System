@@ -40,7 +40,7 @@
                                 <tr>
                                     <td>{{$key + 1}}</td>
                                     <td>{{$data->title}}</td>
-                                    <td>{{$data->sub_title}}</td>
+                                    <td>{!! Str::limit($data->sub_title, 75, '...') !!}</td>
 
 
                                     <td class="d-flex mt-3">

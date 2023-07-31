@@ -225,25 +225,25 @@ class SectionsController extends Controller
 
         if ($request->image1) {
             $imageName = time() . '_image1' . $request->image1->getClientOriginalExtension();
-            $request->image1->move('backend/assets/images', $imageName);
+            $request->image1->move('uploads/images', $imageName);
             $data->image1 = $imageName;
         }
 
         if ($request->image2) {
             $imageName = time() . '_image2' . $request->image2->getClientOriginalExtension();
-            $request->image2->move('backend/assets/images', $imageName);
+            $request->image2->move('uploads/images', $imageName);
             $data->image2 = $imageName;
         }
 
         if ($request->image3) {
             $imageName = time() . '_image3' . $request->image3->getClientOriginalExtension();
-            $request->image3->move('backend/assets/images', $imageName);
+            $request->image3->move('uploads/images', $imageName);
             $data->image3 = $imageName;
         }
 
         if ($request->image4) {
             $imageName = time() . '_image4' . $request->image4->getClientOriginalExtension();
-            $request->image4->move('backend/assets/images', $imageName);
+            $request->image4->move('uploads/images', $imageName);
             $data->image4 = $imageName;
         }
 

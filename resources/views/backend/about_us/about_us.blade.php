@@ -8,7 +8,6 @@
     </div>
 
     <div class="button">
-        <a href="{{ route('about_us') }}" class="btn btn-warning"><span style="font-weight: bolder;">+ </span> Add New</a>
     </div>
 </div>
 
@@ -46,7 +45,7 @@
                                     <td><img style="width: 100px; height:100px; object-fit:cover;" src="../../uploads/images/{{$data->image2}}" alt="{{$data->image1}}"></td>
 
                                     <td>{{$data->title}}</td>
-                                    <td>{{$data->sub_title}}</td>
+                                    <td>{!! Str::limit($data->sub_title, 75, '...') !!}</td>
 
 
                                     <td class="d-flex mt-3">
