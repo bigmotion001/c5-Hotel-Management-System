@@ -339,13 +339,13 @@ class UtilitiesController extends Controller
             'adult' => 'required',
             'child' => 'required',
             'fare' => 'required',
-            'cancellation_fee' => 'required',
+
             'amenities' => 'required',
             'complements' => 'required',
             'total_rooms' => 'required',
             'total_beds' => 'required',
             'description' => 'required',
-            'cancellation_policy' => 'required',
+
 
             'image1' => 'required',
             'image2' => 'required',
@@ -359,15 +359,16 @@ class UtilitiesController extends Controller
         $data->adult = $request->adult;
         $data->child = $request->child;
         $data->fare = $request->fare;
-        $data->cancellation_fee = $request->cancellation_fee;
+
 
         $data->amenities = json_encode($request->amenities);
         $data->complements = json_encode($request->complements);
 
         $data->total_rooms = $request->total_rooms;
+        $data->available_rooms = $request->total_rooms;
         $data->total_beds = $request->total_beds;
         $data->description = $request->description;
-        $data->cancellation_policy = $request->cancellation_policy;
+
 
         $imageName = time() . '_image1' . $request->image1->getClientOriginalExtension();
 

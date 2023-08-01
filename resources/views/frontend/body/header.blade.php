@@ -4,7 +4,7 @@
 
 
 <!DOCTYPE html>
-<html lang="zxx">
+<html lang="en">
 
 
 
@@ -17,7 +17,7 @@
 
     <!-- Favicons-->
     <link rel="shortcut icon" href="{{ asset($site->favicon) }}" type="image/x-icon">
-    
+    <link rel="stylesheet" type="text/css" href="{{ asset('backend/app-assets/vendors/css/extensions/sweetalert2.min.css') }}">
 
     <!-- GOOGLE WEB FONT-->
     <link rel="preconnect" href="https://fonts.googleapis.com/">
@@ -31,9 +31,22 @@
     <link href="{{ ('../frontend/css/style.css') }}" rel="stylesheet">
     <link href="{{ ('../frontend/css/vendors.min.css') }}" rel="stylesheet">
 
+    <script src="
+https://cdn.jsdelivr.net/npm/sweetalert2@11.7.20/dist/sweetalert2.all.min.js
+"></script>
+<link href="
+https://cdn.jsdelivr.net/npm/sweetalert2@11.7.20/dist/sweetalert2.min.css
+" rel="stylesheet">
+
     <!-- YOUR CUSTOM CSS -->
     <link href="{{ ('../frontend/css/custom.css') }}" rel="stylesheet">
 
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    @livewireStyles
 
 </head>
 
@@ -102,14 +115,18 @@
 
                     <li><a href="{{route('contact_us')}}">Contact</a></li>
                     <li><a href="{{route('gallery')}}">Photo Gallery</a></li>
+                    @guest()
+                    <li><a href="{{route('login')}}">Login</a></li>
+                    @else
                     <li><a href="{{route('user_dashboard')}}">Dashboard</a></li>
+                    @endguest
 
                 </ul>
 
             </nav>
 
             <div>
-                <a href="/" class="btn_book">Book Now</a>
+                <a href="/#booking_section" class="btn_book">Book Now</a>
 
             </div>
 

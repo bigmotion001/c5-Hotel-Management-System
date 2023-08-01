@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Backend\AdminController;
 use App\Http\Controllers\Backend\SettingsController;
+use App\Http\Controllers\BookingController;
 use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ReceptionController;
@@ -22,7 +23,7 @@ Route::get('/facility_details/{id}', [FrontendController::class, 'Facility_detai
 
 Route::get('/all_rooms', [FrontendController::class, 'All_rooms'])->name('all_rooms');
 
-Route::get('/user_dashboard', [FrontendController::class, 'User_dashboard'])->name('user_dashboard');
+Route::get('/user/dashboard', [FrontendController::class, 'User_dashboard'])->name('user_dashboard');
 
 
 //===============ADMIN ROUTES======================
@@ -48,6 +49,8 @@ Route::prefix('management')->group(function () {
     Route::get('/receptionist/delete/{id}', [AdminController::class, 'AdminDELETEReceptionists'])->name('delete-recept')->middleware('admin');
     //admin edit receptionist
     Route::post('/receptionist/update/{id}', [AdminController::class, 'AdminUPDATEReceptionists'])->name('admin-update-recept')->middleware('admin');
+    //admin view booking
+    Route::get('/booking/show/{id}', [AdminController::class, 'AdminViewBookingDetails'])->name('admin-view-booking')->middleware('admin');
 
 
 
@@ -62,6 +65,40 @@ Route::prefix('reception')->group(function () {
     Route::get('login', [ReceptionController::class, 'Index'])->name('reception_login');
     Route::post('/login/owner', [ReceptionController::class, 'ReceptionLogin'])->name('reception.login');
     Route::get('/dashboard', [ReceptionController::class, 'Dashboard'])->name('reception.dashboard')->middleware('reception');
+    //view booking
+    Route::get('/booking/view/{id}', [ReceptionController::class, 'ViewBookingDetails'])->name('view-booking')->middleware('reception');
+    //update booking
+    Route::post('/booking/update/{id}', [ReceptionController::class, 'UpdateBooking'])->name('update-booking')->middleware('reception');
+    //book a new room booking
+    Route::post('/booking/store', [ReceptionController::class, 'ReceptionBookRoom'])->name('reception-reseve-room')->middleware('reception');
+    //book a new room booking
+    Route::post('/search/result', [ReceptionController::class, 'Search'])->name('search-p')->middleware('reception');
+
+    //pending booking
+    Route::get('/booking/pending', function () {
+        return view('reception.booking.pending');
+    })->middleware(['reception'])->name('r-pending-booking');
+    //active booking
+    Route::get('/booking/active', function () {
+        return view('reception.booking.active');
+    })->middleware(['reception'])->name('r-active-booking');
+    //compled booking
+    Route::get('/booking/completed', function () {
+        return view('reception.booking.checkedout');
+    })->middleware(['reception'])->name('r-checkedout-booking');
+    //cancelled booking
+    Route::get('/booking/canceled', function () {
+        return view('reception.booking.cancelled');
+    })->middleware(['reception'])->name('r-cancelled-booking');
+    //new  booking
+    Route::get('/booknew', function () {
+        return view('reception.booking.book-room');
+    })->middleware(['reception'])->name('reception-book-room');
+
+    //room list
+    Route::get('/rooms/list', function () {
+        return view('reception.booking.room_list');
+    })->middleware(['reception'])->name('r-room-list');
 });
 //===============END reception ROUTES======================
 
@@ -76,8 +113,8 @@ Route::get('/', function () {
 });
 
 Route::get('/dashboard', function () {
-    return view('backend.index');
-})->middleware(['auth', 'verified'])->name('dashboard');
+    return view('user.index');
+})->middleware(['auth', 'verified'])->name('user_dashboard');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -327,3 +364,11 @@ Route::get('/edit_gallery/{id}', [UtilitiesController::class, 'Edit_gallery'])->
 Route::post('/updated_gallery/{id}', [UtilitiesController::class, 'Updated_gallery'])->name('updated_gallery');
 
 Route::get('/delete_gallery/{id}', [UtilitiesController::class, 'Delete_gallery'])->name('delete_gallery');
+
+
+//========================user all routes
+
+Route::middleware('auth')->group(function () {
+//user book room
+Route::post('/user/book/room', [BookingController::class, 'UserBookRoom'])->name('user_book_room');
+});

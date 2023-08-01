@@ -27,12 +27,12 @@
                 <h5>Explore</h5>
                 <div class="footer_links">
                     <ul>
-                        <li><a href="index-2.html">Home</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="room-list-1.html">Rooms &amp; Suites</a></li>
-                        <li><a href="news-1.html">News &amp; Events</a></li>
-                        <li><a href="contacts.html">Contacts</a></li>
-                        <li><a href="about.html">Terms and Conditions</a></li>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="{{ route('about_us_frontend') }}">About Us</a></li>
+                        <li><a href="{{ route('all_rooms') }}">Rooms &amp; Suites</a></li>
+                        <li><a href="#">News &amp; Events</a></li>
+                        <li><a href="{{ route('contact_us') }}">Contacts</a></li>
+                        <li><a href="#">Terms and Conditions</a></li>
                     </ul>
                 </div>
             </div>
@@ -40,9 +40,10 @@
                 <div id="newsletter">
                     <h5>Newsletter</h5>
                     <div id="message-newsletter"></div>
-                    <form method="post" action="https://ansonika.com/paradise/phpmailer/newsletter_template_email.php" name="newsletter_form" id="newsletter_form">
+                    <form method="post" action="#" name="newsletter_form" id="newsletter_form">
                         <div class="form-group">
-                            <input type="email" name="email_newsletter" id="email_newsletter" class="form-control" placeholder="Your email">
+                            <input type="email" name="email_newsletter" id="email_newsletter" class="form-control"
+                                placeholder="Your email">
                             <button type="submit" id="submit-newsletter"><i class="bi bi-send"></i></button>
                         </div>
                     </form>
@@ -69,11 +70,15 @@
 <!-- /back to top -->
 
 <!-- COMMON SCRIPTS -->
-<script src="{{ ('../frontend/js/common_scripts.js') }}"></script>
-<script src="{{ ('../frontend/js/common_functions.js') }}"></script>
-<script src="{{ ('../frontend/js/datepicker_inline.js') }}"></script>
-<script src="{{ ('../frontend/js/slider.js') }}"></script>
+<script src="{{ '../frontend/js/common_scripts.js' }}"></script>
+<script src="{{ '../frontend/js/common_functions.js' }}"></script>
+<script src="{{ '../frontend/js/datepicker_inline.js' }}"></script>
+<script src="{{ '../frontend/js/slider.js' }}"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
+<!-- BEGIN: Page Vendor JS-->
+
+<!-- END: Page JS-->
 
 
 <script type="text/javascript">
@@ -82,9 +87,41 @@
         videoPlayOnlyVisible: false,
         videoLazyLoading: false
     });
+
+    window.addEventListener('swal',function(e) {
+        Swal.fire({
+            title:  e.detail.title,
+            icon: e.detail.icon,
+            iconColor: e.detail.iconColor,
+            timer: 10000,
+            toast: true,
+            position: 'center',
+            toast:  true,
+            showConfirmButton:  true,
+        });
+    });
 </script>
 
 <script>
+    $(function() {
+        var dtToday = new Date();
+
+        var month = dtToday.getMonth() + 1;
+        var day = dtToday.getDate();
+        var year = dtToday.getFullYear();
+        if (month < 10)
+            month = '0' + month.toString();
+        if (day < 10)
+            day = '0' + day.toString();
+
+        var minDate = year + '-' + month + '-' + day;
+
+        $('.date').attr('min', minDate);
+    });
+
+
+
+
     let rooms = document.getElementById('rooms')
 
     let sideBar = document.getElementById('side_bar')
@@ -114,12 +151,98 @@
         all_rooms.classList.remove('dropdown_ative')
     })
 
-    menu.addEventListener('click', function(){
+    menu.addEventListener('click', function() {
         sideBar.classList.remove('side__bar__active')
         all_rooms.classList.remove('dropdown_ative')
     })
 
+
+
+
+
+
+
+
+
+
+
+    //delete
+    $(function() {
+        $(document).on('click', '#delete', function(e) {
+            e.preventDefault();
+            var link = $(this).attr("href");
+
+
+            Swal.fire({
+                title: 'Are you sure?',
+                text: "To Deleted This Data!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                cancelButtonText: 'No',
+                confirmButtonText: 'Yes, Delete!'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    Swal.fire(
+                        'Deleted!',
+                        'Data Has Been Deleted Successfully.',
+                        'success'
+                    )
+                    window.location.href = link
+                }
+            });
+
+
+        });
+
+
+
+
+    });
+
+
+
+
+
+    //toastr notification
+    window.addEventListener('alert', event => {
+        toastr[event.detail.type](event.detail.message,
+            event.detail.title ?? ''), toastr.options = {
+            "closeButton": true,
+            "progressBar": true,
+        }
+    });
+
+
+
+    ClassicEditor
+        .create(document.querySelector('#editor'))
+        .then(editor => {
+            console.log(editor);
+        })
+        .catch(error => {
+            console.error(error);
+        });
+
+    $(window).ready(function() {
+        $("form").on("keypress", function(event) {
+            var keyPressed = event.keyCode || event.which;
+            if (keyPressed === 13) {
+                event.preventDefault();
+                return false;
+            }
+        });
+    });
+
+
+
+
+
 </script>
+
+@livewireScripts
+
 
 </body>
 
