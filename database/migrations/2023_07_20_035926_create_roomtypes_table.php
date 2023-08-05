@@ -23,6 +23,8 @@ return new class extends Migration
             $table->string('total_rooms')->nullable();
             $table->string('total_beds')->nullable();
             $table->string('description')->nullable();
+            $table->string('total_booked')->nullable();
+            $table->string('available_rooms')->nullable();
             $table->string('cancellation_policy')->nullable();
             $table->string('image1')->nullable();
             $table->string('image2')->nullable();

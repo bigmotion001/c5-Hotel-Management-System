@@ -5,8 +5,7 @@
 @section('content')
 
 @include('frontend.body.carousel')
-<!-- /pinned content -->
-
+<!--/carousel-->
 
 <!-- About Page  -->
 @include('frontend.body.aboutpage')
@@ -16,13 +15,6 @@
 @include('frontend.body.allRooms')
 <!-- /All Rooms-->
 
-
-<!--/carousel-->
-
-
-
-
-
 <!-- /row-->
 <div class="title text-center mb-5">
     <small data-cue="slideInUp">C5 Hotel</small>
@@ -30,7 +22,8 @@
 </div>
 <div class="row mt-4">
     @foreach($facilities as $key => $facility)
-    @if($key < 4) <div class="col-xl-3 col-md-6">
+    @if($key < 4) 
+    <div class="col-xl-3 col-md-6">
         <a href="{{route('facility_details', $facility->id)}}">
             <div class="box_facilities no-border" data-cue="slideInUp">
                 <!-- <i class="customicon-private-parking"></i> -->
@@ -38,9 +31,9 @@
                 <p>{!! Str::limit($facility->sub_title, 75, '...') !!}</p>
             </div>
         </a>
-</div>
-@endif
-@endforeach
+    </div>
+    @endif
+    @endforeach
 <!-- /Row -->
 </div>
 <!-- /container-->
