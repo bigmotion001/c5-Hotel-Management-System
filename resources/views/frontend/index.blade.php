@@ -11,6 +11,7 @@
 @include('frontend.body.aboutpage')
 <!-- /About Page  -->
 
+
 <!--All Rooms-->
 @include('frontend.body.allRooms')
 <!-- /All Rooms-->

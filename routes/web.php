@@ -52,7 +52,32 @@ Route::prefix('management')->group(function () {
     //admin view booking
     Route::get('/booking/show/{id}', [AdminController::class, 'AdminViewBookingDetails'])->name('admin-view-booking')->middleware('admin');
 
+    //admin export booking
+    Route::get('/booking/export', [AdminController::class, 'ExportBooking'])->name('export.booking')->middleware('admin');
+    //admin delete booking
+    Route::get('/booking/delete/{id}', [AdminController::class, 'AdminDeleteBooking'])->name('admin-delete-booking')->middleware('admin');
 
+
+    //active booking
+    Route::get('/booking/active', function () {
+        return view('backend.booking.active-booking');
+    })->middleware(['admin'])->name('admin-active-booking');
+    //pending booking
+    Route::get('/booking/pending', function () {
+        return view('backend.booking.pending-booking');
+    })->middleware(['admin'])->name('admin-pending-booking');
+    //pending booking
+    Route::get('/booking/cancelled', function () {
+        return view('backend.booking.cancelled-booking');
+    })->middleware(['admin'])->name('admin-cancelled-booking');
+    //checkout booking
+    Route::get('/booking/checkout', function () {
+        return view('backend.booking.checkout');
+    })->middleware(['admin'])->name('admin-checkout');
+    //checkout booking
+    Route::get('/booking/all', function () {
+        return view('backend.booking.all-booking');
+    })->middleware(['admin'])->name('admin-all-booking');
 
     //==================== Utility Routes ===================
 });

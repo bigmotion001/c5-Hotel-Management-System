@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Backend;
 
+use App\Exports\BookingExport;
 use App\Http\Controllers\Controller;
 use App\Models\Admin;
 use App\Models\Booking;
@@ -9,6 +10,8 @@ use App\Models\Reception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Charts\ExpensesChart;
 
 class AdminController extends Controller
 {
@@ -30,9 +33,9 @@ class AdminController extends Controller
     }
 
     //admin dash baord
-    public function Dashboard()
+    public function Dashboard(ExpensesChart $chart)
     {
-        return view('admin.index');
+        return view('admin.index', ['chart' => $chart->build()]);
     }
 
     //admin profile
@@ -147,4 +150,30 @@ class AdminController extends Controller
         $booking =  Booking::findOrFail($id);
         return view('backend.booking.booking_details', compact('booking'));
     }
+
+
+
+
+//export booking
+public function ExportBooking(){
+    return Excel::download(new BookingExport, 'booking.xlsx');
+}
+
+
+
+
+
+
+
+//admin delete booking
+public function AdminDeleteBooking($id){
+    Booking::find($id)->delete();
+
+    return redirect()->route('admin.dashboard')->with('success', 'Booking Deleted successfully');
+
+}
+
+
+
+
 }

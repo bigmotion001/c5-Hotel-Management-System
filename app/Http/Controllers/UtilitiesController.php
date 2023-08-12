@@ -334,6 +334,11 @@ class UtilitiesController extends Controller
     //add room function
     function Save_roomtype(Request $request)
     {
+        //check if name exist
+        if(Roomtype::where('name', $request->name)->count() == 1){
+            return redirect()->back()->with('error', 'Room Type Already Added');
+        }
+        else{
         $request->validate([
             'name' => 'required',
             'adult' => 'required',
@@ -399,6 +404,7 @@ class UtilitiesController extends Controller
 
         return redirect('roomtype')->with('success', 'Room Type Added Successfully');
     }
+}
 
     //update room page
     public function Edit_roomtype($id)

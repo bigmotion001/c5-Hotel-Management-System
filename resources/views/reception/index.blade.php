@@ -4,15 +4,13 @@
     @php
         $today = date('d F Y');
         $user = App\Models\User::all();
-        $room = App\Models\Roomtype::sum('total_rooms');
+        $totalrooms = App\Models\Room::all();
         $availableroom = App\Models\Roomtype::where('available_rooms', '!=', 0)->sum('available_rooms');
         $todaybooked = App\Models\Booking::where('today_booking', $today)->count('checking');
         $todaybookedroom = App\Models\Booking::where('today_booking', $today)->sum('total_room');
         $runningbooking = App\Models\Booking::where('status', 1)->count();
         $canclledbooking = App\Models\Booking::where('status', 2)->count();
-        $checkoutbooking = App\Models\Booking::where('today_booking', $today)
-            ->where('status', 3)
-            ->count();
+        $checkoutbooking = App\Models\Booking::where('status', 3)->count('status');
         //booking
         $todayreservation = App\Models\Booking::where('today_booking', $today)
             ->orderBy('created_at', 'DESC')
@@ -39,7 +37,7 @@
                                             <i data-feather='book'></i>
                                         </div>
                                     </div>
-                                    <h2 class="fw-bolder">{{ $room }}</h2>
+                                    <h2 class="fw-bolder">{{ count($totalrooms) }}</h2>
                                     <p class="card-text">Total Rooms</p>
                                 </a>
                             </div>
@@ -181,6 +179,17 @@
         </div>
     </div>
 
+
+
+
+
+
+
+
+
+
+
+
     <hr>
     <div class="row">
         <br>
@@ -265,7 +274,7 @@
                                         <td>
                                             @if ($i->paid == 0)
                                                 <span class="badge bg-danger">Pending</span>
-                                            @elseif ($i->piad == 1)
+                                            @elseif ($i->paid == 1)
                                                 <span class="badge bg-success">Paid</span>
                                             @endif
                                         </td>
@@ -284,7 +293,7 @@
                                                 class="btn btn-primary">View</a></td>
 
                                     @empty
-                                        <h3>No booking yet</h3>
+                                    <center><h3 class="text-danger">No booking yet</h3></center>
                                     </tr>
                                 @endforelse
 
@@ -344,7 +353,7 @@
                             <tbody>
 
                                 @forelse ($rooms as $r)
-                   
+
                                     <tr>
 
                                         <td>{{ $r->name }}</td>

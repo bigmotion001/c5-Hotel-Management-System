@@ -95,7 +95,7 @@ else{
         'booking_id' => $this->booking_id,
         'checking' => date('d F Y', strtotime($this->checking_date)),
         'checkout' => date('d F Y', strtotime($this->checkout_date)),
-        'amount' => $this->total_amount,
+        'amount' => $this->total_amount * Carbon::parse($this->checking_date)->diffInDays(Carbon::parse($this->checkout_date)),
         'total_room' => $this->room_qty,
         'total_day' => Carbon::parse($this->checking_date)->diffInDays(Carbon::parse($this->checkout_date)),
         'total_adults' => $this->adults_booking,

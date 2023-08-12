@@ -179,6 +179,7 @@
                             </div>
                         </div> --}}
                     </form>
+                    <a href="{{  route('admin-delete-booking', $booking->id) }}" class="btn btn-danger" id="delete">Delete Booking</a>
                 </div>
             </div>
         </div>
